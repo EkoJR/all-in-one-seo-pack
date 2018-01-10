@@ -7,28 +7,28 @@
  * @copyright https://semperplugins.com
  * @version 1.0.0
  */
-if ( typeof aiosp_data != 'undefined' ) {
+if ( typeof aioseop_module_data !== 'undefined' ) {
 
 	/**
 	 * @since 1.0.0
 	 * @param int $index.
 	 * @param $value
 	 */
-	jQuery.each( aiosp_data, function( index, value ) {
-//		aiosp_data[index] = value.json.replace(/&quot;/g, '"');
-//		aiosp_data[index] = jQuery.parseJSON( value );
+	jQuery.each( aioseop_module_data, function( index, value ) {
+//		aioseop_module_data[index] = value.json.replace(/&quot;/g, '"');
+//		aioseop_module_data[index] = jQuery.parseJSON( value );
 		if ( index == 0 ) {
 			if ( typeof value.condshow == 'undefined' ) {
-				aiosp_data[ index ].condshow = [];
+				aioseop_module_data[ index ].condshow = [];
 			}
 		} else {
 			if ( typeof value.condshow != 'undefined' ) {
-				aiosp_data[ 0 ].condshow =
-					jQuery.merge( aiosp_data[0].condshow, value.condshow );
+				aioseop_module_data[ 0 ].condshow =
+					jQuery.merge( aioseop_module_data[0].condshow, value.condshow );
 			}
 		}
 	});
-	aiosp_data = aiosp_data[0];
+	aioseop_module_data = aioseop_module_data[0];
 }
 
 /**
@@ -225,8 +225,8 @@ function aioseop_add_condshow_handlers( index, value ) {
  * @param $condshow.
  */
 function aioseop_do_condshow( condshow ) {
-	if ( typeof aiosp_data.condshow != 'undefined' ) {
-		jQuery.each( aiosp_data.condshow, function( index, value ) {
+	if ( typeof aioseop_module_data.condshow != 'undefined' ) {
+		jQuery.each( aioseop_module_data.condshow, function( index, value ) {
 			aioseop_do_condshow_match( index, value );
 			aioseop_add_condshow_handlers( index, value );
 		});
@@ -237,9 +237,9 @@ function aioseop_do_condshow( condshow ) {
  * @since 1.0.0
  */
 jQuery( document ).ready(function() {
-	if ( typeof aiosp_data != 'undefined' ) {
-		if ( typeof aiosp_data.condshow != 'undefined' ) {
-			aioseop_do_condshow( aiosp_data.condshow );
+	if ( typeof aioseop_module_data != 'undefined' ) {
+		if ( typeof aioseop_module_data.condshow != 'undefined' ) {
+			aioseop_do_condshow( aioseop_module_data.condshow );
 		}
 	}
 
@@ -496,7 +496,7 @@ jQuery( document ).ready(function() {
 			jQuery( this ).attr( 'previousValue', 'checked' );
 		}
 	});
-	if ( typeof aiosp_data.pointers != 'undefined' ) {
+	if ( typeof aioseop_module_data.pointers != 'undefined' ) {
 
 		/**
 		 * @since 1.0.0
@@ -504,7 +504,7 @@ jQuery( document ).ready(function() {
 		 * @param $value.
 		 * @return mixed.
 		 */
-		jQuery.each( aiosp_data.pointers, function( index, value ) {
+		jQuery.each( aioseop_module_data.pointers, function( index, value ) {
 			if ( value != 'undefined' && value.pointer_text != '' ) {
 				aioseop_show_pointer( index, value );
 			}
