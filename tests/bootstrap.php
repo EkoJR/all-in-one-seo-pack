@@ -92,6 +92,7 @@ if ( false !== getenv( 'WP_DEFAULT_THEME' ) ) {
  * CONSTANTS
  */
 define( 'WP_DEVELOP_DIR', $wp_develop_dir );
+define( 'WP_DIR', $wp_develop_dir . '/src' );
 define( 'WP_CORE_DIR', $wp_develop_dir . '/src' );
 define( 'WP_TESTS_DIR', $wp_develop_dir . '/tests/phpunit' );
 
