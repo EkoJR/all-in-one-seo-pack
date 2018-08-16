@@ -1154,6 +1154,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 
 			if ( ! AIOSEOPPRO ) {
 				// add_action('all_admin_notices', array( $this, 'woo_upgrade_notice'));
+				aioseop_notice_activate_pro_promo_woocommerce();
 			}
 		}
 		if ( AIOSEOPPRO ) {
@@ -3710,6 +3711,9 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		}
 	}
 
+	/**
+	 * @deprecated 2.4.2 Use AIOSEOP_Notices class.
+	 */
 	function woo_upgrade_notice() {
 
 		$aioseop_woo_upgrade_notice_dismissed = get_user_meta( get_current_user_id(), 'aioseop_woo_upgrade_notice_dismissed', true );
