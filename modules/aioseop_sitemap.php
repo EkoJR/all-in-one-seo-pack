@@ -705,7 +705,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			/**
 			 * Filter to change the filename of the sitemap.
 			 *
-			 * @since ?
+			 * @since 2.9
 			 *
 			 * @param string  $filename  The file name.
 			 */
@@ -1455,16 +1455,21 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			 * @param array $sitemap_data {
 			 *      An array of arrays, where each array corresponds to the <url> element of the sitemap.
 			 *
-			 *      @type   array   The sitemap data corresponding to an <url> element. Each key should correspond to the name of
-									the element as specified by the sitemap XSD.
+			 *      @type array $index {
+			 *         The sitemap data corresponding to an <url> element. Each key should correspond to the name of
+			 *         the element as specified by the sitemap XSD.
+			 *
+			 *         @type string $changefreq Amount of time to update.
+			 *         @type string $loc        URL location of the Sitemap.
+			 *         @type string $priority   Set between "0.0" and "1.0".
+			 *     }
 			 * }
-			 * @param string    $sitemap_type   Name of the sitemap.
+			 * @param string $sitemap_type   Name of the sitemap.
 			 * @param int       $page           Page number.
 			 * @param array $options {
 			 *      Array of the module's options.
 			 *
-			 *      @type   string  Name of the setting.
-			 *      @type   mixed   Value of the setting.   
+			 *      TODO This needs a reference, and reference also needs to be documented. Options is ~98 variables/keys.
 			 * }
 			 */
 			return apply_filters( $this->prefix . 'data', $sitemap_data, $sitemap_type, $page, $this->options );
@@ -1536,10 +1541,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			 * @since ?
 			 *
 			 * @param array $notify_url {
-			 *      Array of search engine name vs. the URL to ping.
+			 *     Array of search engine name vs. the URL to ping.
 			 *
-			 *      @type   string  Name of the search engine.
-			 *      @type   string  URL of the search engine that accepts sitemaps.
+			 *     @type string $bing   URL for Bing Sitemap ping.
+			 *     @type string $google URL for Google Sitemap ping.
 			 * }
 			 */
 			$notify_url = apply_filters( 'aioseo_sitemap_ping_urls', $notify_url );
@@ -1893,11 +1898,16 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			 * @param array $files {
 			 *      An array of arrays, where each array corresponds to the <url> element of the sitemap.
 			 *
-			 *      @type   array   The sitemap data corresponding to an <url> element. Each key should correspond to the name of
-									the element as specified by the sitemap XSD.
-			 * }
-			 * @param string    $prefix     The filename to prefix each sitemap name.
-			 * @param string    $suffix     The suffix/file extension to use.
+			 *     @type array $index {
+			 *         The sitemap data corresponding to an <url> element. Each key should correspond to the name of
+			 *         the element as specified by the sitemap XSD.
+			 *
+			 *         @type string $changefreq Amount of time to update.
+			 *         @type string $loc        URL location of the Sitemap.
+			 *         @type string $priority   Set between "0.0" and "1.0".
+			 *     }
+			 * @param string $prefix The filename to prefix each sitemap name.
+			 * @param string $suffix The suffix/file extension to use.
 			 */
 			$files  = apply_filters( 'aioseop_sitemap_index_filenames', $files, $prefix, $suffix );
 
@@ -2970,13 +2980,17 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			/**
 			 * Filter to include additional post type archives in the sitemap.
 			 *
-			 * @since ?
+			 * @since 2.9
 			 *
-			 * @param array $types {
-			 *      Key/value array, where key corresponds to the post type and value to the post object.
+			 * @type array $types {
+			 *     Key/value array, where key corresponds to the post type and value to the post object.
 			 *
-			 *      @type   string  The post type.
-			 *      @type   WP_Post The post object.
+			 *     @type WP_Post $post_type {
+			 *         The post object.
+			 *
+			 *         @see WP_Post
+			 *         @link https://codex.wordpress.org/Class_Reference/WP_Post
+			 *     }
 			 * }
 			 */
 			$types		= apply_filters( "{$this->prefix}include_post_types_archives", $types );
@@ -3227,18 +3241,36 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 					 * @since ?
 					 *
 					 * @param array $pr_info {
-					 *      An array of arrays, where each array corresponds to the <url> element of the sitemap.
+					 *     An array of arrays, where each array corresponds to the <url> element of the sitemap.
 					 *
-					 *      @type   array   The sitemap data corresponding to an <url> element. Each key should correspond to the name of
-											the element as specified by the sitemap XSD.
+					 *     @type string $changefreq Amount of time to update.
+					 *     @type array  $image:image {
+					 *          Image data.
+					 *
+					 *          TODO Document missing keys.
+					 *     }
+					 *     @type string $lastmod    Last time the post has been modified.
+					 *     @type string $priority   Priority of the post.
+					 *     @type array  $rss {
+					 *         @type string $description Post description.
+					 *         @type string $post_type   What post type the object belongs to.
+					 *         @type string $pubDate     Publish date.
+					 *         @type int    $timestamp   Epoch timestamp.
+					 *         @type string $title       Post title.
+					 *     }
 					 * }
-					 * @param WP_Post   $post       The post object corresponding to the post being processed.
-					 * @param array $args {
-					 *      Key/value array of arguments that signify whether
+					 * @param WP_Post $post {
+					 *     The post object.
 					 *
-					 *      - priority ('prio_override') needs to be overridden (boolean)
-					 *      - frequency ('freq_override') needs to be overridden (boolean)
-					 *      - if any custom function needs to be used to determine the permalink to the post (string)
+					 *     @see WP_Post
+					 *     @link https://codex.wordpress.org/Class_Reference/WP_Post
+					 * }
+					 * @param array $args {
+					 *     Key/value array of arguments that signify whether.
+					 *
+					 *     @type boolean $fre_override  Priority that needs to be overridden.
+					 *     @type string  $linkfunc      Custom function used to determine the permalink to the post.
+					 *     @type boolean $prio_override Frequency that needs to be overridden.
 					 * }
 					 */
 					$pr_info = apply_filters( $this->prefix . 'prio_item_filter', $pr_info, $post, $args );
@@ -3507,7 +3539,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			 * @param array $gallery_types {
 			 *      The string array of shortcodes.
 			 *
-			 *      @type   string  Shortcode to support (without the []).
+			 *      @type string $index Shortcode to support (without the []).
 			 * }
 			 */
 			$types                  = apply_filters( 'aioseop_gallery_shortcodes', $gallery_types );
@@ -3643,7 +3675,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			 * @param array $extensions {
 			 *      String array with extensions in lowercase excluding the dot.
 			 *
-			 *      @type   string  Extension in lowercase excluding the dot.
+			 *      @type string $index Extension in lowercase excluding the dot.
 			 * }
 			 */
 			$allowed    = apply_filters( 'aioseop_allowed_image_extensions', self::$image_extensions );
@@ -3746,17 +3778,16 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			 * @since ?
 			 *
 			 * @param array $args {
-			 *      Arguments to send to WP_Query.
+			 *     Arguments to send to WP_Query.
 			 *
-			 *      @type   string  Argument name.
-			 *      @type   mixed   Argument value.
+			 *     @see Parameter $args for WP_Query.
+			 *     @link https://codex.wordpress.org/Class_Reference/WP_Query#Parameters
 			 * }
 			 * @param int       $hardcoded      Page number.
 			 * @param array $options {
 			 *      Array of the module's options.
 			 *
-			 *      @type   string  Name of the setting.
-			 *      @type   mixed   Value of the setting.   
+			 *      TODO This needs a reference, and reference also needs to be documented. Options is ~98 variables/keys.
 			 * }
 			 */
 			$args = apply_filters( $this->prefix . 'tax_args', $args, $page, $this->options );
@@ -4032,15 +4063,17 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			 * @param array $post_counts {
 			 *      Key/value map where key is the post type and value is the count of how many posts are in the post type.
 			 *
-			 *      @type string    Post type.
-			 *      @type int       Post count.
+			 *      @type int $page Page count.
+			 *      @type int $post Post count.
 			 * }
 			 * @param array $args {
-			 *      Arguments to send to WP_Query.
+			 *     Arguments to send to WP_Query.
 			 *
-			 *      @type   string  Argument name.
-			 *      @type   mixed   Argument value.
-			 * }
+			 *     @type string $post_status Status to query.
+			 *     @type array  $post_type {
+			 *         Post types to query.
+			 *         @type string $index Post Type slug.
+			 *     }
 			 */
 			$post_counts = apply_filters( $this->prefix . 'post_counts', $post_counts, $args );
 
@@ -4066,8 +4099,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			 * @param array $args {
 			 *      Arguments to send to WP_Query.
 			 *
-			 *      @type   string  Argument name.
-			 *      @type   mixed   Argument value.
+			 *      @type string $post_type   Argument name.
+			 *      @type mixed  $post_status Argument value.
 			 * }
 			 */
 			$args = apply_filters( $this->prefix . 'modify_post_params', $args );
@@ -4208,10 +4241,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			 * @since ?
 			 *
 			 * @param array $args {
-			 *      Arguments to send to WP_Query.
+			 *     Arguments to send to WP_Query.
 			 *
-			 *      @type   string  Argument name.
-			 *      @type   mixed   Argument value.
+			 *     @see Parameter $args for WP_Query.
+			 *     @link https://codex.wordpress.org/Class_Reference/WP_Query#Parameters
 			 * }
 			 */
 			$posts = get_posts( apply_filters( $this->prefix . 'post_query', $args ) );
@@ -4228,16 +4261,20 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			 *
 			 * @since ?
 			 *
-			 * @param array     $posts {
+			 * @param array $posts {
 			 *      Array of posts.
 			 *
-			 *      @type WP_Post The post object.
-			 * }
-			 * @param array     $args {
-			 *      Arguments to send to WP_Query.
+			 *      @type WP_Post $post {
+			 *          The post object.
 			 *
-			 *      @type   string  Argument name.
-			 *      @type   mixed   Argument value.
+			 *          @see WP_Post
+			 *          @link https://codex.wordpress.org/Class_Reference/WP_Post
+			 *      }
+			 * @param array $args {
+			 *     Arguments to send to WP_Query.
+			 *
+			 *     @see Parameter $args for WP_Query.
+			 *     @link https://codex.wordpress.org/Class_Reference/WP_Query#Parameters
 			 * }
 			 */
 			$posts = apply_filters( $this->prefix . 'post_filter', $posts, $args );
