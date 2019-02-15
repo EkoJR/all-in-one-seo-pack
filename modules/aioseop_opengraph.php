@@ -1766,6 +1766,15 @@ END;
 			return false;
 		}
 
+		/**
+		 * Get the Image
+		 *
+		 * @deprecated Appears to be unused.
+		 *
+		 * @param null $options
+		 * @param null $p
+		 * @return bool|mixed|string
+		 */
 		function get_the_image( $options = null, $p = null ) {
 			$meta_key = $this->options['aiosp_opengraph_meta_key'];
 
