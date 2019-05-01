@@ -448,7 +448,6 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			add_action( 'after_doing_aioseop_updates', array( $this, 'scan_sitemaps' ) );
 			add_action( 'after_doing_aioseop_updates', array( $this, 'upgrade_excluded_categories_to_excluded_terms' ) );
 			add_action( 'all_admin_notices', array( $this, 'sitemap_notices' ) );
-			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ), 20 );
 			add_action( "wp_ajax_{$this->prefix}", array( $this, 'ajax' ) );
 		}
 
@@ -593,7 +592,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 		 *
 		 * @param string $hook_suffix The current admin page.
 		 */
-		function enqueue_assets( $hook_suffix ) {
+		function admin_enqueue_scripts( $hook_suffix ) {
+			parent::admin_enqueue_scripts( $hook_suffix );
 			$deps = array();
 			$options = array(
 				'ajax' => array(
