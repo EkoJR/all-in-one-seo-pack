@@ -1364,15 +1364,35 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 			}
 
 			if ( ! empty( $this->options['aiosp_opengraph_title_shortcodes'] ) ) {
-				if ( ! aioseop_contains_conflicting_shortcodes( $title ) ) {
-					$title = do_shortcode( $title );
+				$conflict_shortcodes = aioseop_contains_conflicting_shortcodes( $title );
+
+				// Removes conflicting shortcodes.
+				foreach ( $conflict_shortcodes as $shortcode_tag => $shortcode_callback ) {
+					remove_shortcode( $shortcode_tag );
+				}
+
+				$title = do_shortcode( $title );
+
+				// Restores conflicting shortcodes.
+				foreach ( $conflict_shortcodes as $shortcode_tag => $shortcode_callback ) {
+					add_shortcode( $shortcode_tag, $shortcode_callback );
 				}
 			}
 			if ( ! empty( $description ) ) {
 				$description = $aiosp->internationalize( preg_replace( '/\s+/', ' ', $description ) );
 				if ( ! empty( $this->options['aiosp_opengraph_description_shortcodes'] ) ) {
-					if ( ! aioseop_contains_conflicting_shortcodes( $description ) ) {
-						$description = do_shortcode( $description );
+					$conflict_shortcodes = aioseop_contains_conflicting_shortcodes( $description );
+
+					// Removes conflicting shortcodes.
+					foreach ( $conflict_shortcodes as $shortcode_tag => $shortcode_callback ) {
+						remove_shortcode( $shortcode_tag );
+					}
+
+					$description = do_shortcode( $description );
+
+					// Restores conflicting shortcodes.
+					foreach ( $conflict_shortcodes as $shortcode_tag => $shortcode_callback ) {
+						add_shortcode( $shortcode_tag, $shortcode_callback );
 					}
 				}
 				if ( ! empty( $this->options['aiosp_opengraph_generate_descriptions'] ) && $this->options['aiosp_opengraph_generate_descriptions'] ) {

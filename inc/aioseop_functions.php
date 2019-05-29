@@ -1159,17 +1159,22 @@ if ( ! function_exists( 'aioseop_get_menu_icon' ) ) {
  * @since 3.0.0
  *
  * @param string $content
- * @return boolean
+ * @return array
  */
 function aioseop_contains_conflicting_shortcodes( $content ) {
 	$conflicting_shortcodes = array(
 		'WooCommerce Login' => '[woocommerce_my_account]',
 	);
+	$rtn_conflict_shortcodes = array();
 	foreach ( $conflicting_shortcodes as $shortcode ) {
 		// Second check is needed for shortcodes in Gutenberg Classic blocks.
 		if ( stripos( $content, $shortcode, 0 ) || 0 === stripos( $content, $shortcode, 0 ) ) {
-			return true;
+			global $shortcode_tags;
+			if ( array_key_exists( $shortcode, $shortcode_tags ) ) {
+				$rtn_conflict_shortcodes[ $shortcode ] = $shortcode_tags[ $shortcode ];
+			}
 		}
 	}
-	return false;
+
+	return $rtn_conflict_shortcodes;
 }

@@ -3763,8 +3763,18 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 					}
 					$code .= ']';
 
-					if ( ! aioseop_contains_conflicting_shortcodes( $code ) ) {
-						$gallery_content .= do_shortcode( $code );
+					$conflict_shortcodes = aioseop_contains_conflicting_shortcodes( $code );
+
+					// Removes conflicting shortcodes.
+					foreach ( $conflict_shortcodes as $shortcode_tag => $shortcode_callback ) {
+						remove_shortcode( $shortcode_tag );
+					}
+
+					$gallery_content = do_shortcode( $code );
+
+					// Restores conflicting shortcodes.
+					foreach ( $conflict_shortcodes as $shortcode_tag => $shortcode_callback ) {
+						add_shortcode( $shortcode_tag, $shortcode_callback );
 					}
 				}
 			}
