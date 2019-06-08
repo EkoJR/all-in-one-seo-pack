@@ -49,7 +49,6 @@
         <exclude name="Squiz.Commenting.InlineComment.NotCapital" />
 
         <!-- these can be removed once #2335 is closed -->
-        <exclude name="WordPress.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition" />
 
 
     </rule>
