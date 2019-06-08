@@ -51,7 +51,6 @@
         <!-- these can be removed once #2335 is closed -->
         <exclude name="WordPress.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition" />
         <exclude name="WordPress.CodeAnalysis.AssignmentInCondition.Found" />
-        <exclude name="WordPress.PHP.StrictComparisons.LooseComparison" />
 
 
     </rule>
