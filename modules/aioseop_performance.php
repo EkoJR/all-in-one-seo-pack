@@ -304,7 +304,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 										), AIOSEOP_PLUGIN_NAME
 									) . "\n";
 
-									// Adds all settings and posts data to settings file
+									// Adds all settings and posts data to settings file.
 									add_filter( 'aioseop_export_settings_exporter_post_types', array( $this, 'get_exporter_post_types' ) );
 									add_filter( 'aioseop_export_settings_exporter_choices', array( $this, 'get_exporter_choices' ) );
 

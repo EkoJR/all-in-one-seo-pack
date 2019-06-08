@@ -11,7 +11,7 @@ class aiosp_metaboxes {
 	 * aiosp_metaboxes constructor.
 	 */
 	function __construct() {
-		// construct
+		// construct.
 	}
 
 	/**

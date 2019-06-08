@@ -21,17 +21,24 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		protected $default_options;
 		protected $help_text = array();
 		protected $help_anchors = array();
-		protected $locations = null;    // organize settings into settings pages with a menu items and/or metaboxes on post types edit screen; optional
-		protected $layout = null;        // organize settings on a settings page into multiple, separate metaboxes; optional
-		protected $tabs = null;            // organize layouts on a settings page into multiple, separate tabs; optional
-		protected $current_tab = null;    // the current tab
-		protected $pagehook = null;        // the current page hook
+		// organize settings into settings pages with a menu items and/or metaboxes on post types edit screen; optional.
+		protected $locations = null;
+		// organize settings on a settings page into multiple, separate metaboxes; optional.
+		protected $layout = null;
+		// organize layouts on a settings page into multiple, separate tabs; optional.
+		protected $tabs = null;
+		// the current tab.
+		protected $current_tab = null;
+		// the current page hook.
+		protected $pagehook = null;
 		protected $store_option = false;
 		protected $parent_option = 'aioseop_options';
 		protected $post_metaboxes = array();
 		protected $tabbed_metaboxes = true;
-		protected $credentials = false; // used for WP Filesystem
-		protected $script_data = null;    // used for passing data to JavaScript
+		// used for WP Filesystem.
+		protected $credentials = false;
+		// used for passing data to JavaScript.
+		protected $script_data = null;
 		protected $plugin_path = null;
 		protected $pointers = array();
 		protected $form = 'dofollow';
@@ -371,7 +378,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 							$output = (string) $v;
 						}
 					}
-					if ( $node->attributes->length && ! is_array( $output ) ) { // Has attributes but isn't an array
+					// Has attributes but isn't an array.
+					if ( $node->attributes->length && ! is_array( $output ) ) {
 						$output = array( '@content' => $output );
 					} //Change output into an array.
 					if ( is_array( $output ) ) {
@@ -498,8 +506,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 			return $regex;
 		}
 
-		// original code thanks to Sean M. Brown -- http://smbrown.wordpress.com/2009/04/29/verify-googlebot-forward-reverse-dns/
 		/**
+		 * Is Good Bot
+		 *
+		 * @see Original code, thanks to Sean M. Brown.
+		 * @link http://smbrown.wordpress.com/2009/04/29/verify-googlebot-forward-reverse-dns/
+		 *
 		 * @return bool
 		 */
 		function is_good_bot() {
@@ -2042,7 +2054,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 					}
 					add_action( "load-{$hookname}", array( $this, 'add_page_hooks' ) );
 				} elseif ( $v['type'] === 'metabox' ) {
-					$this->setting_options( $k ); // hack -- make sure this runs anyhow, for now -- pdb
+					// hack -- make sure this runs anyhow, for now -- pdb.
+					$this->setting_options( $k );
 					$this->toggle_save_post_hooks( true );
 					if ( isset( $v['display'] ) && ! empty( $v['display'] ) ) {
 						add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_metabox_scripts' ), 5 );

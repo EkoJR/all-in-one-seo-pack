@@ -55,6 +55,7 @@ class Test_Canonical_Urls extends AIOSEOP_Test_Base {
 		$pages[] = add_query_arg( 'page', 3, $link_page );
 		foreach ( $pages as $page ) {
 			$links = $this->parse_html( $page, array( 'link' ) );
+			// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 			// error_log("getting $page " . print_r($links,true));
 			$canonical_url = null;
 			foreach ( $links as $link ) {

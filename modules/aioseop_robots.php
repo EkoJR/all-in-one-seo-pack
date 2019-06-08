@@ -9,16 +9,16 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Robots' ) ) {
 	class All_in_One_SEO_Pack_Robots extends All_in_One_SEO_Pack_Module {
 
 		function __construct() {
-			// only for testing
+			// only for testing.
 			/*
 			if ( ! defined( 'AIOSEOP_DO_LOG' ) ) {
 				define( 'AIOSEOP_DO_LOG', true );
 			}
 			*/
 
-			$this->name   = __( 'Robots.txt', 'all-in-one-seo-pack' );    // Human-readable name of the plugin
-			$this->prefix = 'aiosp_robots_';                        // option prefix
-			$this->file   = __FILE__;                                    // the current file
+			$this->name   = __( 'Robots.txt', 'all-in-one-seo-pack' ); // Human-readable name of the plugin.
+			$this->prefix = 'aiosp_robots_';                           // option prefix.
+			$this->file   = __FILE__;                                  // the current file.
 			parent::__construct();
 
 			$this->default_options = array(
@@ -88,7 +88,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Robots' ) ) {
 				),
 			);
 
-			// load initial options / set defaults
+			// load initial options / set defaults.
 			$this->update_options();
 
 			add_filter( $this->prefix . 'output_option', array( $this, 'display_custom_options' ), 10, 2 );

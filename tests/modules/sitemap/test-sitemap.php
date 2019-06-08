@@ -40,7 +40,7 @@ class Test_Sitemap extends Sitemap_Test_Base {
 		$pages = $this->setup_posts( 2, 0, 'page' );
 
 		// create a new page with a delay so that we can test if the sitemap is created in ASCENDING order.
-		// @issue https://github.com/semperfiwebdesign/all-in-one-seo-pack/issues/2217
+		// @issue ( https://github.com/semperfiwebdesign/all-in-one-seo-pack/issues/2217 ).
 		sleep( 1 );
 		$new_page_id = $this->factory->post->create( array( 'post_type' => 'page' ) );
 		$new_page = get_permalink( $new_page_id );
@@ -778,7 +778,7 @@ class Test_Sitemap extends Sitemap_Test_Base {
 			)
 		);
 
-		// so all urls
+		// so all urls.
 	}
 
 	/**

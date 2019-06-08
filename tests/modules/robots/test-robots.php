@@ -245,7 +245,7 @@ class Test_Robots extends AIOSEOP_Test_Base {
 	public function conflictingRulesProvider() {
 		return array(
 
-			// It should not be possible to add a duplicate rule for an individual file
+			// It should not be possible to add a duplicate rule for an individual file.
 			array(
 				array(
 					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
@@ -261,7 +261,7 @@ class Test_Robots extends AIOSEOP_Test_Base {
 				'Identical rule exists',
 			),
 
-			// It should not be possible to add a duplicate rule using wildcards for an individual file
+			// It should not be possible to add a duplicate rule using wildcards for an individual file.
 			array(
 				array(
 					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
@@ -270,7 +270,7 @@ class Test_Robots extends AIOSEOP_Test_Base {
 				'Wild-card path cannot be overridden',
 			),
 
-			// It should not be possible to add a conflicting rule for an individual file
+			// It should not be possible to add a conflicting rule for an individual file.
 			array(
 				array(
 					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
@@ -279,7 +279,7 @@ class Test_Robots extends AIOSEOP_Test_Base {
 				'Rule cannot be overridden',
 			),
 
-			// It should not be possible to add a conflicting rule using wildcards for an individual file
+			// It should not be possible to add a conflicting rule using wildcards for an individual file.
 			array(
 				array(
 					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
@@ -288,7 +288,7 @@ class Test_Robots extends AIOSEOP_Test_Base {
 				'Wild-card path cannot be overridden',
 			),
 
-			// It should not be possible to add a duplicate rule for a directory
+			// It should not be possible to add a duplicate rule for a directory.
 			array(
 				array(
 					array( 'path' => '/wp-includes/', 'type' => 'disallow', 'agent' => '*' ),
@@ -297,7 +297,7 @@ class Test_Robots extends AIOSEOP_Test_Base {
 				'Identical rule exists',
 			),
 
-			// It should not be possible to add a duplicate rule using wildcards for a directory
+			// It should not be possible to add a duplicate rule using wildcards for a directory.
 			array(
 				array(
 					array( 'path' => '/wp-includes/', 'type' => 'disallow', 'agent' => '*' ),
@@ -306,7 +306,7 @@ class Test_Robots extends AIOSEOP_Test_Base {
 				'Wild-card path cannot be overridden',
 			),
 
-			// It should not be possible to add a conflicting rule for a directory
+			// It should not be possible to add a conflicting rule for a directory.
 			array(
 				array(
 					array( 'path' => '/wp-includes/', 'type' => 'disallow', 'agent' => '*' ),
@@ -315,7 +315,7 @@ class Test_Robots extends AIOSEOP_Test_Base {
 				'Rule cannot be overridden',
 			),
 
-			// It should not be possible to add a conflicting rule using wildcards for a directory
+			// It should not be possible to add a conflicting rule using wildcards for a directory.
 			array(
 				array(
 					array( 'path' => '/wp-includes/', 'type' => 'disallow', 'agent' => '*' ),

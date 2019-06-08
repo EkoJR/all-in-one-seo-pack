@@ -70,7 +70,7 @@ if ( ! class_exists( 'aioseop_google_analytics' ) ) {
 					);
 					?><script async src="<?php echo $autotrack; ?>"></script>
 					<?php
-					// Requested indent #921
+					// Requested indent #921.
 				}
 				$analytics = ob_get_clean();
 			}
@@ -153,7 +153,7 @@ if ( ! class_exists( 'aioseop_google_analytics' ) ) {
 			$js_options = empty( $js_options )
 				? ''
 				: ', { ' . implode( ',', $js_options ) . ' } ';
-			// Prepare analytics
+			// Prepare analytics.
 			$analytics_id = esc_js( $aioseop_options['aiosp_google_analytics_id'] );
 			ob_start()
 			?>

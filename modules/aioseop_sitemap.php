@@ -1042,7 +1042,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			if ( ! empty( $_POST[ $this->prefix . 'excl_terms' ] ) ) {
 				$raw_excl_terms = filter_input( INPUT_POST, $this->prefix . 'excl_terms', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY );
 
-				// Parse taxonomy terms {$taxonomy_slug}-{$term_id}
+				// Parse taxonomy terms {$taxonomy_slug}-{$term_id}.
 				$excl_terms = array();
 				foreach ( $raw_excl_terms as $v1_tax_term ) {
 					$term_id = explode( '-', $v1_tax_term );
@@ -1565,7 +1565,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 				$content = $this->do_rewrite_sitemap( $sitemap_type, $page );
 
 				// if the sitemap has no content, it's probabaly invalid and is being called directly.
-				// @issue https://github.com/semperfiwebdesign/all-in-one-seo-pack/issues/2190
+				// @issue ( https://github.com/semperfiwebdesign/all-in-one-seo-pack/issues/2190 ).
 				if ( empty( $content ) ) {
 					$query->set_404();
 					status_header( 404 );
@@ -1705,8 +1705,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			if ( ! empty( $url ) ) {
 				foreach ( $notify_url as $k => $v ) {
 					// TODO Change urlencode() to rawurlencode().
-					// @link http://php.net/manual/en/function.rawurlencode.php
-					// @link http://www.faqs.org/rfcs/rfc3986.html
+					// @link ( http://php.net/manual/en/function.rawurlencode.php ).
+					// @link ( http://www.faqs.org/rfcs/rfc3986.html ).
 					$response = wp_remote_get( $notify_url[ $k ] . urlencode( $url ) );
 					if ( is_array( $response ) && ! empty( $response['response'] ) && ! empty( $response['response']['code'] ) ) {
 						if ( 200 !== intval( $response['response']['code'] ) ) {

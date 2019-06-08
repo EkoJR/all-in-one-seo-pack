@@ -45,13 +45,13 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Wpml' ) ) {
 		 */
 		public function aioseop_home_url( $path ) {
 			$url = apply_filters( 'wpml_home_url', home_url( '/' ) );
-			// Remove query string
+			// Remove query string.
 			preg_match_all( '/\?[\s\S]+/', $url, $matches );
-			// Get base
+			// Get base.
 			$url = preg_replace( '/\?[\s\S]+/', '', $url );
 			$url = trailingslashit( $url );
 			$url .= preg_replace( '/\//', '', $path, 1 );
-			// Add query string
+			// Add query string.
 			if ( count( $matches ) > 0 && count( $matches[0] ) > 0 ) {
 				$url .= $matches[0][0];
 			}

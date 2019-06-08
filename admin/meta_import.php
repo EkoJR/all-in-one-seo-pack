@@ -106,6 +106,7 @@ function aiosp_seometa_action() {
 
 		printf( __( '<p>Analyzing records in a %1$s to %2$s conversion&hellip;', 'all-in-one-seo-pack' ), esc_html( $_POST['platform_old'] ), 'All in One SEO Pack' );
 		printf( '<p><b>%d</b> Compatible Records were identified</p>', $response->update );
+		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 		// printf( '<p>%d Compatible Records will be ignored</p>', $response->ignore );
 		printf( '<p><b>%s</b></p>', __( 'Compatible data:', 'all-in-one-seo-pack' ) );
 		echo '<ol>';
@@ -378,12 +379,14 @@ function aiosp_seometa_post_meta_analyze( $old_platform = '', $new_platform = 'A
 		$update = $wpdb->get_results( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = %s", $meta_key ) );
 
 		// Count items in returned arrays.
+		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 		// $ignore = count( (array)$ignore );
 		$update = count( (array) $update );
 
 		// Calculate update/ignore by comparison.
+		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 		// $update = ( (int)$update > (int)$ignore ) ? ( (int)$update - (int)$ignore ) : 0;
-		// update output numbers
+		// update output numbers.
 		$output->update += (int) $update;
 		$output->ignore += (int) $ignore;
 
@@ -397,9 +400,10 @@ function aiosp_seometa_post_meta_analyze( $old_platform = '', $new_platform = 'A
 
 }
 
-
+// phpcs:disable Squiz.Commenting.InlineComment.InvalidEndChar
 // define('aiosp_seometa_PLUGIN_DIR', dirname(__FILE__));
 // add_action( 'plugins_loaded', 'aiosp_seometa_import' );
+// phpcs:enable
 /**
  * Initialize the SEO Data Transporter plugin
  */
@@ -411,7 +415,7 @@ function aiosp_seometa_import() {
 	 * The associative array of supported themes.
 	 */
 	$_aiosp_seometa_themes = array(
-		// alphabatized
+		// alphabatized.
 		'Builder'      => array(
 			'Custom Doctitle'  => '_builder_seo_title',
 			'META Description' => '_builder_seo_description',
@@ -483,7 +487,7 @@ function aiosp_seometa_import() {
 	 * The associative array of supported plugins.
 	 */
 	$_aiosp_seometa_plugins = array(
-		// alphabatized
+		// alphabatized.
 		'Add Meta Tags' => array(
 			'Custom Doctitle'  => '_amt_title',
 			'META Description' => '_amt_description',
@@ -566,8 +570,10 @@ function aiosp_seometa_import() {
 	/**
 	 * Include the other elements of the plugin.
 	 */
+	// phpcs:disable Squiz.Commenting.InlineComment.InvalidEndChar
 	// require_once( aiosp_seometa_PLUGIN_DIR . '/admin.php' );
 	// require_once( aiosp_seometa_PLUGIN_DIR . '/functions.php' );
+	// phpcs:enable
 	/**
 	 * Init hook.
 	 *
@@ -586,7 +592,7 @@ function aiosp_seometa_import() {
  */
 register_activation_hook( __FILE__, 'aiosp_seometa_activation_hook' );
 function aiosp_seometa_activation_hook() {
-
+	// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 	// require_once( aiosp_seometa_PLUGIN_DIR . '/functions.php' );
 	aiosp_seometa_meta_key_convert( '_yoast_seo_title', 'yoast_wpseo_title', true );
 	aiosp_seometa_meta_key_convert( '_yoast_seo_metadesc', 'yoast_wpseo_metadesc', true );

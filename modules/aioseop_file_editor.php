@@ -16,9 +16,9 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_File_Editor' ) ) {
 		 * All_in_One_SEO_Pack_File_Editor constructor.
 		 */
 		function __construct() {
-			$this->name   = __( 'File Editor', 'all-in-one-seo-pack' );        // Human-readable name of the plugin
-			$this->prefix = 'aiosp_file_editor_';                        // option prefix
-			$this->file   = __FILE__;                                        // the current file
+			$this->name   = __( 'File Editor', 'all-in-one-seo-pack' ); // Human-readable name of the plugin.
+			$this->prefix = 'aiosp_file_editor_';                       // option prefix.
+			$this->file   = __FILE__;                                   // the current file.
 			parent::__construct();
 			$this->current_tab = 'htaccess';
 			if ( isset( $_REQUEST['tab'] ) ) {
@@ -49,7 +49,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_File_Editor' ) ) {
 				),
 			);
 
-			$this->update_options();            // load initial options / set defaults
+			// load initial options / set defaults.
+			$this->update_options();
 		}
 
 		function settings_page_init() {

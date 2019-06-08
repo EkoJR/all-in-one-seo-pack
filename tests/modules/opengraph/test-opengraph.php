@@ -39,9 +39,9 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 	 */
 	public function test_meta_tag_truncation_all( $title, $content, $og_desc_limit ) {
 		$tag_limits  = array(
-			'og:description'    => $og_desc_limit,  // limit to 200 but respect full words
-			'twitter:description'   => 200, // hard limit to 200
-			'twitter:title' => 70, // hard limit to 70
+			'og:description'    => $og_desc_limit, // limit to 200 but respect full words.
+			'twitter:description'   => 200,        // hard limit to 200.
+			'twitter:title' => 70,                 // hard limit to 70.
 		);
 
 		$id = $this->factory->post->create( array( 'post_title' => $title, 'post_content' => $content ) );
@@ -191,7 +191,7 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 		$tag_limits  = array(
 			'og:description'    => 200,
 			'twitter:description'   => 200,
-			'twitter:title' => array( 70 ), // no limit
+			'twitter:title' => array( 70 ), // no limit.
 		);
 
 		$id = $this->factory->post->create( array( 'post_title' => $title, 'post_content' => $content ) );
@@ -250,9 +250,11 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 		$this->markTestIncomplete( 'Cannot seem to get any meta tag when accessing the home page. Have set home page as static page as well as showing latest posts. Nothing works.' );
 
 		$id = $this->factory->post->create( array('post_type' => 'page') );
-		$home_url = get_site_url();// trailingslashit( get_site_url() ) . 'house';
+		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
+		// trailingslashit( get_site_url() ) . 'house';
+		$home_url = get_site_url();
+		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 		// update_option( 'home', $home_url );
-
 		update_option( 'show_on_front', 'page' );
 		update_option( 'page_on_front', $id );
 

@@ -79,10 +79,10 @@ class aiosp_common {
 
 		$affiliate_id = '';
 
-		// call during plugins_loaded
+		// call during plugins_loaded.
 		$affiliate_id = apply_filters( 'aiosp_aff_id', $affiliate_id );
 
-		// build URL
+		// build URL.
 		$url = 'https://semperplugins.com/all-in-one-seo-pack-pro-version/';
 		if ( $location ) {
 			$url .= '?loc=' . $location;
@@ -91,7 +91,7 @@ class aiosp_common {
 			$url .= "?ap_id=$affiliate_id";
 		}
 
-		// build hyperlink
+		// build hyperlink.
 		$hyperlink = '<a ';
 		if ( $target ) {
 			$hyperlink .= "target=\"$target\" ";
@@ -112,7 +112,7 @@ class aiosp_common {
 	 * Gets the upgrade to Pro version URL.
 	 */
 	static function get_upgrade_url() {
-		// put build URL stuff in here
+		// put build URL stuff in here.
 	}
 
 	/**
@@ -267,6 +267,7 @@ class aiosp_common {
 					$id = intval( $results_1[ $url_md5 ] );
 				}
 
+				// phpcs:disable Squiz.Commenting.InlineComment.InvalidEndChar
 				// TODO Add setting to enable; this is TOO MEMORY INTENSE which could result in 1 or more crashes,
 				// TODO however some may still need custom image URLs.
 				// TODO NOTE: Transient data does prevent continual crashes.
@@ -282,6 +283,7 @@ class aiosp_common {
 				// $id = intval( $results_2[ $url_md5 ] );
 				// }
 				// }
+				// phpcs:enable
 			}
 
 			self::$attachment_url_postids[ $url_md5 ] = $id;

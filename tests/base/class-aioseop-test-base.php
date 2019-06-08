@@ -7,7 +7,7 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 	public function _setUp() {
 		parent::setUp();
 
-		// avoids error - readfile(/src/wp-includes/js/wp-emoji-loader.js): failed to open stream: No such file or directory
+		// avoids error - readfile(/src/wp-includes/js/wp-emoji-loader.js): failed to open stream: No such file or directory.
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 
 		// reset global options.
@@ -54,7 +54,7 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 
 	public function ajaxSetUp() {
 		parent::setUp();
-		// Register the core actions
+		// Register the core actions.
 		foreach ( array_merge( $this->_core_actions_get, $this->_core_actions_post ) as $action ) {
 			if ( function_exists( 'wp_ajax_' . str_replace( '-', '_', $action ) ) ) {
 				add_action( 'wp_ajax_' . $action, 'wp_ajax_' . str_replace( '-', '_', $action ), 1 );
@@ -65,9 +65,9 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 			define( 'DOING_AJAX', true );
 		}
 		set_current_screen( 'ajax' );
-		// Clear logout cookies
+		// Clear logout cookies.
 		add_action( 'clear_auth_cookie', array( $this, 'logout' ) );
-		// Suppress warnings from "Cannot modify header information - headers already sent by"
+		// Suppress warnings from "Cannot modify header information - headers already sent by".
 		$this->_error_level = error_reporting();
 		error_reporting( $this->_error_level & ~E_WARNING );
 	}
@@ -137,17 +137,18 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 	 * @param string $action
 	 */
 	protected function _handleAjax( $action ) {
-		// Start output buffering
+		// Start output buffering.
 		ini_set( 'implicit_flush', false );
 		ob_start();
-		// Build the request
+		// Build the request.
 		$_POST['action'] = $action;
 		$_GET['action']  = $action;
 		$_REQUEST        = array_merge( $_POST, $_GET );
-		// Call the hooks
+		// Call the hooks.
+		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 		// do_action( 'admin_init' );
 		do_action( 'wp_ajax_' . $_REQUEST['action'], null );
-		// Save the output
+		// Save the output.
 		$buffer = ob_get_clean();
 		if ( ! empty( $buffer ) ) {
 			$this->_last_response = $buffer;
@@ -273,6 +274,7 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 		update_option( 'aioseop_options', $aioseop_options );
 
 		$aioseop_options = get_option( 'aioseop_options' );
+		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 		// error_log("aioseop_options " . print_r($aioseop_options,true));
 	}
 

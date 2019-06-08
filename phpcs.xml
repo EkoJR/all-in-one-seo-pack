@@ -45,7 +45,6 @@
         <exclude name="Squiz.Commenting.ClassComment" />
         <exclude name="Squiz.Commenting.VariableComment" />
         <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
-        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
 
         <!-- these can be removed once #2335 is closed -->
 

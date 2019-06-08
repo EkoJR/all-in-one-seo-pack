@@ -566,6 +566,7 @@ class AIOSEOP_Helper {
 			'aiosp_dynamic_postspage_keywords'  => 'https://semperplugins.com/documentation/keyword-settings/#dynamically-generate-keywords-for-posts-page',
 
 			// Unknown/Pro?
+			// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 			// 'aiosp_google_connect'              => '',
 		);
 

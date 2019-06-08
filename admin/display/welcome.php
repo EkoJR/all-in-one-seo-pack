@@ -74,7 +74,7 @@ if ( ! class_exists( 'aioseop_welcome' ) ) {
 				return;
 			}
 
-			// Bail if activating from network, or bulk
+			// Bail if activating from network, or bulk.
 			if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
 				return;
 			}

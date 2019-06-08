@@ -197,6 +197,7 @@ if ( ! empty( $aioseop_mem_limit ) ) {
 }
 
 $aiosp_activation    = false;
+// list all available modules here.
 $aioseop_module_list = array(
 	'sitemap',
 	'opengraph',
@@ -205,7 +206,7 @@ $aioseop_module_list = array(
 	'importer_exporter',
 	'bad_robots',
 	'performance',
-); // list all available modules here
+);
 
 if ( AIOSEOPPRO ) {
 	$aioseop_module_list[] = 'video_sitemap';
@@ -419,9 +420,11 @@ if ( ! function_exists( 'aioseop_init_class' ) ) {
 		$aioseop_welcome = new aioseop_welcome(); // TODO move this to updates file.
 
 		if ( AIOSEOPPRO ) {
-			require_once( AIOSEOP_PLUGIN_DIR . 'pro/class-aio-pro-init.php' ); // Loads pro files and other pro init stuff.
+			// Loads pro files and other pro init stuff.
+			require_once( AIOSEOP_PLUGIN_DIR . 'pro/class-aio-pro-init.php' );
 		}
-		aiosp_seometa_import(); // call importer functions... this should be moved somewhere better
+		// call importer functions... this should be moved somewhere better.
+		aiosp_seometa_import();
 
 		$aiosp = new All_in_One_SEO_Pack();
 
@@ -441,11 +444,13 @@ if ( ! function_exists( 'aioseop_init_class' ) ) {
 		add_action( 'init', array( $aiosp, 'add_hooks' ) );
 		add_action( 'admin_init', array( $aioseop_updates, 'version_updates' ), 11 );
 
+		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 		// add_action( 'admin_init', 'aioseop_review_plugin_notice' );
 		if ( defined( 'DOING_AJAX' ) && ! empty( $_POST ) && ! empty( $_POST['action'] ) && 'aioseop_ajax_scan_header' === $_POST['action'] ) {
 			remove_action( 'init', array( $aiosp, 'add_hooks' ) );
 			add_action( 'admin_init', 'aioseop_scan_post_header' );
-			add_action( 'shutdown', 'aioseop_ajax_scan_header' ); // if the action doesn't run -- pdb
+			// if the action doesn't run -- pdb.
+			add_action( 'shutdown', 'aioseop_ajax_scan_header' );
 			include_once( ABSPATH . 'wp-admin/includes/screen.php' );
 			global $current_screen;
 			if ( class_exists( 'WP_Screen' ) ) {
@@ -522,6 +527,7 @@ if ( ! function_exists( 'aioseop_welcome' ) ) {
 }
 
 add_action( 'init', 'aioseop_load_modules', 1 );
+// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 // add_action( 'after_setup_theme', 'aioseop_load_modules' );
 if ( is_admin() || defined( 'AIOSEOP_UNIT_TESTING' ) ) {
 	add_action( 'wp_ajax_aioseop_ajax_save_meta', 'aioseop_ajax_save_meta' );

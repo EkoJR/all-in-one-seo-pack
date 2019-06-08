@@ -201,25 +201,20 @@ class Tests_All_in_One_SEO_Pack_AiospMrtGetUrl extends AIOSEOP_Test_Base {
 		}
 		// Set global $post_type with $post->post_type.
 		$post_type = $post->post_type;
-		// Set global $post_type_object = get_post_type_object( $post_type );
 		$post_type_object = get_post_type_object( $post_type );
-		// Switch-case sets global $post = get_post($post_id, OBJECT, 'edit');
+		// Sets global post.
 		$post = get_post( $this->post_ids[0], OBJECT, 'edit' );
 
 		// - Operations in All_in_One_SEO_Pack::get_page_snippet_info().
 		// The global $wp_query is still un-initiated/null values.
 		// global $post is set to page being edited. $post = get_post( ID )
 		global $wp_query;
-		// Set $wp_query->is_single = true;
 		$wp_query->is_single = true;
-		// Set $this->is_front_page = false;
 		$this->is_front_page = false;
-		// Set $wp_query->queried_object = $post;
-		// When ! empty( $aioseop_options['aiosp_no_paged_canonical_links'], is when $show_page = false.
+
 		// - Operation in test function.
 		// Would need to be empty
-		// $aioseop_options['aiosp_customize_canonical_links']
-		// $opts['aiosp_custom_link']
+		// $aioseop_options['aiosp_customize_canonical_links'].
 		global $aioseop_options;
 		$aioseop_options['aiosp_no_paged_canonical_links']  = false;
 		$aioseop_options['aiosp_customize_canonical_links'] = false;

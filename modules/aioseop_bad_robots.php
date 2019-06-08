@@ -59,7 +59,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Bad_Robots' ) ) {
 
 			add_filter( $this->prefix . 'display_options', array( $this, 'filter_display_options' ) );
 
-			// Load initial options / set defaults,
+			// Load initial options / set defaults.
 			$this->update_options();
 
 			if ( $this->option_isset( 'edit_blocks' ) ) {

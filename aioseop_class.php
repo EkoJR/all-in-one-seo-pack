@@ -764,7 +764,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		}
 	}
 
-	// good candidate for pro dir
+	// good candidate for pro dir.
 	/**
 	 * Use custom callback for outputting snippet
 	 *
@@ -956,7 +956,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		return $title_format;
 	}
 
-	// good candidate for pro dir
+	// good candidate for pro dir.
 	/**
 	 * @return array
 	 */
@@ -1014,7 +1014,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			}
 			$description = $this->get_main_description( $post );
 
-			// All this needs to be in it's own function (class really)
+			// All this needs to be in it's own function (class really).
 			if ( empty( $title_format ) ) {
 				if ( is_page() ) {
 					$title_format = $aioseop_options['aiosp_page_title_format'];
@@ -1315,7 +1315,8 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 
 			}
 
-			return $this->paged_title( $title ); // this is returned for woo
+			// this is returned for woo.
+			return $this->paged_title( $title );
 		} elseif ( is_attachment() ) {
 			if ( null === $post ) {
 				return false;
@@ -4399,6 +4400,7 @@ EOF;
 						'meta'   => array( 'target' => '_blank' ),
 					)
 				);
+				// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 				// add_action( 'admin_bar_menu', array( $this, 'admin_bar_upgrade_menu' ), 1101 );
 			}
 
@@ -4756,9 +4758,9 @@ EOF;
 	 * @return string
 	 */
 	public function filter_title( $value ) {
-		// Decode entities
+		// Decode entities.
 		$value = $this->html_entity_decode( $value );
-		// Encode to valid SEO html entities
+		// Encode to valid SEO html entities.
 		return $this->seo_entity_encode( $value );
 	}
 
@@ -4788,30 +4790,30 @@ EOF;
 		if ( $ignore_php_version || preg_match( '/5.2[\s\S]+/', PHP_VERSION ) ) {
 			$value = htmlspecialchars( wp_strip_all_tags( htmlspecialchars_decode( $value ) ) );
 		}
-		// Decode entities
+		// Decode entities.
 		$value = $this->html_entity_decode( $value );
 		$value = preg_replace(
 			array(
-				'#<a.*?>([^>]*)</a>#i', // Remove link but keep anchor text
-				'@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', // Remove URLs
+				'#<a.*?>([^>]*)</a>#i', // Remove link but keep anchor text.
+				'@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', // Remove URLs.
 			),
 			array(
 				'$1', // Replacement link's anchor text.
-				'', // Replacement URLs
+				'', // Replacement URLs.
 			),
 			$value
 		);
-		// Strip html
+		// Strip html.
 		$value = wp_strip_all_tags( $value );
-		// External trim
+		// External trim.
 		$value = trim( $value );
 		// Internal whitespace trim.
 		$value = preg_replace( '/\s\s+/u', ' ', $value );
-		// Truncate / crop
+		// Truncate / crop.
 		if ( ! empty( $truncate ) && $truncate ) {
 			$value = $this->trim_excerpt_without_filters( $value );
 		}
-		// Encode to valid SEO html entities
+		// Encode to valid SEO html entities.
 		return $this->seo_entity_encode( $value );
 	}
 
@@ -4828,16 +4830,20 @@ EOF;
 	 * @return string
 	 */
 	private function html_entity_decode( $value ) {
-		// Special conversions
+		// Special conversions.
 		$value = preg_replace(
 			array(
+				// Double quotes.
 				'/\“|\”|&#[xX]00022;|&#34;|&[lLrRbB](dquo|DQUO)(?:[rR])?;|&#[xX]0201[dDeE];'
-					. '|&[OoCc](pen|lose)[Cc]urly[Dd]ouble[Qq]uote;|&#822[012];|&#[xX]27;/', // Double quotes
-				'/&#039;|&#8217;|&apos;/', // Apostrophes
+					. '|&[OoCc](pen|lose)[Cc]urly[Dd]ouble[Qq]uote;|&#822[012];|&#[xX]27;/',
+				// Apostrophes.
+				'/&#039;|&#8217;|&apos;/',
 			),
 			array(
-				'"', // Double quotes
-				'\'', // Apostrophes
+				// Double quotes.
+				'"',
+				// Apostrophes.
+				'\'',
 			),
 			$value
 		);
@@ -4857,12 +4863,12 @@ EOF;
 	private function seo_entity_encode( $value ) {
 		return preg_replace(
 			array(
-				'/\"|\“|\”|\„/', // Double quotes
-				'/\'|\’|\‘/',   // Apostrophes
+				'/\"|\“|\”|\„/', // Double quotes.
+				'/\'|\’|\‘/',   // Apostrophes.
 			),
 			array(
-				'&quot;', // Double quotes
-				'&#039;', // Apostrophes
+				'&quot;', // Double quotes.
+				'&#039;', // Apostrophes.
 			),
 			esc_html( $value )
 		);
