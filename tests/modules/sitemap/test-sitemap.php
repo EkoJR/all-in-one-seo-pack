@@ -11,6 +11,11 @@
 
 require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-sitemap-test-base.php';
 
+/**
+ * Class Test_Sitemap
+ *
+ * @since 2.4.3.1
+ */
 class Test_Sitemap extends Sitemap_Test_Base {
 
 	/**

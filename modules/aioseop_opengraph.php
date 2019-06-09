@@ -6,6 +6,12 @@
  * @version 2.3.16
  */
 if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
+
+	/**
+	 * Class All_in_One_SEO_Pack_Opengraph
+	 *
+	 * @since ?
+	 */
 	class All_in_One_SEO_Pack_Opengraph extends All_in_One_SEO_Pack_Module {
 		/**
 		 * Facebook Object Types

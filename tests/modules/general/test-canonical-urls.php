@@ -8,6 +8,12 @@
  * Canonnical URLs test cases.
  */
 require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-aioseop-test-base.php';
+
+/**
+ * Class Test_Canonical_Urls
+ *
+ * @since 2.9
+ */
 class Test_Canonical_Urls extends AIOSEOP_Test_Base {
 	public function setUp() {
 		$this->init( true );

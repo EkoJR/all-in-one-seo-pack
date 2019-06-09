@@ -7,6 +7,11 @@
 
 if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 
+	/**
+	 * Class All_in_One_SEO_Pack_Performance
+	 *
+	 * @since ?
+	 */
 	class All_in_One_SEO_Pack_Performance extends All_in_One_SEO_Pack_Module {
 
 		/**

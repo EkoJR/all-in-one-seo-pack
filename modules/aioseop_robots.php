@@ -6,6 +6,12 @@
  * The Robots class.
  */
 if ( ! class_exists( 'All_in_One_SEO_Pack_Robots' ) ) {
+
+	/**
+	 * Class All_in_One_SEO_Pack_Robots
+	 *
+	 * @since ?
+	 */
 	class All_in_One_SEO_Pack_Robots extends All_in_One_SEO_Pack_Module {
 
 		function __construct() {

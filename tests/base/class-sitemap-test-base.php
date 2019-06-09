@@ -11,6 +11,11 @@
 
 require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-aioseop-test-base.php';
 
+/**
+ * Class Sitemap_Test_Base
+ *
+ * @since 2.4.3.1
+ */
 class Sitemap_Test_Base extends AIOSEOP_Test_Base {
 
 	/**
@@ -77,14 +82,16 @@ class Sitemap_Test_Base extends AIOSEOP_Test_Base {
 				if ( array_key_exists( 'title', $images ) ) {
 					$element['image:title'] = $images['title'];
 					if ( is_array( $images['title'] ) ) {
-						// TODO: this does not work because wptexturize mangles the single and double quotes into the typewriter equivalents ' to ‘ or ’ and " to “ or ”.
+						// TODO: this does not work because wptexturize mangles the single and double quotes into the typewriter equivalents ' to ï¿½ or ï¿½ and " to ï¿½ or ï¿½.
+						// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 						// $this->assertContains( strip_tags( $this->_spl_chars ), $images['title'][0] );
 					}
 				}
 				if ( array_key_exists( 'caption', $images ) ) {
 					$element['image:caption'] = $images['caption'];
 					if ( is_array( $images['caption'] ) ) {
-						// TODO: this does not work because wptexturize mangles the single and double quotes into the typewriter equivalents ' to ‘ or ’ and " to “ or ”.
+						// TODO: this does not work because wptexturize mangles the single and double quotes into the typewriter equivalents ' to ï¿½ or ï¿½ and " to ï¿½ or ï¿½.
+						// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 						// $this->assertContains( strip_tags( $this->_spl_chars ), $images['caption'][0] );
 					}
 				}

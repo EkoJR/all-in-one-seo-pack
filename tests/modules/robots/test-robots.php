@@ -11,6 +11,11 @@
 
 require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-aioseop-test-base.php';
 
+/**
+ * Class Test_Robots
+ *
+ * @since 2.7.2
+ */
 class Test_Robots extends AIOSEOP_Test_Base {
 
 	public function setUp() {
