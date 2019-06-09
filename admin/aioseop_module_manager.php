@@ -76,7 +76,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module_Manager' ) ) {
 			$reset_all = ( isset( $_POST['Submit_All_Default'] ) && '' !== $_POST['Submit_All_Default'] );
 			$reset     = ( ( isset( $_POST['Submit_Default'] ) && '' !== $_POST['Submit_Default'] ) || $reset_all );
 			$update    = ( isset( $_POST['action'] ) && $_POST['action']
-						   && ( ( isset( $_POST['Submit'] ) && '' !== $_POST['Submit'] ) || $reset )
+						&& ( ( isset( $_POST['Submit'] ) && '' !== $_POST['Submit'] ) || $reset )
 			);
 			if ( $update ) {
 				if ( $reset ) {
@@ -214,10 +214,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module_Manager' ) ) {
 			if ( 'performance' === $mod && ! is_super_admin() ) {
 				return false;
 			}
-			if ( ( 'file_editor' === $mod )
-				 && ( ( defined( 'DISALLOW_FILE_EDIT' ) && DISALLOW_FILE_EDIT )
-					  || ( defined( 'DISALLOW_FILE_MODS' ) && DISALLOW_FILE_MODS )
-					  || ! is_super_admin() )
+			if (
+					( 'file_editor' === $mod )
+					&& ( ( defined( 'DISALLOW_FILE_EDIT' ) && DISALLOW_FILE_EDIT )
+					|| ( defined( 'DISALLOW_FILE_MODS' ) && DISALLOW_FILE_MODS )
+					|| ! is_super_admin() )
 			) {
 				return false;
 			}

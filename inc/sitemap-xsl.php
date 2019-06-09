@@ -152,24 +152,15 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
 			<thead>
 			<tr>
 				<th width="50%">URL</th>
-				<?php
-				if ( aiosp_include_images() ) {
-					?>
-				<th>Images</th>
-					<?php
-				}
-				?>
-				<?php
-				if ( AIOSEOPPRO ) {
-					?>
-								
-				<xsl:if test="$sitemapType='video'">
-					<th>Videos</th>
-					<th>Video Thumbnails</th>
-				</xsl:if>
-					<?php
-				}
-				?>
+				<?php if ( aiosp_include_images() ) : ?>
+					<th>Images</th>
+				<?php endif; ?>
+				<?php if ( AIOSEOPPRO ) : ?>
+					<xsl:if test="$sitemapType='video'">
+						<th>Videos</th>
+						<th>Video Thumbnails</th>
+					</xsl:if>
+				<?php endif; ?>
 				<th>Priority</th>
 				<th>Change Frequency</th>
 				<th>Last Change</th>

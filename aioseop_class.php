@@ -719,8 +719,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 					'support'            => array(
 						'type'    => 'html',
 						'label'   => 'none',
-						'default' => '<a target="_blank" href="https://semperplugins.com/support/">'
-									 . __( 'Support Forum', 'all-in-one-seo-pack' ) . '</a>',
+						'default' => '<a target="_blank" href="https://semperplugins.com/support/">' . __( 'Support Forum', 'all-in-one-seo-pack' ) . '</a>',
 					),
 					'snippet'            => array(
 						'name'    => __( 'Preview Snippet', 'all-in-one-seo-pack' ),
@@ -2142,8 +2141,17 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 
 		if ( ! empty( $aioseop_options['aiosp_cpostactive'] ) ) {
 			$wp_post_types = $aioseop_options['aiosp_cpostactive'];
-			if ( ( ( $title_type == 'archive' ) && is_post_type_archive( $wp_post_types ) && $prefix = "aiosp_{$title_type}_" ) ||
-				 ( ( $title_type == 'post' ) && $this->is_singular( $wp_post_types, $p ) && $prefix = 'aiosp_' )
+			if (
+					(
+						( $title_type == 'archive' ) &&
+						is_post_type_archive( $wp_post_types ) &&
+						$prefix = "aiosp_{$title_type}_"
+					) ||
+					(
+						( $title_type == 'post' ) &&
+						$this->is_singular( $wp_post_types, $p ) &&
+						$prefix = 'aiosp_'
+					)
 			) {
 				$post_type = get_post_type( $p );
 
@@ -4165,9 +4173,9 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			} else {
 				$active_handlers = array();
 			}
-			if ( sizeof( $active_handlers ) > 0 &&
-				 $this->strtolower( $active_handlers[ sizeof( $active_handlers ) - 1 ] ) ==
-				 $this->strtolower( 'All_in_One_SEO_Pack::output_callback_for_title' )
+			if (
+					sizeof( $active_handlers ) > 0 &&
+					$this->strtolower( $active_handlers[ sizeof( $active_handlers ) - 1 ] ) == $this->strtolower( 'All_in_One_SEO_Pack::output_callback_for_title' )
 			) {
 				ob_end_flush();
 			} else {
@@ -4263,10 +4271,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		}
 
 		/*
-		 This was intended to make attachment descriptions unique if pulling from the parent... let's remove it and see if there are any problems
-		*on the roadmap is to have a better hierarchy for attachment description pulling
-		* if ($aioseop_options['aiosp_can']) $description = $this->make_unique_att_desc($description);
-		*/
+		 * This was intended to make attachment descriptions unique if pulling from the parent... let's remove it and see if there are any problems
+		 * on the roadmap is to have a better hierarchy for attachment description pulling
+		 * if ($aioseop_options['aiosp_can']) $description = $this->make_unique_att_desc($description);
+		 */
 		$description = $this->apply_cf_fields( $description );
 
 		/**
@@ -4309,36 +4317,109 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			$aiosp_nofollow = htmlspecialchars( stripslashes( $opts['aiosp_nofollow'] ) );
 		}
 
-		if ( ( is_category() && ! empty( $aioseop_options['aiosp_category_noindex'] ) ) || ( ! is_category() && is_archive() && ! is_tag() && ! is_tax()
-																							 && ( ( is_date() && ! empty( $aioseop_options['aiosp_archive_date_noindex'] ) ) || ( is_author() && ! empty( $aioseop_options['aiosp_archive_author_noindex'] ) ) ) )
-			 || ( is_tag() && ! empty( $aioseop_options['aiosp_tags_noindex'] ) )
-			 || ( is_search() && ! empty( $aioseop_options['aiosp_search_noindex'] ) )
-			 || ( is_404() && ! empty( $aioseop_options['aiosp_404_noindex'] ) )
-			 || ( is_tax() && in_array( get_query_var( 'taxonomy' ), $tax_noindex ) )
+		if (
+				(
+					is_category() &&
+					! empty( $aioseop_options['aiosp_category_noindex'] )
+				) ||
+				(
+					! is_category() &&
+					is_archive() &&
+					! is_tag() &&
+					! is_tax() &&
+					(
+						(
+							is_date() &&
+							! empty( $aioseop_options['aiosp_archive_date_noindex'] )
+						) ||
+						(
+							is_author() &&
+							! empty( $aioseop_options['aiosp_archive_author_noindex'] )
+						)
+					)
+				) ||
+				(
+					is_tag() &&
+					! empty( $aioseop_options['aiosp_tags_noindex'] )
+				) ||
+				(
+					is_search() &&
+					! empty( $aioseop_options['aiosp_search_noindex'] )
+				) ||
+				(
+					is_404() &&
+					! empty( $aioseop_options['aiosp_404_noindex'] )
+				) ||
+				(
+					is_tax() &&
+					in_array( get_query_var( 'taxonomy' ), $tax_noindex )
+				)
 		) {
 			$noindex = 'noindex';
 
 			// #322: duplicating this code so that we don't step on some other entities' toes.
-			if ( ( 'on' === $aiosp_nofollow ) || ( ( ! empty( $aioseop_options['aiosp_paginated_nofollow'] ) ) && $page > 1 ) ||
-				 ( ( '' === $aiosp_nofollow ) && ( ! empty( $aioseop_options['aiosp_cpostnofollow'] ) ) && in_array( $post_type, $aioseop_options['aiosp_cpostnofollow'] ) )
+			if (
+					( 'on' === $aiosp_nofollow ) ||
+					(
+						( ! empty( $aioseop_options['aiosp_paginated_nofollow'] ) ) &&
+						$page > 1
+					) ||
+					(
+							( '' === $aiosp_nofollow ) &&
+							( ! empty( $aioseop_options['aiosp_cpostnofollow'] ) ) &&
+							in_array( $post_type, $aioseop_options['aiosp_cpostnofollow'] )
+					)
 			) {
 				$nofollow = 'nofollow';
 			}
 			// #322: duplicating this code so that we don't step on some other entities' toes.
-		} elseif ( is_single() || is_page() || $this->is_static_posts_page() || is_attachment() || is_category() || is_tag() || is_tax() || ( $page > 1 ) || $this->check_singular() ) {
+		} elseif (
+				is_single() ||
+				is_page() ||
+				$this->is_static_posts_page() ||
+				is_attachment() ||
+				is_category() ||
+				is_tag() ||
+				is_tax() ||
+				( $page > 1 ) ||
+				$this->check_singular()
+		) {
 			$post_type = get_post_type();
-			if ( $aiosp_noindex || $aiosp_nofollow || ! empty( $aioseop_options['aiosp_cpostnoindex'] )
-				 || ! empty( $aioseop_options['aiosp_cpostnofollow'] ) || ! empty( $aioseop_options['aiosp_paginated_noindex'] ) || ! empty( $aioseop_options['aiosp_paginated_nofollow'] )
+			if (
+					$aiosp_noindex ||
+					$aiosp_nofollow ||
+					! empty( $aioseop_options['aiosp_cpostnoindex'] ) ||
+					! empty( $aioseop_options['aiosp_cpostnofollow'] ) ||
+					! empty( $aioseop_options['aiosp_paginated_noindex'] ) ||
+					! empty( $aioseop_options['aiosp_paginated_nofollow'] )
 			) {
 
-				if ( ( 'on' === $aiosp_noindex ) || ( ( ! empty( $aioseop_options['aiosp_paginated_noindex'] ) ) && $page > 1 ) ||
-					 ( ( '' === $aiosp_noindex ) && ( ! empty( $aioseop_options['aiosp_cpostnoindex'] ) ) && in_array( $post_type, $aioseop_options['aiosp_cpostnoindex'] ) )
+				if (
+						( 'on' === $aiosp_noindex ) ||
+						(
+							( ! empty( $aioseop_options['aiosp_paginated_noindex'] ) )
+							&& $page > 1
+						) ||
+						(
+							( '' === $aiosp_noindex ) &&
+							( ! empty( $aioseop_options['aiosp_cpostnoindex'] ) ) &&
+							in_array( $post_type, $aioseop_options['aiosp_cpostnoindex'] )
+						)
 
 				) {
 					$noindex = 'noindex';
 				}
-				if ( ( $aiosp_nofollow == 'on' ) || ( ( ! empty( $aioseop_options['aiosp_paginated_nofollow'] ) ) && $page > 1 ) ||
-					 ( ( $aiosp_nofollow == '' ) && ( ! empty( $aioseop_options['aiosp_cpostnofollow'] ) ) && in_array( $post_type, $aioseop_options['aiosp_cpostnofollow'] ) )
+				if (
+						( $aiosp_nofollow == 'on' ) ||
+						(
+							( ! empty( $aioseop_options['aiosp_paginated_nofollow'] ) ) &&
+							$page > 1
+						) ||
+						(
+							( $aiosp_nofollow == '' ) &&
+							( ! empty( $aioseop_options['aiosp_cpostnofollow'] ) ) &&
+							in_array( $post_type, $aioseop_options['aiosp_cpostnofollow'] )
+						)
 				) {
 					$nofollow = 'nofollow';
 				}
@@ -4993,7 +5074,7 @@ EOF;
 
 		if ( AIOSEOPPRO ) {
 			if ( is_array( $this->options['aiosp_cpostactive'] ) ) {
-					  $this->locations['aiosp']['display'] = $this->options['aiosp_cpostactive'];
+				$this->locations['aiosp']['display'] = $this->options['aiosp_cpostactive'];
 			} else {
 				$this->locations['aiosp']['display'][] = $this->options['aiosp_cpostactive']; // Store as an array in case there are taxonomies to add also.
 			}
@@ -5315,8 +5396,9 @@ EOF;
 				<?php if ( ! AIOSEOPPRO ) { ?>
 					<div class="aioseop_advert aioseop_nopad_all">
 						<?php $adid = mt_rand( 21, 22 ); ?>
-							<a href="https://www.wincher.com/?referer=all-in-one-seo-pack&adreferer=banner<?php echo $adid; ?>"
-							   target="_blank">
+							<a
+								href="https://www.wincher.com/?referer=all-in-one-seo-pack&adreferer=banner<?php echo $adid; ?>"
+								target="_blank">
 								<div class=wincherad id=wincher<?php echo $adid; ?>>
 								</div>
 							</a>

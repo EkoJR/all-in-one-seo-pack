@@ -479,9 +479,9 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 						'summary_large_image' => __( 'Summary Large Image', 'all-in-one-seo-pack' ),
 
 						/*
-						 REMOVING THIS TWITTER CARD TYPE FROM SOCIAL META MODULE
-						'photo' => __( 'Photo', 'all-in-one-seo-pack' )
-						*/
+						 * REMOVING THIS TWITTER CARD TYPE FROM SOCIAL META MODULE
+						 * 'photo' => __( 'Photo', 'all-in-one-seo-pack' )
+						 */
 					),
 				),
 				'setcard'                => array(
@@ -492,9 +492,9 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 						'summary'             => __( 'Summary', 'all-in-one-seo-pack' ),
 
 						/*
-						 REMOVING THIS TWITTER CARD TYPE FROM SOCIAL META MODULE
-						'photo' => __( 'Photo', 'all-in-one-seo-pack' )
-						*/
+						 * REMOVING THIS TWITTER CARD TYPE FROM SOCIAL META MODULE
+						 * 'photo' => __( 'Photo', 'all-in-one-seo-pack' )
+						 */
 					),
 				),
 				'twitter_site'           => array(
@@ -1196,9 +1196,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 						$social_type = 'Organization';
 					}
 				}
-			} elseif ( is_singular() && $this->option_isset( 'types' )
-					   && is_array( $this->options['aiosp_opengraph_types'] )
-					   && in_array( $current_post_type, $this->options['aiosp_opengraph_types'] )
+			} elseif (
+					is_singular() && $this->option_isset( 'types' ) &&
+					is_array( $this->options['aiosp_opengraph_types'] ) &&
+					in_array( $current_post_type, $this->options['aiosp_opengraph_types'] )
 			) {
 
 				if ( $type == 'article' ) {

@@ -97,11 +97,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 		 * @return array
 		 */
 		function filter_submit( $submit ) {
-			$submit['Submit']['value'] = __(
-				'Import',
-				'all-in-one-seo-pack'
-			)
-										 . ' &raquo;';
+			$submit['Submit']['value'] = __( 'Import', 'all-in-one-seo-pack' ) . ' &raquo;';
 
 			return array(
 				'export_submit' => array(
@@ -459,8 +455,9 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 													$module_options[ $key ]['post_date']
 												);
 												$target      = get_post( $post_exists );
-												if ( ( ! empty( $module_options[ $key ]['post_type'] ) )
-													 && $post_exists != null
+												if (
+													( ! empty( $module_options[ $key ]['post_type'] ) ) &&
+													$post_exists != null
 												) {
 													if ( is_array( $value ) ) {
 														foreach ( $value as $field_name => $field_value ) {

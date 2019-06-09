@@ -176,13 +176,19 @@ function aiosp_seometa_admin() {
 				</span>
 		</p>
 
-		<p><span
-				class="description"><strong><?php printf( __( 'Please Note: ' ) ); ?></strong>
-														  <?php
-															/* translators: %s is a placeholder, which means that it should not be translated. It will be replaced with the name of the plugin, All in One SEO Pack. */
-															printf( sprintf( __( 'Some plugins and themes do not share similar data, or they store data in a non-standard way. If we cannot import this data, it will remain unchanged in your database. Any compatible SEO data will be displayed for you to review. If a post or page already has SEO data in %s, we will not import data from another plugin/theme.', 'all-in-one-seo-pack' ), AIOSEOP_PLUGIN_NAME ) );
-															?>
-				</span>
+		<p>
+			<span class="description">
+				<strong><?php printf( __( 'Please Note: ' ) ); ?></strong>
+				<?php
+				/* translators: %s is a placeholder, which means that it should not be translated. It will be replaced with the name of the plugin, All in One SEO Pack. */
+				printf(
+					sprintf(
+						__( 'Some plugins and themes do not share similar data, or they store data in a non-standard way. If we cannot import this data, it will remain unchanged in your database. Any compatible SEO data will be displayed for you to review. If a post or page already has SEO data in %s, we will not import data from another plugin/theme.', 'all-in-one-seo-pack' ),
+						AIOSEOP_PLUGIN_NAME
+					)
+				);
+				?>
+			</span>
 		</p>
 
 		<p><span
@@ -222,10 +228,17 @@ function aiosp_seometa_admin() {
 
 			?>
 
-			<input type="submit" class="button-secondary" name="analyze"
-				   value="<?php _e( 'Analyze', 'all-in-one-seo-pack' ); ?>" aria-label="Analyze"/>
-			<input type="submit" class="button-primary"
-				   value="<?php _e( 'Convert', 'all-in-one-seo-pack' ); ?>" aria-label="Convert"/>
+			<input
+				type="submit"
+				class="button-secondary"
+				name="analyze"
+				value="<?php _e( 'Analyze', 'all-in-one-seo-pack' ); ?>"
+				aria-label="Analyze"/>
+			<input
+				type="submit"
+				class="button-primary"
+				value="<?php _e( 'Convert', 'all-in-one-seo-pack' ); ?>"
+				aria-label="Convert"/>
 
 		</form>
 
