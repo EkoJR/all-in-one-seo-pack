@@ -25,14 +25,22 @@
         <exclude name="WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar" />
         <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+        
+        <!-- TODO Change plugin filenames to use Hyphens instead of Underscores. -->
         <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
 
+        <!-- TODO Clean ( OR disable/ignore ) commented out code. -->
         <exclude name="Squiz.PHP.CommentedOutCode" />
+
+        <!-- TODO Add `// translators: *` comments to `__()`. -->
         <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+
+        <!-- TODO Change ( OR disable/ignore ) classname naming convention. -->
         <exclude name="PEAR.NamingConventions.ValidClassName.Invalid" />
 
         <!-- these can be removed once the initial part of #1003 is closed -->
 
+        <!-- TODO Fix missing param comments in phpDoc. -->
         <exclude name="Squiz.Commenting.FunctionComment" />
 
         <!-- these can be removed once #2335 is closed -->
