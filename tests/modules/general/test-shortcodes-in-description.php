@@ -52,8 +52,8 @@ class Test_Shortcodes_In_Description extends AIOSEOP_Test_Base {
 		update_option( 'aioseop_options', $aioseop_options );
 
 		$args = array(
-			'post_type' => 'post',
-			'post_title' => 'Example Title',
+			'post_type'    => 'post',
+			'post_title'   => 'Example Title',
 			'post_content' => $shortcode . $expected_description,
 		);
 		$id = $this->factory->post->create( $args );

@@ -35,7 +35,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Robots' ) ) {
 			parent::__construct();
 
 			$this->default_options = array(
-				'usage'              => array(
+				'usage' => array(
 					'type'    => 'html',
 					'label'   => 'none',
 					'default' => __( 'Use the rule builder below to add/delete rules.', 'all-in-one-seo-pack' ),
@@ -43,28 +43,28 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Robots' ) ) {
 				),
 			);
 
-			$this->rule_fields      = array(
-				'agent'         => array(
-					'name'            => __( 'User Agent', 'all-in-one-seo-pack' ),
-					'type'            => 'text',
-					'label'           => 'top',
-					'save'            => false,
-				),
-				'type'          => array(
-					'name'  => __( 'Rule', 'all-in-one-seo-pack' ),
-					'type'  => 'select',
-					'initial_options' => array(
-						'allow' => __( 'Allow', 'all-in-one-seo-pack' ),
-						'disallow' => __( 'Disallow', 'all-in-one-seo-pack' ),
-					),
+			$this->rule_fields = array(
+				'agent'             => array(
+					'name'  => __( 'User Agent', 'all-in-one-seo-pack' ),
+					'type'  => 'text',
 					'label' => 'top',
 					'save'  => false,
 				),
-				'path'         => array(
-					'name'            => __( 'Directory Path', 'all-in-one-seo-pack' ),
-					'type'            => 'text',
+				'type'              => array(
+					'name'            => __( 'Rule', 'all-in-one-seo-pack' ),
+					'type'            => 'select',
+					'initial_options' => array(
+						'allow'    => __( 'Allow', 'all-in-one-seo-pack' ),
+						'disallow' => __( 'Disallow', 'all-in-one-seo-pack' ),
+					),
 					'label'           => 'top',
 					'save'            => false,
+				),
+				'path'              => array(
+					'name'  => __( 'Directory Path', 'all-in-one-seo-pack' ),
+					'type'  => 'text',
+					'label' => 'top',
+					'save'  => false,
 				),
 				'Submit'            => array(
 					'type'  => 'submit',
@@ -74,13 +74,13 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Robots' ) ) {
 					'save'  => false,
 					'value' => 1,
 				),
-				"{$this->prefix}id"            => array(
+				"{$this->prefix}id" => array(
 					'type'  => 'hidden',
 					'class' => 'edit-rule-id',
 					'save'  => false,
 					'value' => '',
 				),
-				'rules'        => array(
+				'rules'             => array(
 					'name' => __( 'Configured Rules', 'all-in-one-seo-pack' ),
 					'type' => 'custom',
 					'save' => true,
@@ -96,11 +96,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Robots' ) ) {
 
 			$this->default_options = array_merge( $this->default_options, $this->rule_fields );
 
-			$this->layout             = array(
+			$this->layout = array(
 				'default' => array(
-					'name'    => __( 'Create a Robots.txt File', 'all-in-one-seo-pack' ),
+					'name'      => __( 'Create a Robots.txt File', 'all-in-one-seo-pack' ),
 					'help_link' => 'https://semperplugins.com/documentation/robots-txt-module/',
-					'options' => array_merge( array( 'usage' ), array_keys( $this->rule_fields ) ),
+					'options'   => array_merge( array( 'usage' ), array_keys( $this->rule_fields ) ),
 				),
 			);
 

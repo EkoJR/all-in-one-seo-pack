@@ -233,8 +233,8 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 		$spl = wp_generate_password( 12, true, true ) . $this->_spl_chars;
 		wp_update_post(
 			array(
-				'ID' => $attachment_id,
-				'post_title' => $spl,
+				'ID'           => $attachment_id,
+				'post_title'   => $spl,
 				'post_excerpt' => $spl,
 			)
 		);
@@ -269,10 +269,10 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 	 * Clean up the flotsam and jetsam before starting.
 	 */
 	protected final function clean() {
-		$posts  = get_posts(
+		$posts = get_posts(
 			array(
-				'post_type' => 'any',
-				'fields'    => 'ids',
+				'post_type'   => 'any',
+				'fields'      => 'ids',
 				'numberposts' => -1,
 			)
 		);
@@ -295,22 +295,22 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 		// activate the sitemap module.
 		$aioseop_options['modules'] = array(
 			'aiosp_feature_manager_options' => array(
-				"aiosp_feature_manager_enable_$module"  => 'on',
+				"aiosp_feature_manager_enable_$module" => 'on',
 			),
 		);
 		update_option( 'aioseop_options', $aioseop_options );
 
 		set_current_screen( 'edit-post' );
 
-		$nonce      = wp_create_nonce( 'aioseop-nonce' );
-		$class      = 'All_in_One_SEO_Pack_' . ucwords( $module );
-		$_POST      = array(
-			'action'                => 'aiosp_update_module',
-			'Submit_All_Default'    => 'blah',
-			'Submit'                => 'blah',
-			'nonce-aioseop'         => $nonce,
-			'settings'              => ' ',
-			'options'               => "aiosp_feature_manager_enable_{$module}=true&page=" . trailingslashit( AIOSEOP_PLUGIN_DIRNAME ) . "modules/aioseop_feature_manager.php&Submit=testing!&module={$class}&nonce-aioseop=" . $nonce,
+		$nonce = wp_create_nonce( 'aioseop-nonce' );
+		$class = 'All_in_One_SEO_Pack_' . ucwords( $module );
+		$_POST = array(
+			'action'             => 'aiosp_update_module',
+			'Submit_All_Default' => 'blah',
+			'Submit'             => 'blah',
+			'nonce-aioseop'      => $nonce,
+			'settings'           => ' ',
+			'options'            => "aiosp_feature_manager_enable_{$module}=true&page=" . trailingslashit( AIOSEOP_PLUGIN_DIRNAME ) . "modules/aioseop_feature_manager.php&Submit=testing!&module={$class}&nonce-aioseop=" . $nonce,
 		);
 
 		// so that is_admin returns true.
@@ -352,19 +352,19 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 			$this->factory->post->create_many(
 				$without_images,
 				array(
-					'post_type' => $type,
+					'post_type'    => $type,
 					'post_content' => 'content without image',
-					'post_title' => 'title without image',
+					'post_title'   => 'title without image',
 				)
 			);
 		}
 		if ( $with_images > 0 ) {
-			$ids    = $this->factory->post->create_many(
+			$ids = $this->factory->post->create_many(
 				$with_images,
 				array(
-					'post_type' => $type,
+					'post_type'    => $type,
 					'post_content' => 'content with image',
-					'post_title' => 'title with image',
+					'post_title'   => 'title with image',
 				)
 			);
 			foreach ( $ids as $id ) {
@@ -372,10 +372,10 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 			}
 		}
 
-		$posts  = get_posts(
+		$posts = get_posts(
 			array(
-				'post_type' => $type,
-				'fields'    => 'ids',
+				'post_type'   => $type,
+				'fields'      => 'ids',
 				'numberposts' => -1,
 			)
 		);
@@ -387,10 +387,10 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 			get_permalink( $id );
 		}
 
-		$attachments    = get_posts(
+		$attachments = get_posts(
 			array(
-				'post_type' => 'attachment',
-				'fields'    => 'ids',
+				'post_type'   => 'attachment',
+				'fields'      => 'ids',
 				'numberposts' => -1,
 			)
 		);

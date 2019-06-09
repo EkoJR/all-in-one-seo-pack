@@ -125,10 +125,10 @@ class Test_Robots extends AIOSEOP_Test_Base {
 
 		$this->_setup_options( 'robots', array() );
 
-		$_POST      = array(
-			'aiosp_robots_path'     => $rule['path'],
-			'aiosp_robots_type'     => $rule['type'],
-			'aiosp_robots_agent'    => $rule['agent'],
+		$_POST = array(
+			'aiosp_robots_path'  => $rule['path'],
+			'aiosp_robots_type'  => $rule['type'],
+			'aiosp_robots_agent' => $rule['agent'],
 		);
 
 		$path       = $rule['path'];
@@ -159,23 +159,23 @@ class Test_Robots extends AIOSEOP_Test_Base {
 	public function sanitizedRulesProvider() {
 		return array(
 			array(
-				'path' => 'test.txt',
-				'type' => 'disallow',
+				'path'  => 'test.txt',
+				'type'  => 'disallow',
 				'agent' => '*',
 			),
 			array(
-				'path' => 'wp-content/image.jpg',
-				'type' => 'allow',
+				'path'  => 'wp-content/image.jpg',
+				'type'  => 'allow',
 				'agent' => '*',
 			),
 			array(
-				'path' => 'temp.*',
-				'type' => 'allow',
+				'path'  => 'temp.*',
+				'type'  => 'allow',
 				'agent' => '*',
 			),
 			array(
-				'path' => 'wp-content/*.txt',
-				'type' => 'disallow',
+				'path'  => 'wp-content/*.txt',
+				'type'  => 'disallow',
 				'agent' => '*',
 			),
 		);
@@ -197,10 +197,10 @@ class Test_Robots extends AIOSEOP_Test_Base {
 		// import default WP rules.
 		do_action( 'aioseop_ut_aiosp_robots_admin_init' );
 
-		$_POST      = array(
-			'aiosp_robots_path'     => $rule['path'],
-			'aiosp_robots_type'     => $rule['type'],
-			'aiosp_robots_agent'    => $rule['agent'],
+		$_POST = array(
+			'aiosp_robots_path'  => $rule['path'],
+			'aiosp_robots_type'  => $rule['type'],
+			'aiosp_robots_agent' => $rule['agent'],
 		);
 
 		$options    = apply_filters( 'aiosp_robots_update_options', array() );
@@ -214,64 +214,64 @@ class Test_Robots extends AIOSEOP_Test_Base {
 		return array(
 			array(
 				array(
-					'path' => '/wp-admin/',
-					'type' => 'disallow',
+					'path'  => '/wp-admin/',
+					'type'  => 'disallow',
 					'agent' => '*',
 				),
 				'Rule cannot be overridden',
 			),
 			array(
 				array(
-					'path' => '/wp-admin/admin-ajax.php',
-					'type' => 'allow',
+					'path'  => '/wp-admin/admin-ajax.php',
+					'type'  => 'allow',
 					'agent' => '*',
 				),
 				'Rule cannot be overridden',
 			),
 			array(
 				array(
-					'path' => '/wp-admin/',
-					'type' => 'allow',
+					'path'  => '/wp-admin/',
+					'type'  => 'allow',
 					'agent' => '*',
 				),
 				'Rule cannot be overridden',
 			),
 			array(
 				array(
-					'path' => '/wp-admin/admin-ajax.php',
-					'type' => 'disallow',
+					'path'  => '/wp-admin/admin-ajax.php',
+					'type'  => 'disallow',
 					'agent' => '*',
 				),
 				'Rule cannot be overridden',
 			),
 			array(
 				array(
-					'path' => '/wp-*',
-					'type' => 'disallow',
+					'path'  => '/wp-*',
+					'type'  => 'disallow',
 					'agent' => '*',
 				),
 				'Wild-card path cannot be overridden',
 			),
 			array(
 				array(
-					'path' => '/wp-*/admin-ajax.*',
-					'type' => 'allow',
+					'path'  => '/wp-*/admin-ajax.*',
+					'type'  => 'allow',
 					'agent' => '*',
 				),
 				'Wild-card path cannot be overridden',
 			),
 			array(
 				array(
-					'path' => '/*-admin/',
-					'type' => 'allow',
+					'path'  => '/*-admin/',
+					'type'  => 'allow',
 					'agent' => '*',
 				),
 				'Wild-card path cannot be overridden',
 			),
 			array(
 				array(
-					'path' => '/*-admin/admin-ajax.*',
-					'type' => 'disallow',
+					'path'  => '/*-admin/admin-ajax.*',
+					'type'  => 'disallow',
 					'agent' => '*',
 				),
 				'Wild-card path cannot be overridden',
@@ -294,10 +294,10 @@ class Test_Robots extends AIOSEOP_Test_Base {
 		global $aioseop_options;
 
 		foreach ( $existing_rules as $rule ) {
-			$_POST      = array(
-				'aiosp_robots_path'     => $rule['path'],
-				'aiosp_robots_type'     => $rule['type'],
-				'aiosp_robots_agent'    => $rule['agent'],
+			$_POST = array(
+				'aiosp_robots_path'  => $rule['path'],
+				'aiosp_robots_type'  => $rule['type'],
+				'aiosp_robots_agent' => $rule['agent'],
 			);
 
 			$options    = apply_filters( 'aiosp_robots_update_options', array() );
@@ -306,10 +306,10 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			update_option( 'aioseop_options', $aioseop_options );
 		}
 
-		$_POST      = array(
-			'aiosp_robots_path'     => $new_rule['path'],
-			'aiosp_robots_type'     => $new_rule['type'],
-			'aiosp_robots_agent'    => $new_rule['agent'],
+		$_POST = array(
+			'aiosp_robots_path'  => $new_rule['path'],
+			'aiosp_robots_type'  => $new_rule['type'],
+			'aiosp_robots_agent' => $new_rule['agent'],
 		);
 
 		$options    = apply_filters( 'aiosp_robots_update_options', array() );
@@ -326,14 +326,14 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			array(
 				array(
 					array(
-						'path' => '/test.txt',
-						'type' => 'disallow',
+						'path'  => '/test.txt',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 				),
 				array(
-					'path' => '/test.txt',
-					'type' => 'disallow',
+					'path'  => '/test.txt',
+					'type'  => 'disallow',
 					'agent' => '*',
 				),
 				'Identical rule exists',
@@ -341,14 +341,14 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			array(
 				array(
 					array(
-						'path' => '/wp-content/image.jpg',
-						'type' => 'allow',
+						'path'  => '/wp-content/image.jpg',
+						'type'  => 'allow',
 						'agent' => '*',
 					),
 				),
 				array(
-					'path' => '/wp-content/image.jpg',
-					'type' => 'allow',
+					'path'  => '/wp-content/image.jpg',
+					'type'  => 'allow',
 					'agent' => '*',
 				),
 				'Identical rule exists',
@@ -358,14 +358,14 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			array(
 				array(
 					array(
-						'path' => '/test.txt',
-						'type' => 'disallow',
+						'path'  => '/test.txt',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 				),
 				array(
-					'path' => '/test.*',
-					'type' => 'disallow',
+					'path'  => '/test.*',
+					'type'  => 'disallow',
 					'agent' => '*',
 				),
 				'Wild-card path cannot be overridden',
@@ -375,14 +375,14 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			array(
 				array(
 					array(
-						'path' => '/test.txt',
-						'type' => 'disallow',
+						'path'  => '/test.txt',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 				),
 				array(
-					'path' => '/test.txt',
-					'type' => 'allow',
+					'path'  => '/test.txt',
+					'type'  => 'allow',
 					'agent' => '*',
 				),
 				'Rule cannot be overridden',
@@ -392,14 +392,14 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			array(
 				array(
 					array(
-						'path' => '/test.txt',
-						'type' => 'disallow',
+						'path'  => '/test.txt',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 				),
 				array(
-					'path' => '/test.*',
-					'type' => 'allow',
+					'path'  => '/test.*',
+					'type'  => 'allow',
 					'agent' => '*',
 				),
 				'Wild-card path cannot be overridden',
@@ -409,14 +409,14 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			array(
 				array(
 					array(
-						'path' => '/wp-includes/',
-						'type' => 'disallow',
+						'path'  => '/wp-includes/',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 				),
 				array(
-					'path' => '/wp-includes/',
-					'type' => 'disallow',
+					'path'  => '/wp-includes/',
+					'type'  => 'disallow',
 					'agent' => '*',
 				),
 				'Identical rule exists',
@@ -426,14 +426,14 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			array(
 				array(
 					array(
-						'path' => '/wp-includes/',
-						'type' => 'disallow',
+						'path'  => '/wp-includes/',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 				),
 				array(
-					'path' => '/wp-*/',
-					'type' => 'disallow',
+					'path'  => '/wp-*/',
+					'type'  => 'disallow',
 					'agent' => '*',
 				),
 				'Wild-card path cannot be overridden',
@@ -443,14 +443,14 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			array(
 				array(
 					array(
-						'path' => '/wp-includes/',
-						'type' => 'disallow',
+						'path'  => '/wp-includes/',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 				),
 				array(
-					'path' => '/wp-includes/',
-					'type' => 'allow',
+					'path'  => '/wp-includes/',
+					'type'  => 'allow',
 					'agent' => '*',
 				),
 				'Rule cannot be overridden',
@@ -460,14 +460,14 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			array(
 				array(
 					array(
-						'path' => '/wp-includes/',
-						'type' => 'disallow',
+						'path'  => '/wp-includes/',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 				),
 				array(
-					'path' => '/wp-*/',
-					'type' => 'allow',
+					'path'  => '/wp-*/',
+					'type'  => 'allow',
 					'agent' => '*',
 				),
 				'Wild-card path cannot be overridden',
@@ -490,10 +490,10 @@ class Test_Robots extends AIOSEOP_Test_Base {
 		global $aioseop_options;
 
 		foreach ( $existing_rules as $rule ) {
-			$_POST      = array(
-				'aiosp_robots_path'     => $rule['path'],
-				'aiosp_robots_type'     => $rule['type'],
-				'aiosp_robots_agent'    => $rule['agent'],
+			$_POST = array(
+				'aiosp_robots_path'  => $rule['path'],
+				'aiosp_robots_type'  => $rule['type'],
+				'aiosp_robots_agent' => $rule['agent'],
 			);
 
 			$options    = apply_filters( 'aiosp_robots_update_options', array() );
@@ -511,11 +511,11 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			}
 		}
 
-		$_POST      = array(
-			'aiosp_robots_id'       => $rule_modified['id'],
-			'aiosp_robots_path'     => $new_rule['path'],
-			'aiosp_robots_type'     => $new_rule['type'],
-			'aiosp_robots_agent'    => $new_rule['agent'],
+		$_POST = array(
+			'aiosp_robots_id'    => $rule_modified['id'],
+			'aiosp_robots_path'  => $new_rule['path'],
+			'aiosp_robots_type'  => $new_rule['type'],
+			'aiosp_robots_agent' => $new_rule['agent'],
 		);
 
 		$options    = apply_filters( 'aiosp_robots_update_options', array() );
@@ -541,40 +541,40 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			array(
 				array(
 					array(
-						'path' => '/test.txt',
-						'type' => 'disallow',
+						'path'  => '/test.txt',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 					array(
-						'path' => '/wp-admin',
-						'type' => 'disallow',
+						'path'  => '/wp-admin',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 				),
 				'/test.txt',
 				array(
-					'path' => '/testttt.txt',
-					'type' => 'disallow',
+					'path'  => '/testttt.txt',
+					'type'  => 'disallow',
 					'agent' => '*',
 				),
 			),
 			array(
 				array(
 					array(
-						'path' => '/test.txt',
-						'type' => 'disallow',
+						'path'  => '/test.txt',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 					array(
-						'path' => '/wp-admin',
-						'type' => 'disallow',
+						'path'  => '/wp-admin',
+						'type'  => 'disallow',
 						'agent' => '*',
 					),
 				),
 				'/test.txt',
 				array(
-					'path' => '/wp-admin',
-					'type' => 'disallow',
+					'path'  => '/wp-admin',
+					'type'  => 'disallow',
 					'agent' => '*',
 				),
 				'Identical rule exists',

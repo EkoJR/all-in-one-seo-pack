@@ -23,11 +23,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Bad_Robots' ) ) {
 			parent::__construct();
 
 			$this->default_options = array(
-				'block_bots'     => array( 'name' => __( 'Block Bad Bots using HTTP', 'all-in-one-seo-pack' ) ),
-				'block_refer'    => array( 'name' => __( 'Block Referral Spam using HTTP', 'all-in-one-seo-pack' ) ),
-				'track_blocks'   => array( 'name' => __( 'Track Blocked Bots', 'all-in-one-seo-pack' ) ),
-				'edit_blocks'    => array( 'name' => __( 'Use Custom Blocklists', 'all-in-one-seo-pack' ) ),
-				'blocklist'      => array(
+				'block_bots'   => array( 'name' => __( 'Block Bad Bots using HTTP', 'all-in-one-seo-pack' ) ),
+				'block_refer'  => array( 'name' => __( 'Block Referral Spam using HTTP', 'all-in-one-seo-pack' ) ),
+				'track_blocks' => array( 'name' => __( 'Track Blocked Bots', 'all-in-one-seo-pack' ) ),
+				'edit_blocks'  => array( 'name' => __( 'Use Custom Blocklists', 'all-in-one-seo-pack' ) ),
+				'blocklist'    => array(
 					'name'     => __( 'User Agent Blocklist', 'all-in-one-seo-pack' ),
 					'type'     => 'textarea',
 					'rows'     => 5,
@@ -35,7 +35,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Bad_Robots' ) ) {
 					'condshow' => array( "{$this->prefix}edit_blocks" => 'on' ),
 					'default'  => join( "\n", $this->default_bad_bots() ),
 				),
-				'referlist'      => array(
+				'referlist'    => array(
 					'name'     => __( 'Referer Blocklist', 'all-in-one-seo-pack' ),
 					'type'     => 'textarea',
 					'rows'     => 5,
@@ -46,7 +46,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Bad_Robots' ) ) {
 					),
 					'default'  => join( "\n", $this->default_bad_referers() ),
 				),
-				'blocked_log'    => array(
+				'blocked_log'  => array(
 					'name'     => __( 'Log Of Blocked Bots', 'all-in-one-seo-pack' ),
 					'default'  => __( 'No requests yet.', 'all-in-one-seo-pack' ),
 					'type'     => 'esc_html',

@@ -622,11 +622,11 @@ if ( ! function_exists( 'aioseop_ajax_scan_header' ) ) {
 		$meta     = '';
 		$metatags = array(
 			'facebook' => array(
-				'name' => 'property',
+				'name'  => 'property',
 				'value' => 'content',
 			),
 			'twitter'  => array(
-				'name' => 'name',
+				'name'  => 'name',
 				'value' => 'value',
 			),
 		);

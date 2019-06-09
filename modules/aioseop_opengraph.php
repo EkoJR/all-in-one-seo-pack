@@ -217,12 +217,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 					array(
 						'meta_query' => array(
 							array(
-								'key' => '_' . $prefix . $k,
+								'key'     => '_' . $prefix . $k,
 								'compare' => 'NOT EXISTS',
 							),
 						),
-						'number' => PHP_INT_MAX,
-						'fields' => 'ids',
+						'number'     => PHP_INT_MAX,
+						'fields'     => 'ids',
 						'hide_empty' => false,
 					)
 				);
@@ -239,12 +239,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 				$posts = get_posts(
 					array(
 						'numberposts' => 1,
-						'post_type' => 'any',
-						'tax_query' => array(
+						'post_type'   => 'any',
+						'tax_query'   => array(
 							array(
 								'taxonomy' => $taxonomy_name,
-								'field' => 'term_id',
-								'terms' => $terms,
+								'field'    => 'term_id',
+								'terms'    => $terms,
 							),
 						),
 					)
@@ -1589,11 +1589,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 
 			$tags = array(
 				'facebook' => array(
-					'name' => 'property',
+					'name'  => 'property',
 					'value' => 'content',
 				),
 				'twitter'  => array(
-					'name' => 'name',
+					'name'  => 'name',
 					'value' => 'content',
 				),
 			);

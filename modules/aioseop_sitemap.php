@@ -184,7 +184,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 					'default'         => 0,
 				),
 				'indexes'     => array(
-					'name' => __( 'Enable Sitemap Indexes', 'all-in-one-seo-pack' ),
+					'name'    => __( 'Enable Sitemap Indexes', 'all-in-one-seo-pack' ),
 					'default' => 'on',
 				),
 				'max_posts'   => array(
@@ -299,9 +299,9 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 					'save'    => false,
 				),
 				'addl_url'          => array(
-					'name'  => __( 'Page URL', 'all-in-one-seo-pack' ),
-					'type'  => 'url',
-					'save'  => false,
+					'name' => __( 'Page URL', 'all-in-one-seo-pack' ),
+					'type' => 'url',
+					'save' => false,
 				),
 				'addl_prio'         => array(
 					'name'            => __( 'Page Priority', 'all-in-one-seo-pack' ),
@@ -343,7 +343,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 					'type'  => 'multiselect',
 					'class' => 'aioseop-exclude-terms',
 				),
-				'excl_pages'      => array(
+				'excl_pages' => array(
 					'name' => __( 'Excluded Pages', 'all-in-one-seo-pack' ),
 					'type' => 'text',
 				),
@@ -2057,17 +2057,17 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 				foreach ( $post_types as $index => $post_type ) {
 					if ( in_array( $post_type, $aioseop_options['aiosp_cpostnoindex'], true ) ) {
 						$args = array(
-							'post_type'   => $post_type,
+							'post_type'      => $post_type,
+							'fields'         => 'ids',
+							'posts_per_page' => 1,
 							'meta_query'     => array(
-								'relation'   => 'OR',
+								'relation' => 'OR',
 								array(
 									'key'     => '_aioseop_noindex',
 									'value'   => 'off',
 									'compare' => '=',
 								),
 							),
-							'fields'         => 'ids',
-							'posts_per_page' => 1,
 						);
 						$q = new WP_Query( $args );
 						if ( 0 === $q->post_count ) {
@@ -2085,8 +2085,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 				$args = array(
 					'post_type'   => $post_types,
 					'post_status' => 'publish',
-					'meta_query'     => array(
-						'relation'   => 'OR',
+					'meta_query'  => array(
+						'relation' => 'OR',
 						array(
 							'key'     => '_aioseop_noindex',
 							'value'   => 'on',
@@ -3804,7 +3804,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			if ( ! empty( $post_image_urls ) ) {
 				foreach ( $post_image_urls as $v1_image_url ) {
 					$rtn_image_attributes[] = array(
-						'image:loc'     => $v1_image_url,
+						'image:loc' => $v1_image_url,
 					);
 				}
 			}
@@ -4652,8 +4652,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 			// for example, exclude post type, but include certain posts.
 			// NOTE: Do NOT use this for basic including. It's best to avoid an additional query.
 			$args_include = array(
-				'post_type'  => array(),
-				'meta_query' => array(
+				'post_type'      => array(),
+				'meta_query'     => array(
 					'relation' => 'OR',
 					array(
 						'key'     => '_aioseop_noindex',

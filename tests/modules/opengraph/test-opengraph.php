@@ -43,14 +43,14 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 	 */
 	public function test_meta_tag_truncation_all( $title, $content, $og_desc_limit ) {
 		$tag_limits  = array(
-			'og:description'    => $og_desc_limit, // limit to 200 but respect full words.
-			'twitter:description'   => 200,        // hard limit to 200.
-			'twitter:title' => 70,                 // hard limit to 70.
+			'og:description'      => $og_desc_limit, // limit to 200 but respect full words.
+			'twitter:description' => 200,            // hard limit to 200.
+			'twitter:title'       => 70,             // hard limit to 70.
 		);
 
 		$id = $this->factory->post->create(
 			array(
-				'post_title' => $title,
+				'post_title'   => $title,
 				'post_content' => $content,
 			)
 		);
@@ -96,9 +96,9 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 	 */
 	public function test_meta_tag_truncation_with_manual_og_title( $title, $content ) {
 		$tag_limits  = array(
-			'og:description'    => 200,
-			'twitter:description'   => 200,
-			'twitter:title' => 70,
+			'og:description'      => 200,
+			'twitter:description' => 200,
+			'twitter:title'       => 70,
 		);
 
 		wp_set_current_user( 1 );
@@ -114,7 +114,7 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 
 		$id = $this->factory->post->create(
 			array(
-				'post_title' => $title,
+				'post_title'   => $title,
 				'post_content' => $content,
 			)
 		);
@@ -153,9 +153,9 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 	 */
 	public function test_meta_tag_truncation_with_manual_main_title( $title, $content ) {
 		$tag_limits  = array(
-			'og:description'    => 200,
-			'twitter:description'   => 200,
-			'twitter:title' => 70,
+			'og:description'      => 200,
+			'twitter:description' => 200,
+			'twitter:title'       => 70,
 		);
 
 		wp_set_current_user( 1 );
@@ -171,7 +171,7 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 
 		$id = $this->factory->post->create(
 			array(
-				'post_title' => $title,
+				'post_title'   => $title,
 				'post_content' => $content,
 			)
 		);
@@ -208,14 +208,14 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 	 */
 	public function test_meta_tag_truncation_filter( $title, $content ) {
 		$tag_limits  = array(
-			'og:description'    => 200,
-			'twitter:description'   => 200,
-			'twitter:title' => array( 70 ), // no limit.
+			'og:description'      => 200,
+			'twitter:description' => 200,
+			'twitter:title'       => array( 70 ), // no limit.
 		);
 
 		$id = $this->factory->post->create(
 			array(
-				'post_title' => $title,
+				'post_title'   => $title,
 				'post_content' => $content,
 			)
 		);

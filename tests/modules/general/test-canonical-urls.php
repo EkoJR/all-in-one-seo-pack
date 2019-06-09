@@ -29,7 +29,7 @@ class Test_Canonical_Urls extends AIOSEOP_Test_Base {
 		update_option( 'aioseop_options', $aioseop_options );
 		$id = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
+				'post_type'    => 'post',
 				'post_content' => 'one <!--nextpage--> two <!--nextpage--> three <!--nextpage-->',
 			)
 		);
@@ -63,7 +63,7 @@ class Test_Canonical_Urls extends AIOSEOP_Test_Base {
 		update_option( 'aioseop_options', $aioseop_options );
 		$id = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
+				'post_type'    => 'post',
 				'post_content' => 'one two three',
 			)
 		);

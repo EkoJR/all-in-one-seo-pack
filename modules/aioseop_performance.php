@@ -85,17 +85,17 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 			);
 
 			$system_status = array(
-				'status' => array(
+				'status'     => array(
 					'default' => '',
-					'type' => 'html',
-					'label' => 'none',
-					'save' => false,
+					'type'    => 'html',
+					'label'   => 'none',
+					'save'    => false,
 				),
 				'send_email' => array(
 					'default' => '',
-					'type' => 'html',
-					'label' => 'none',
-					'save' => false,
+					'type'    => 'html',
+					'label'   => 'none',
+					'save'    => false,
 				),
 			);
 
@@ -300,13 +300,14 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 			$blog_public    = get_option( 'blog_public' );
 			$perm_struct    = get_option( 'permalink_structure' );
 
-			$debug_info                   = array(
+			// TODO Change array keys to NOT be translations. Try to use a separate array for translations.
+			$debug_info = array(
 				__( 'Operating System', 'all-in-one-seo-pack' ) => PHP_OS,
-				__( 'Server', 'all-in-one-seo-pack' )                      => $_SERVER['SERVER_SOFTWARE'],
+				__( 'Server', 'all-in-one-seo-pack' )      => $_SERVER['SERVER_SOFTWARE'],
 				__( 'Memory usage', 'all-in-one-seo-pack' ) => $memory_usage,
 				__( 'MYSQL Version', 'all-in-one-seo-pack' ) => $sqlversion,
-				__( 'SQL Mode', 'all-in-one-seo-pack' )                    => $sql_mode,
-				__( 'PHP Version', 'all-in-one-seo-pack' )                 => PHP_VERSION,
+				__( 'SQL Mode', 'all-in-one-seo-pack' )    => $sql_mode,
+				__( 'PHP Version', 'all-in-one-seo-pack' ) => PHP_VERSION,
 				__( 'PHP Allow URL fopen', 'all-in-one-seo-pack' ) => $allow_url_fopen,
 				__( 'PHP Memory Limit', 'all-in-one-seo-pack' ) => $memory_limit,
 				__( 'PHP Max Upload Size', 'all-in-one-seo-pack' ) => $upload_max,
@@ -315,13 +316,13 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 				__( 'PHP Exif support', 'all-in-one-seo-pack' ) => $exif,
 				__( 'PHP IPTC support', 'all-in-one-seo-pack' ) => $iptc,
 				__( 'PHP XML support', 'all-in-one-seo-pack' ) => $xml,
-				__( 'Site URL', 'all-in-one-seo-pack' )                    => $siteurl,
-				__( 'Home URL', 'all-in-one-seo-pack' )                    => $homeurl,
+				__( 'Site URL', 'all-in-one-seo-pack' )    => $siteurl,
+				__( 'Home URL', 'all-in-one-seo-pack' )    => $homeurl,
 				__( 'WordPress Version', 'all-in-one-seo-pack' ) => $wp_version,
 				__( 'WordPress DB Version', 'all-in-one-seo-pack' ) => $db_version,
-				__( 'Multisite', 'all-in-one-seo-pack' )                   => $ms,
+				__( 'Multisite', 'all-in-one-seo-pack' )   => $ms,
 				__( 'Active Theme', 'all-in-one-seo-pack' ) => $theme['Name'] . ' ' . $theme['Version'],
-				__( 'Site Title', 'all-in-one-seo-pack' )                  => $site_title,
+				__( 'Site Title', 'all-in-one-seo-pack' )  => $site_title,
 				__( 'Site Language', 'all-in-one-seo-pack' ) => $language,
 				__( 'Front Page Displays', 'all-in-one-seo-pack' ) => $front_displays === 'page' ? $front_displays . ' [ID = ' . $page_on_front . ']' : $front_displays,
 				__( 'Search Engine Visibility', 'all-in-one-seo-pack' ) => $blog_public,

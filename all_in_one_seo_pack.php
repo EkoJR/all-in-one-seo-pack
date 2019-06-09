@@ -356,12 +356,12 @@ if ( ! function_exists( 'aiosp_add_action_links' ) ) {
 				'url'   => get_admin_url( null, "admin.php?page=$aioseop_plugin_dirname/aioseop_class.php" ),
 			),
 
-			'forum' => array(
+			'forum'    => array(
 				'label' => __( 'Support Forum', 'all-in-one-seo-pack' ),
 				'url'   => 'https://semperplugins.com/support/',
 			),
 
-			'docs' => array(
+			'docs'     => array(
 				'label' => __( 'Documentation', 'all-in-one-seo-pack' ),
 				'url'   => 'https://semperplugins.com/documentation/',
 			),

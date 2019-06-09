@@ -74,7 +74,7 @@ class Test_Sitemap extends Sitemap_Test_Base {
 				$pages['without'][1] => true,
 				$posts['without'][0] => false,
 				$posts['without'][1] => false,
-				$new_page => true,
+				$new_page            => true,
 			)
 		);
 
@@ -114,14 +114,14 @@ class Test_Sitemap extends Sitemap_Test_Base {
 		$without = $posts['without'];
 		$this->validate_sitemap(
 			array(
-				$with[0] => array(
-					'image' => true,
-					'image:title' => true,
+				$with[0]    => array(
+					'image'         => true,
+					'image:title'   => true,
 					'image:caption' => true,
 				),
-				$with[1] => array(
-					'image' => true,
-					'image:title' => true,
+				$with[1]    => array(
+					'image'         => true,
+					'image:title'   => true,
 					'image:caption' => true,
 				),
 				$without[0] => array(
@@ -159,10 +159,10 @@ class Test_Sitemap extends Sitemap_Test_Base {
 		$without = $posts['without'];
 		$this->validate_sitemap(
 			array(
-				$with[0] => array(
+				$with[0]    => array(
 					'image' => false,
 				),
-				$with[1] => array(
+				$with[1]    => array(
 					'image' => false,
 				),
 				$without[0] => array(
@@ -404,7 +404,7 @@ class Test_Sitemap extends Sitemap_Test_Base {
 				get_category_link( $test1 ) => true,
 				get_category_link( $test2 ) => true,
 				get_category_link( $test3 ) => false,
-				get_category_link( 1 ) => true,
+				get_category_link( 1 )      => true,
 			)
 		);
 	}
@@ -431,23 +431,23 @@ class Test_Sitemap extends Sitemap_Test_Base {
 
 		$id1 = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
+				'post_type'    => 'post',
 				'post_content' => 'content <img src="http://example.org/image1.jpg">',
-				'post_title' => 'title with image',
+				'post_title'   => 'title with image',
 			)
 		);
 		$id2 = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
+				'post_type'    => 'post',
 				'post_content' => 'content <img src="//example.org/image2.jpg">',
-				'post_title' => 'title with image',
+				'post_title'   => 'title with image',
 			)
 		);
 		$id3 = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
+				'post_type'    => 'post',
 				'post_content' => 'content <img src="/image3.jpg">',
-				'post_title' => 'title with image',
+				'post_title'   => 'title with image',
 			)
 		);
 		$urls = array( get_permalink( $id1 ), get_permalink( $id2 ), get_permalink( $id3 ) );
@@ -556,9 +556,9 @@ class Test_Sitemap extends Sitemap_Test_Base {
 		}
 		$id = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
+				'post_type'    => 'post',
 				'post_content' => '[gallery size="medium" link="file" columns="5" type="slideshow" ids="' . implode( ',', $attachments ) . '"]',
-				'post_title' => 'jetpack',
+				'post_title'   => 'jetpack',
 			)
 		);
 		$posts['with'][] = get_permalink( $id );
@@ -572,10 +572,10 @@ class Test_Sitemap extends Sitemap_Test_Base {
 		$without = $posts['without'];
 		$this->validate_sitemap(
 			array(
-				$with[0] => array(
+				$with[0]    => array(
 					'image' => true,
 				),
-				$with[1] => array(
+				$with[1]    => array(
 					'image' => true,
 				),
 				$without[0] => array(
@@ -624,9 +624,9 @@ class Test_Sitemap extends Sitemap_Test_Base {
 		$this->markTestIncomplete( 'We cannot add images in such a way that the shortcode displays the "src" attribute in the image tags. Skipping.' );
 		$id = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
+				'post_type'    => 'post',
 				'post_content' => $shortcode,
-				'post_title' => 'nextgen',
+				'post_title'   => 'nextgen',
 			)
 		);
 		$url = get_permalink( $id );
@@ -674,8 +674,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 		$without = $posts['without'];
 		$this->validate_sitemap(
 			array(
-				$without[0] => true,
-				$without[1] => true,
+				$without[0]  => true,
+				$without[1]  => true,
 				$url1['loc'] => true,
 				$url2['loc'] => true,
 			)
@@ -755,16 +755,16 @@ class Test_Sitemap extends Sitemap_Test_Base {
 
 		$id1 = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
+				'post_type'    => 'post',
 				'post_content' => 'content <img src="http://www.x.com/image.jpg">',
-				'post_title' => 'title with image',
+				'post_title'   => 'title with image',
 			)
 		);
 		$id2 = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
+				'post_type'    => 'post',
 				'post_content' => 'content <img src="http://www.y.com/image.jpg">',
-				'post_title' => 'title with image',
+				'post_title'   => 'title with image',
 			)
 		);
 		$posts['with'] = array( get_permalink( $id1 ), get_permalink( $id2 ) );
@@ -784,10 +784,10 @@ class Test_Sitemap extends Sitemap_Test_Base {
 		$without = $posts['without'];
 		$this->validate_sitemap(
 			array(
-				$with[0] => array(
+				$with[0]    => array(
 					'image' => true,
 				),
-				$with[1] => array(
+				$with[1]    => array(
 					'image' => false,
 				),
 				$without[0] => array(
@@ -839,9 +839,9 @@ class Test_Sitemap extends Sitemap_Test_Base {
 		$pages  = array();
 		foreach ( $urls as $url ) {
 			$pages[ $url['loc'] ] = array(
-				'prio'      => $url['priority'],
-				'freq'      => $url['changefreq'],
-				'mod'       => $url['lastmod'],
+				'prio' => $url['priority'],
+				'freq' => $url['changefreq'],
+				'mod'  => $url['lastmod'],
 			);
 		}
 

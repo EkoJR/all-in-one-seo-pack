@@ -36,8 +36,8 @@ class Test_Meta extends AIOSEOP_Test_Base {
 		$meta_desc  = 'heyhey';
 		$id = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
-				'post_title' => 'hey',
+				'post_type'    => 'post',
+				'post_title'   => 'hey',
 				'post_content' => $meta_desc,
 			)
 		);
@@ -83,8 +83,8 @@ class Test_Meta extends AIOSEOP_Test_Base {
 		// very, very important: post excerpt has to be empty or this will not work.
 		$id = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
-				'post_title' => 'hey',
+				'post_type'    => 'post',
+				'post_title'   => 'hey',
 				'post_content' => '',
 				'post_excerpt' => '',
 			)
@@ -123,8 +123,8 @@ class Test_Meta extends AIOSEOP_Test_Base {
 		global $aioseop_options;
 		$id = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
-				'post_title' => 'hey' . rand(),
+				'post_type'    => 'post',
+				'post_title'   => 'hey' . rand(),
 				'post_excerpt' => $excerpt,
 				'post_content' => $content,
 			)
@@ -158,7 +158,7 @@ class Test_Meta extends AIOSEOP_Test_Base {
 		global $aioseop_options;
 		$id = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
+				'post_type'  => 'post',
 				'post_title' => $title,
 			)
 		);
@@ -225,7 +225,7 @@ class Test_Meta extends AIOSEOP_Test_Base {
 
 		$id = $this->factory->post->create(
 			array(
-				'post_type' => $type,
+				'post_type'  => $type,
 				'post_title' => 'heyhey',
 			)
 		);
@@ -284,13 +284,13 @@ class Test_Meta extends AIOSEOP_Test_Base {
 
 		$post_id = $this->factory->post->create(
 			array(
-				'post_type' => 'post',
+				'post_type'  => 'post',
 				'post_title' => 'heyhey',
 			)
 		);
 		$page_id = $this->factory->post->create(
 			array(
-				'post_type' => 'page',
+				'post_type'  => 'page',
 				'post_title' => 'heyhey',
 			)
 		);
@@ -299,8 +299,8 @@ class Test_Meta extends AIOSEOP_Test_Base {
 		// what keyword should each title contain.
 		$ids    = array(
 			'MEDIA' => $attachment_ids[0],
-			'POST' => $post_id,
-			'PAGE' => $page_id,
+			'POST'  => $post_id,
+			'PAGE'  => $page_id,
 		);
 
 		$aioseop_options['aiosp_attachment_title_format'] = '%post_title% - MEDIA';

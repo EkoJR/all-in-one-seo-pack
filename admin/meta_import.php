@@ -522,7 +522,7 @@ function aiosp_seometa_import() {
 	 */
 	$_aiosp_seometa_plugins = array(
 		// alphabatized.
-		'Add Meta Tags' => array(
+		'Add Meta Tags'                => array(
 			'Custom Doctitle'  => '_amt_title',
 			'META Description' => '_amt_description',
 			'META Keywords'    => '_amt_keywords',
@@ -553,7 +553,7 @@ function aiosp_seometa_import() {
 			'Canonical URI'    => '_wds_canonical',
 			'Redirect URI'     => '_wds_redirect',
 		),
-		'Jetpack'                => array(
+		'Jetpack'                      => array(
 			'META Description' => 'advanced_seo_description',
 		),
 		'Meta SEO Pack'                => array(
@@ -570,7 +570,7 @@ function aiosp_seometa_import() {
 			'META Description' => 'rank_math_description',
 			'Canonical URI'    => 'rank_math_canonical_url',
 		),
-		'SEOpressor'                 => array(
+		'SEOpressor'                   => array(
 			'Custom Doctitle'  => '_seopressor_meta_title',
 			'META Description' => '_seopressor_meta_description',
 		),

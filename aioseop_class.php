@@ -267,7 +267,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				'type'     => 'textarea',
 				'sanitize' => 'text',
 				'condshow' => array(
-					'aiosp_togglekeywords' => 0,
+					'aiosp_togglekeywords'       => 0,
 					'aiosp_use_static_home_info' => 0,
 				),
 			),
@@ -309,74 +309,74 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				),
 			),
 			'home_page_title_format'      => array(
-				'name'     => __( 'Home Page Title Format:', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => '%page_title%',
+				'name'    => __( 'Home Page Title Format:', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => '%page_title%',
 			),
 			'page_title_format'           => array(
-				'name'     => __( 'Page Title Format:', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => '%page_title% | %site_title%',
+				'name'    => __( 'Page Title Format:', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => '%page_title% | %site_title%',
 			),
 			'post_title_format'           => array(
-				'name'     => __( 'Post Title Format:', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => '%post_title% | %site_title%',
+				'name'    => __( 'Post Title Format:', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => '%post_title% | %site_title%',
 			),
 			'category_title_format'       => array(
-				'name'     => __( 'Category Title Format:', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => '%category_title% | %site_title%',
+				'name'    => __( 'Category Title Format:', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => '%category_title% | %site_title%',
 			),
 			'archive_title_format'        => array(
-				'name'     => __( 'Archive Title Format:', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => '%archive_title% | %site_title%',
+				'name'    => __( 'Archive Title Format:', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => '%archive_title% | %site_title%',
 			),
 			'date_title_format'           => array(
-				'name'     => __( 'Date Archive Title Format:', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => '%date% | %site_title%',
+				'name'    => __( 'Date Archive Title Format:', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => '%date% | %site_title%',
 			),
 			'author_title_format'         => array(
-				'name'     => __( 'Author Archive Title Format:', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => '%author% | %site_title%',
+				'name'    => __( 'Author Archive Title Format:', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => '%author% | %site_title%',
 			),
 			'tag_title_format'            => array(
-				'name'     => __( 'Tag Title Format:', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => '%tag% | %site_title%',
+				'name'    => __( 'Tag Title Format:', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => '%tag% | %site_title%',
 			),
 			'search_title_format'         => array(
-				'name'     => __( 'Search Title Format:', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => '%search% | %site_title%',
+				'name'    => __( 'Search Title Format:', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => '%search% | %site_title%',
 			),
 			'description_format'          => array(
-				'name'     => __( 'Description Format', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => '%description%',
+				'name'    => __( 'Description Format', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => '%description%',
 			),
 			'404_title_format'            => array(
-				'name'     => __( '404 Title Format:', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => __( 'Nothing found for %request_words%', 'all-in-one-seo-pack' ),
+				'name'    => __( '404 Title Format:', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => __( 'Nothing found for %request_words%', 'all-in-one-seo-pack' ),
 			),
 			'paged_format'                => array(
-				'name'     => __( 'Paged Format:', 'all-in-one-seo-pack' ),
-				'type'     => 'text',
-				'default'  => sprintf( ' - %s %%page%%', __( 'Part', 'all-in-one-seo-pack' ) ),
+				'name'    => __( 'Paged Format:', 'all-in-one-seo-pack' ),
+				'type'    => 'text',
+				'default' => sprintf( ' - %s %%page%%', __( 'Part', 'all-in-one-seo-pack' ) ),
 			),
 			'cpostactive'                 => array(
-				'name'     => __( 'SEO on only these Content Types:', 'all-in-one-seo-pack' ),
-				'type'     => 'multicheckbox',
-				'default'  => array( 'post', 'page' ),
+				'name'    => __( 'SEO on only these Content Types:', 'all-in-one-seo-pack' ),
+				'type'    => 'multicheckbox',
+				'default' => array( 'post', 'page' ),
 			),
 			'taxactive'                   => array(
-				'name'     => __( 'SEO on only these taxonomies:', 'all-in-one-seo-pack' ),
-				'type'     => 'multicheckbox',
-				'default'  => array( 'category', 'post_tag' ),
+				'name'    => __( 'SEO on only these taxonomies:', 'all-in-one-seo-pack' ),
+				'type'    => 'multicheckbox',
+				'default' => array( 'category', 'post_tag' ),
 			),
 			'cpostnoindex'                => array(
 				'name'    => __( 'Default to NOINDEX:', 'all-in-one-seo-pack' ),
@@ -388,10 +388,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				'type'    => 'multicheckbox',
 				'default' => array(),
 			),
-			'posttypecolumns' => array(
-				'name'     => __( 'Show Column Labels for Custom Post Types:', 'all-in-one-seo-pack' ),
-				'type'     => 'multicheckbox',
-				'default'  => array( 'post', 'page' ),
+			'posttypecolumns'             => array(
+				'name'    => __( 'Show Column Labels for Custom Post Types:', 'all-in-one-seo-pack' ),
+				'type'    => 'multicheckbox',
+				'default' => array( 'post', 'page' ),
 			),
 			'google_verify'               => array(
 				'name'    => __( 'Google Search Console:', 'all-in-one-seo-pack' ),
@@ -408,12 +408,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				'default' => '',
 				'type'    => 'text',
 			),
-			'yandex_verify'            => array(
+			'yandex_verify'               => array(
 				'name'    => __( 'Yandex Webmaster Tools:', 'all-in-one-seo-pack' ),
 				'default' => '',
 				'type'    => 'text',
 			),
-			'baidu_verify'            => array(
+			'baidu_verify'                => array(
 				'name'    => __( 'Baidu Webmaster Tools:', 'all-in-one-seo-pack' ),
 				'default' => '',
 				'type'    => 'text',
@@ -545,12 +545,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				'name'     => __( 'Enhanced Ecommerce:', 'all-in-one-seo-pack' ),
 				'default'  => 0,
 				'condshow' => array(
-					'aiosp_google_analytics_id'        => array(
+					'aiosp_google_analytics_id' => array(
 						'lhs' => 'aiosp_google_analytics_id',
 						'op'  => '!=',
 						'rhs' => '',
 					),
-					'aiosp_ga_advanced_options'        => 'on',
+					'aiosp_ga_advanced_options' => 'on',
 				),
 			),
 			'use_categories'              => array(
@@ -593,9 +593,9 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				'default' => 0,
 			),
 			'tax_noindex'                 => array(
-				'name'     => __( 'Use noindex for Taxonomy Archives:', 'all-in-one-seo-pack' ),
-				'type'     => 'multicheckbox',
-				'default'  => array(),
+				'name'    => __( 'Use noindex for Taxonomy Archives:', 'all-in-one-seo-pack' ),
+				'type'    => 'multicheckbox',
+				'default' => array(),
 			),
 			'paginated_noindex'           => array(
 				'name'    => __( 'Use noindex for paginated pages/posts:', 'all-in-one-seo-pack' ),
@@ -610,8 +610,8 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				'default' => 0,
 			),
 			'skip_excerpt'                => array(
-				'name'    => __( 'Use Content For Autogenerated Descriptions:', 'all-in-one-seo-pack' ),
-				'default' => 0,
+				'name'     => __( 'Use Content For Autogenerated Descriptions:', 'all-in-one-seo-pack' ),
+				'default'  => 0,
 				'condshow' => array( 'aiosp_generate_descriptions' => 'on' ),
 			),
 			'run_shortcodes'              => array(
@@ -681,9 +681,9 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 
 		$this->locations = array(
 			'default' => array(
-				'name' => $this->name,
-				'prefix' => 'aiosp_',
-				'type' => 'settings',
+				'name'    => $this->name,
+				'prefix'  => 'aiosp_',
+				'type'    => 'settings',
 				'options' => null,
 			),
 			'aiosp'   => array(
@@ -749,26 +749,26 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 						'rows'  => 2,
 					),
 
-					'keywords'          => array(
+					'keywords'           => array(
 						'name' => __( 'Keywords (comma separated)', 'all-in-one-seo-pack' ),
 						'type' => 'text',
 					),
-					'custom_link'       => array(
+					'custom_link'        => array(
 						'name' => __( 'Custom Canonical URL', 'all-in-one-seo-pack' ),
 						'type' => 'text',
 						'size' => 60,
 					),
-					'noindex'           => array(
+					'noindex'            => array(
 						'name'    => __( 'NOINDEX this page/post', 'all-in-one-seo-pack' ),
 						'default' => '',
 					),
-					'nofollow'          => array(
+					'nofollow'           => array(
 						'name'    => __( 'NOFOLLOW this page/post', 'all-in-one-seo-pack' ),
 						'default' => '',
 					),
-					'sitemap_exclude'   => array( 'name' => __( 'Exclude From Sitemap', 'all-in-one-seo-pack' ) ),
-					'disable'           => array( 'name' => __( 'Disable on this page/post', 'all-in-one-seo-pack' ) ),
-					'disable_analytics' => array(
+					'sitemap_exclude'    => array( 'name' => __( 'Exclude From Sitemap', 'all-in-one-seo-pack' ) ),
+					'disable'            => array( 'name' => __( 'Disable on this page/post', 'all-in-one-seo-pack' ) ),
+					'disable_analytics'  => array(
 						'name'     => __( 'Disable Google Analytics', 'all-in-one-seo-pack' ),
 						'condshow' => array( 'aiosp_disable' => 'on' ),
 					),
@@ -1144,7 +1144,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			if ( empty( $post->post_modified_gmt ) ) {
 				$wp_query = new WP_Query(
 					array(
-						'p' => $post_id,
+						'p'         => $post_id,
 						'post_type' => $post->post_type,
 					)
 				);
@@ -3289,7 +3289,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 						'type'     => 'text',
 						'default'  => '%taxonomy_title% | %site_title%',
 						'condshow' => array(
-							'aiosp_taxactive\[\]'  => $p,
+							'aiosp_taxactive\[\]' => $p,
 						),
 					);
 					$this->layout['cpt']['options'][] = $field;
@@ -4070,7 +4070,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 					'bing'      => 'msvalidate.01',
 					'pinterest' => 'p:domain_verify',
 					'yandex'    => 'yandex-verification',
-					'baidu'    => 'baidu-site-verification',
+					'baidu'     => 'baidu-site-verification',
 				) as $k => $v
 			) {
 				if ( ! empty( $aioseop_options[ "aiosp_{$k}_verify" ] ) ) {
