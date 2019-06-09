@@ -9,6 +9,13 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 
 	class All_in_One_SEO_Pack_Performance extends All_in_One_SEO_Pack_Module {
 
+		/**
+		 * Module Info
+		 *
+		 * @since ?
+		 *
+		 * @var array $module_info
+		 */
 		protected $module_info = array();
 
 		function __construct( $mod ) {

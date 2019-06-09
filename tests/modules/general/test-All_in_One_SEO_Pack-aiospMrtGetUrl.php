@@ -23,6 +23,14 @@ require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-aioseop-test-base.php';
  */
 class Tests_All_in_One_SEO_Pack_AiospMrtGetUrl extends AIOSEOP_Test_Base {
 
+	/**
+	 * Post IDs
+	 *
+	 * @since 2.4.4.1
+	 * @access private
+	 *
+	 * @var array
+	 */
 	private $post_ids = array();
 
 	/**

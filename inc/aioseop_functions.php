@@ -962,6 +962,13 @@ if ( ! function_exists( 'parse_ini_string' ) ) {
 			// @codingStandardsIgnoreStart
 			class parse_ini_filter extends php_user_filter {
 			// @codingStandardsIgnoreEnd
+				/**
+				 * Buffer
+				 *
+				 * @since ?
+				 *
+				 * @var string $buf
+				 */
 				static $buf = '';
 
 				/**

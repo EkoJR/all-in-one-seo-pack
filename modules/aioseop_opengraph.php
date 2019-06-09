@@ -7,7 +7,22 @@
  */
 if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 	class All_in_One_SEO_Pack_Opengraph extends All_in_One_SEO_Pack_Module {
+		/**
+		 * Facebook Object Types
+		 *
+		 * @since ?
+		 *
+		 * @var array
+		 */
 		var $fb_object_types;
+
+		/**
+		 * Type
+		 *
+		 * @since ?
+		 *
+		 * @var string $type
+		 */
 		var $type;
 
 		/**

@@ -9,24 +9,85 @@ if ( ! class_exists( 'AIOSEOP_Translations' ) ) :
 	 */
 	class AIOSEOP_Translations {
 
+		/**
+		 * Current Local
+		 *
+		 * @since ?
+		 *
+		 * @var string $current_locale
+		 */
 		public $current_locale = '';
 
+		/**
+		 * URL
+		 *
+		 * @since ?
+		 *
+		 * @var string $url
+		 */
 		public $url = 'https://translate.wordpress.org/api/projects/wp-plugins/all-in-one-seo-pack/dev';
 
+		/**
+		 * Name
+		 *
+		 * @since ?
+		 *
+		 * @var string $name
+		 */
 		public $name = '';
 
 		/**
 		 * Loop through the locale info.
 		 *
 		 * @since 2.3.5
-		 * @access public
+		 *
 		 * @var string $wplocale Information for a particular locale (in loop)
 		 */
 		public $wplocale = '';
+
+		/**
+		 * Translated Count
+		 *
+		 * @since ?
+		 *
+		 * @var int $translated_count
+		 */
 		public $translated_count = 0;
+
+		/**
+		 * Translation URL
+		 *
+		 * @since ?
+		 *
+		 * @var string $translation_url
+		 */
 		public $translation_url = 'https://translate.wordpress.org/projects/wp-plugins/all-in-one-seo-pack';
+
+		/**
+		 * Slug
+		 *
+		 * @since ?
+		 *
+		 * @var string $slug
+		 */
 		public $slug = '';
+
+		/**
+		 * Percent Translated
+		 *
+		 * @since ?
+		 *
+		 * @var string $percent_translated
+		 */
 		public $percent_translated = '';
+
+		/**
+		 * Native Name
+		 *
+		 * @since 2.3.14.1
+		 *
+		 * @var string $native_name
+		 */
 		public $native_name = '';
 
 		/**

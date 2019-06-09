@@ -9,8 +9,22 @@ if ( class_exists( 'WPSEO_Import_Hooks' ) ) {
 	 */
 	class WPSEO_Import_AIOSEO_Hooks extends WPSEO_Import_Hooks {
 
+		/**
+		 * Plugin File
+		 *
+		 * @since ?
+		 *
+		 * @var string $plugin_file
+		 */
 		protected $plugin_file = 'all-in-one-seo-pack/all_in_one_seo_pack.php';
 
+		/**
+		 * Deactivate Listener
+		 *
+		 * @since ?
+		 *
+		 * @var string $deactivation_listener
+		 */
 		protected $deactivation_listener = 'deactivate_aioseo';
 
 		/**

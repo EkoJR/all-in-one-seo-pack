@@ -16,40 +16,181 @@ require_once( AIOSEOP_PLUGIN_DIR . 'admin/aioseop_module_class.php' ); // Includ
  */
 class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 
-	// Current version of the plugin.
+	/**
+	 * Plugin Version
+	 *
+	 * Current version of the plugin.
+	 *
+	 * @since ?
+	 *
+	 * @var string $version
+	 */
 	var $version = AIOSEOP_VERSION;
 
-	// Max numbers of chars in auto-generated description.
+	/**
+	 * Max Description Length
+	 *
+	 * Max numbers of chars in auto-generated description.
+	 *
+	 * @since ?
+	 *
+	 * @var int $maximum_description_length
+	 */
 	var $maximum_description_length = 160;
 
-	// Minimum number of chars an excerpt should be so that it can be used as description.
+	/**
+	 * Min Description Length
+	 *
+	 * Minimum number of chars an excerpt should be so that it can be used as description.
+	 *
+	 * @since ?
+	 *
+	 * @var int $minimum_description_length
+	 */
 	var $minimum_description_length = 1;
 
-	// Whether output buffering is already being used during forced title rewrites.
+	/**
+	 * OB Start Detected
+	 *
+	 * Whether output buffering is already being used during forced title rewrites.
+	 *
+	 * @since ?
+	 *
+	 * @var bool $ob_start_detected
+	 */
 	var $ob_start_detected = false;
 
-	// The start of the title text in the head section for forced title rewrites.
+	/**
+	 * Title Start
+	 *
+	 * The start of the title text in the head section for forced title rewrites.
+	 *
+	 * @since ?
+	 *
+	 * @var int $title_start
+	 */
 	var $title_start = - 1;
 
-	// The end of the title text in the head section for forced title rewrites.
+	/**
+	 * Title End
+	 *
+	 * The end of the title text in the head section for forced title rewrites.
+	 *
+	 * @since ?
+	 *
+	 * @var int $title_end
+	 */
 	var $title_end = - 1;
 
-	// The title before rewriting.
+	/**
+	 * Original Title
+	 *
+	 * The title before rewriting.
+	 *
+	 * @since ?
+	 *
+	 * @var string $orig_title
+	 */
 	var $orig_title = '';
 
-	// Filename of log file.
+	/**
+	 * Log File
+	 *
+	 * Filename of log file.
+	 *
+	 * @since ?
+	 *
+	 * @var string $log_file
+	 */
 	var $log_file;
 
-	// Flag whether there should be logging.
+	/**
+	 * Do Log
+	 *
+	 * Flag whether there should be logging.
+	 *
+	 * @since ?
+	 *
+	 * @var bool $do_log
+	 */
 	var $do_log;
 
+	/**
+	 * Token
+	 *
+	 * @since ?
+	 * @deprecated
+	 *
+	 * @var null $token
+	 */
 	var $token;
+
+	/**
+	 * Secret
+	 *
+	 * @since ?
+	 * @deprecated
+	 *
+	 * @var null $secret
+	 */
 	var $secret;
+
+	/**
+	 * Access Token
+	 *
+	 * @since ?
+	 * @deprecated
+	 *
+	 * @var null $access_token
+	 */
 	var $access_token;
+
+	/**
+	 * GA Token
+	 *
+	 * @since ?
+	 * @deprecated
+	 *
+	 * @var null $ga_token
+	 */
 	var $ga_token;
+
+	/**
+	 * Account Cache
+	 *
+	 * @since ?
+	 * @deprecated
+	 *
+	 * @var null $account_cache
+	 */
 	var $account_cache;
+
+	/**
+	 * Profile ID
+	 *
+	 * @since ?
+	 * @deprecated
+	 *
+	 * @var null $profile_id
+	 */
 	var $profile_id;
+
+	/**
+	 * Meta Opts
+	 *
+	 * @since ?
+	 *
+	 * @var bool $meta_opts
+	 */
 	var $meta_opts = false;
+
+	/**
+	 * Is Front Page
+	 *
+	 * @since ?
+	 *
+	 * @var bool|null $is_front_page
+	 */
 	var $is_front_page = null;
 
 	/**

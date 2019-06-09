@@ -10,37 +10,245 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 	 * The module base class; handles settings, options, menus, metaboxes, etc.
 	 */
 	abstract class All_in_One_SEO_Pack_Module {
+		/**
+		 * Instance
+		 *
+		 * @since ?
+		 *
+		 * @var null $instance
+		 */
 		public static $instance = null;
+
+		/**
+		 * Plugin Name
+		 *
+		 * @since ?
+		 *
+		 * @var string $plugin_name
+		 */
 		protected $plugin_name;
+
+		/**
+		 * Name
+		 *
+		 * @since ?
+		 *
+		 * @var string $name
+		 */
 		protected $name;
+
+		/**
+		 * Menu Name
+		 *
+		 * @since ?
+		 *
+		 * @var string $menu_name
+		 */
 		protected $menu_name;
+
+		/**
+		 * Module Prefix
+		 *
+		 * @since ?
+		 *
+		 * @var string $prefix
+		 */
 		protected $prefix;
+
+		/**
+		 * File
+		 *
+		 * @since ?
+		 *
+		 * @var string $file
+		 */
 		protected $file;
+
+		/**
+		 * Module Options
+		 *
+		 * @since ?
+		 *
+		 * @var array $options {
+		 *     TODO Add details to show module database options. May need to use module classes instead.
+		 * }
+		 */
 		protected $options;
+
+		/**
+		 * Option Name
+		 *
+		 * @since ?
+		 *
+		 * @var string $option_name
+		 */
 		protected $option_name;
+
+		/**
+		 * Default Options
+		 *
+		 * @since ?
+		 *
+		 * @var array $default_options
+		 */
 		protected $default_options;
+
+		/**
+		 * Help Text
+		 *
+		 * @since ?
+		 * @deprecated
+		 *
+		 * @var array $help_text
+		 */
 		protected $help_text = array();
+
+		/**
+		 * Help Anchors
+		 *
+		 * @since ?
+		 * @deprecated
+		 *
+		 * @var array $help_anchors
+		 */
 		protected $help_anchors = array();
-		// organize settings into settings pages with a menu items and/or metaboxes on post types edit screen; optional.
+
+		/**
+		 * Locations
+		 *
+		 * (Optional) Organize settings into settings pages with a menu items and/or metaboxes on post types edit screen.
+		 *
+		 * @since ?
+		 *
+		 * @var array $locations
+		 */
 		protected $locations = null;
-		// organize settings on a settings page into multiple, separate metaboxes; optional.
+
+		/**
+		 * Layout
+		 *
+		 * (Optional) Organize settings on a settings page into multiple, separate metaboxes.
+		 *
+		 * @since ?
+		 *
+		 * @var array $layout
+		 */
 		protected $layout = null;
-		// organize layouts on a settings page into multiple, separate tabs; optional.
+
+		/**
+		 * Tabs
+		 *
+		 * (Optional) Organize layouts on a settings page into multiple.
+		 *
+		 * @since ?
+		 *
+		 * @var array $tabs
+		 */
 		protected $tabs = null;
-		// the current tab.
+
+		/**
+		 * Current Tab
+		 *
+		 * @since ?
+		 *
+		 * @var string $current_tab
+		 */
 		protected $current_tab = null;
-		// the current page hook.
+
+		/**
+		 * Pagehook
+		 *
+		 * The current page hook.
+		 *
+		 * @since ?
+		 *
+		 * @var string $pagehook
+		 */
 		protected $pagehook = null;
+
+		/**
+		 * Store Option
+		 *
+		 * @since ?
+		 *
+		 * @var bool
+		 */
 		protected $store_option = false;
+
+		/**
+		 * Parent Option
+		 *
+		 * @since ?
+		 *
+		 * @var string $parent_option
+		 */
 		protected $parent_option = 'aioseop_options';
+
+		/**
+		 * Post Metaboxes
+		 *
+		 * @since ?
+		 *
+		 * @var array $post_metaboxes
+		 */
 		protected $post_metaboxes = array();
+
+		/**
+		 * Tabbed Metaboxes
+		 *
+		 * @since ?
+		 *
+		 * @var bool
+		 */
 		protected $tabbed_metaboxes = true;
-		// used for WP Filesystem.
+
+		/**
+		 * Credentials
+		 *
+		 * Used for WP Filesystem.
+		 *
+		 * @since ?
+		 *
+		 * @var bool
+		 */
 		protected $credentials = false;
-		// used for passing data to JavaScript.
+
+		/**
+		 * Script Data
+		 *
+		 * Used for passing data to JavaScript.
+		 *
+		 * @since ?
+		 *
+		 * @var array $script_data
+		 */
 		protected $script_data = null;
+
+		/**
+		 * Plugin Path
+		 *
+		 * @since ?
+		 *
+		 * @var array|null
+		 */
 		protected $plugin_path = null;
+
+		/**
+		 * Pointers
+		 *
+		 * @since ?
+		 *
+		 * @var array
+		 */
 		protected $pointers = array();
+
+		/**
+		 * Form
+		 *
+		 * @since ?
+		 *
+		 * @var string $form
+		 */
 		protected $form = 'dofollow';
 
 		/**

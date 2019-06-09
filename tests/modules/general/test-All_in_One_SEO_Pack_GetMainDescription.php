@@ -33,11 +33,32 @@ require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-aioseop-test-base.php';
  * @package WP_UnitTestCase
  */
 class Test_GetMainDescription extends AIOSEOP_Test_Base {
+
 	/**
-	 * (Test) Config Variables
+	 * Post Amount
+	 *
+	 * @since 2.4.4.1
+	 *
+	 * @var int $post_amount
 	 */
-	public $post_amount          = 5;
-	public $post_amount_excerpt  = 5;
+	public $post_amount = 5;
+
+	/**
+	 * Post Amount Excerpt
+	 *
+	 * @since 2.4.4.1
+	 *
+	 * @var int $post_amount_excerpt
+	 */
+	public $post_amount_excerpt = 5;
+
+	/**
+	 * AIOSEOP Description
+	 *
+	 * @since 2.4.4.1
+	 *
+	 * @var array $aioseop_descriptions
+	 */
 	public $aioseop_descriptions = array(
 		'',
 		'Short Description',
@@ -47,6 +68,10 @@ class Test_GetMainDescription extends AIOSEOP_Test_Base {
 
 	/**
 	 * Post IDs
+	 *
+	 * @since 2.4.4.1
+	 *
+	 * @var array $post_ids
 	 */
 	public $post_ids = array();
 

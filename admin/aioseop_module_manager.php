@@ -14,10 +14,49 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module_Manager' ) ) {
 	 * Class All_in_One_SEO_Pack_Module_Manager
 	 */
 	class All_in_One_SEO_Pack_Module_Manager {
+		/**
+		 * Modules
+		 *
+		 * @since ?
+		 *
+		 * @var array $modules
+		 */
 		protected $modules = array();
+
+		/**
+		 * Settings Update
+		 *
+		 * @since ?
+		 *
+		 * @var bool $settings_update
+		 */
 		protected $settings_update = false;
+
+		/**
+		 * Settings Reset
+		 *
+		 * @since ?
+		 *
+		 * @var bool $settings_reset
+		 */
 		protected $settings_reset = false;
+
+		/**
+		 * Settings Reset All
+		 *
+		 * @since ?
+		 *
+		 * @var bool $settings_reset_all
+		 */
 		protected $settings_reset_all = false;
+
+		/**
+		 * Module Settings Update
+		 *
+		 * @since ?
+		 *
+		 * @var bool $module_settings_update
+		 */
 		protected $module_settings_update = false;
 
 		/**
