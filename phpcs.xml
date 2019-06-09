@@ -34,7 +34,6 @@
         <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
         <exclude name="Generic.Files.LineEndings.InvalidEOLChar" />
         <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
-        <exclude name="WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase" />
 
         <!-- these can be removed once the initial part of #1003 is closed -->
 
