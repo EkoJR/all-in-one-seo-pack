@@ -158,10 +158,26 @@ class Test_Robots extends AIOSEOP_Test_Base {
 
 	public function sanitizedRulesProvider() {
 		return array(
-			array( 'path' => 'test.txt', 'type' => 'disallow', 'agent' => '*' ),
-			array( 'path' => 'wp-content/image.jpg', 'type' => 'allow', 'agent' => '*' ),
-			array( 'path' => 'temp.*', 'type' => 'allow', 'agent' => '*' ),
-			array( 'path' => 'wp-content/*.txt', 'type' => 'disallow', 'agent' => '*' ),
+			array(
+				'path' => 'test.txt',
+				'type' => 'disallow',
+				'agent' => '*',
+			),
+			array(
+				'path' => 'wp-content/image.jpg',
+				'type' => 'allow',
+				'agent' => '*',
+			),
+			array(
+				'path' => 'temp.*',
+				'type' => 'allow',
+				'agent' => '*',
+			),
+			array(
+				'path' => 'wp-content/*.txt',
+				'type' => 'disallow',
+				'agent' => '*',
+			),
 		);
 	}
 
@@ -196,14 +212,70 @@ class Test_Robots extends AIOSEOP_Test_Base {
 
 	public function defaultRulesProvider() {
 		return array(
-			array( array( 'path' => '/wp-admin/', 'type' => 'disallow', 'agent' => '*' ), 'Rule cannot be overridden' ),
-			array( array( 'path' => '/wp-admin/admin-ajax.php', 'type' => 'allow', 'agent' => '*' ), 'Rule cannot be overridden' ),
-			array( array( 'path' => '/wp-admin/', 'type' => 'allow', 'agent' => '*' ), 'Rule cannot be overridden' ),
-			array( array( 'path' => '/wp-admin/admin-ajax.php', 'type' => 'disallow', 'agent' => '*' ), 'Rule cannot be overridden' ),
-			array( array( 'path' => '/wp-*', 'type' => 'disallow', 'agent' => '*' ), 'Wild-card path cannot be overridden' ),
-			array( array( 'path' => '/wp-*/admin-ajax.*', 'type' => 'allow', 'agent' => '*' ), 'Wild-card path cannot be overridden' ),
-			array( array( 'path' => '/*-admin/', 'type' => 'allow', 'agent' => '*' ), 'Wild-card path cannot be overridden' ),
-			array( array( 'path' => '/*-admin/admin-ajax.*', 'type' => 'disallow', 'agent' => '*' ), 'Wild-card path cannot be overridden' ),
+			array(
+				array(
+					'path' => '/wp-admin/',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
+				'Rule cannot be overridden',
+			),
+			array(
+				array(
+					'path' => '/wp-admin/admin-ajax.php',
+					'type' => 'allow',
+					'agent' => '*',
+				),
+				'Rule cannot be overridden',
+			),
+			array(
+				array(
+					'path' => '/wp-admin/',
+					'type' => 'allow',
+					'agent' => '*',
+				),
+				'Rule cannot be overridden',
+			),
+			array(
+				array(
+					'path' => '/wp-admin/admin-ajax.php',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
+				'Rule cannot be overridden',
+			),
+			array(
+				array(
+					'path' => '/wp-*',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
+				'Wild-card path cannot be overridden',
+			),
+			array(
+				array(
+					'path' => '/wp-*/admin-ajax.*',
+					'type' => 'allow',
+					'agent' => '*',
+				),
+				'Wild-card path cannot be overridden',
+			),
+			array(
+				array(
+					'path' => '/*-admin/',
+					'type' => 'allow',
+					'agent' => '*',
+				),
+				'Wild-card path cannot be overridden',
+			),
+			array(
+				array(
+					'path' => '/*-admin/admin-ajax.*',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
+				'Wild-card path cannot be overridden',
+			),
 		);
 	}
 
@@ -253,79 +325,151 @@ class Test_Robots extends AIOSEOP_Test_Base {
 			// It should not be possible to add a duplicate rule for an individual file.
 			array(
 				array(
-					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/test.txt',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
-				array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
+				array(
+					'path' => '/test.txt',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
 				'Identical rule exists',
 			),
 			array(
 				array(
-					array( 'path' => '/wp-content/image.jpg', 'type' => 'allow', 'agent' => '*' ),
+					array(
+						'path' => '/wp-content/image.jpg',
+						'type' => 'allow',
+						'agent' => '*',
+					),
 				),
-				array( 'path' => '/wp-content/image.jpg', 'type' => 'allow', 'agent' => '*' ),
+				array(
+					'path' => '/wp-content/image.jpg',
+					'type' => 'allow',
+					'agent' => '*',
+				),
 				'Identical rule exists',
 			),
 
 			// It should not be possible to add a duplicate rule using wildcards for an individual file.
 			array(
 				array(
-					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/test.txt',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
-				array( 'path' => '/test.*', 'type' => 'disallow', 'agent' => '*' ),
+				array(
+					'path' => '/test.*',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
 				'Wild-card path cannot be overridden',
 			),
 
 			// It should not be possible to add a conflicting rule for an individual file.
 			array(
 				array(
-					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/test.txt',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
-				array( 'path' => '/test.txt', 'type' => 'allow', 'agent' => '*' ),
+				array(
+					'path' => '/test.txt',
+					'type' => 'allow',
+					'agent' => '*',
+				),
 				'Rule cannot be overridden',
 			),
 
 			// It should not be possible to add a conflicting rule using wildcards for an individual file.
 			array(
 				array(
-					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/test.txt',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
-				array( 'path' => '/test.*', 'type' => 'allow', 'agent' => '*' ),
+				array(
+					'path' => '/test.*',
+					'type' => 'allow',
+					'agent' => '*',
+				),
 				'Wild-card path cannot be overridden',
 			),
 
 			// It should not be possible to add a duplicate rule for a directory.
 			array(
 				array(
-					array( 'path' => '/wp-includes/', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/wp-includes/',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
-				array( 'path' => '/wp-includes/', 'type' => 'disallow', 'agent' => '*' ),
+				array(
+					'path' => '/wp-includes/',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
 				'Identical rule exists',
 			),
 
 			// It should not be possible to add a duplicate rule using wildcards for a directory.
 			array(
 				array(
-					array( 'path' => '/wp-includes/', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/wp-includes/',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
-				array( 'path' => '/wp-*/', 'type' => 'disallow', 'agent' => '*' ),
+				array(
+					'path' => '/wp-*/',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
 				'Wild-card path cannot be overridden',
 			),
 
 			// It should not be possible to add a conflicting rule for a directory.
 			array(
 				array(
-					array( 'path' => '/wp-includes/', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/wp-includes/',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
-				array( 'path' => '/wp-includes/', 'type' => 'allow', 'agent' => '*' ),
+				array(
+					'path' => '/wp-includes/',
+					'type' => 'allow',
+					'agent' => '*',
+				),
 				'Rule cannot be overridden',
 			),
 
 			// It should not be possible to add a conflicting rule using wildcards for a directory.
 			array(
 				array(
-					array( 'path' => '/wp-includes/', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/wp-includes/',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
-				array( 'path' => '/wp-*/', 'type' => 'allow', 'agent' => '*' ),
+				array(
+					'path' => '/wp-*/',
+					'type' => 'allow',
+					'agent' => '*',
+				),
 				'Wild-card path cannot be overridden',
 			),
 		);
@@ -396,19 +540,43 @@ class Test_Robots extends AIOSEOP_Test_Base {
 		return array(
 			array(
 				array(
-					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
-					array( 'path' => '/wp-admin', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/test.txt',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
+					array(
+						'path' => '/wp-admin',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
 				'/test.txt',
-				array( 'path' => '/testttt.txt', 'type' => 'disallow', 'agent' => '*' ),
+				array(
+					'path' => '/testttt.txt',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
 			),
 			array(
 				array(
-					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
-					array( 'path' => '/wp-admin', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/test.txt',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
+					array(
+						'path' => '/wp-admin',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
 				'/test.txt',
-				array( 'path' => '/wp-admin', 'type' => 'disallow', 'agent' => '*' ),
+				array(
+					'path' => '/wp-admin',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
 				'Identical rule exists',
 			),
 		);

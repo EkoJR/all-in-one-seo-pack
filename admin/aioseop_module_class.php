@@ -1660,7 +1660,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 						if ( ! empty( $post_thumbnail_id ) ) {
 							$image = wp_get_attachment_image_src( $post_thumbnail_id, $size );
 							if ( is_array( $image ) ) {
-								$img[] = array( 'type' => 'featured', 'id' => $post_thumbnail_id, 'link' => $image[0] );
+								$img[] = array(
+									'type' => 'featured',
+									'id' => $post_thumbnail_id,
+									'link' => $image[0],
+								);
 							}
 						}
 					}
@@ -1682,12 +1686,21 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 							)
 						);
 						if ( ! empty( $image ) ) {
-							$img[] = array( 'type' => 'meta_key', 'id' => $meta_key, 'link' => $image );
+							$img[] = array(
+								'type' => 'meta_key',
+								'id' => $meta_key,
+								'link' => $image,
+							);
 						}
 					}
 
 					if ( ! $post->post_modified_gmt != '' ) {
-						$wp_query = new WP_Query( array( 'p' => $post_id, 'post_type' => $post->post_type ) );
+						$wp_query = new WP_Query(
+							array(
+								'p' => $post_id,
+								'post_type' => $post->post_type,
+							)
+						);
 					}
 					if ( $post->post_type == 'page' ) {
 						$wp_query->is_page = true;
@@ -1718,7 +1731,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 						foreach ( $attachments as $id => $attachment ) {
 							$image = wp_get_attachment_image_src( $id, $size );
 							if ( is_array( $image ) ) {
-								$img[] = array( 'type' => 'attachment', 'id' => $id, 'link' => $image[0] );
+								$img[] = array(
+									'type' => 'attachment',
+									'id' => $id,
+									'link' => $image[0],
+								);
 							}
 						}
 					}
@@ -1726,7 +1743,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 					preg_match_all( '|<img.*?src=[\'"](.*?)[\'"].*?>|i', get_post_field( 'post_content', $post->ID ), $matches );
 					if ( isset( $matches ) && ! empty( $matches[1] ) && ! empty( $matches[1][0] ) ) {
 						foreach ( $matches[1] as $i => $m ) {
-							$img[] = array( 'type' => 'post_content', 'id' => 'post' . $count ++, 'link' => $m );
+							$img[] = array(
+								'type' => 'post_content',
+								'id' => 'post' . $count ++,
+								'link' => $m,
+							);
 						}
 					}
 					wp_reset_postdata();
@@ -3066,14 +3087,26 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 						<?php
 
 						$submit_options = array(
-							'action'         => array( 'type' => 'hidden', 'value' => 'aiosp_update_module' ),
-							'module'         => array( 'type' => 'hidden', 'value' => get_class( $this ) ),
-							'location'       => array( 'type' => 'hidden', 'value' => $location ),
+							'action'         => array(
+								'type' => 'hidden',
+								'value' => 'aiosp_update_module',
+							),
+							'module'         => array(
+								'type' => 'hidden',
+								'value' => get_class( $this ),
+							),
+							'location'       => array(
+								'type' => 'hidden',
+								'value' => $location,
+							),
 							'nonce-aioseop'  => array(
 								'type'  => 'hidden',
 								'value' => wp_create_nonce( 'aioseop-nonce' ),
 							),
-							'page_options'   => array( 'type' => 'hidden', 'value' => 'aiosp_home_description' ),
+							'page_options'   => array(
+								'type' => 'hidden',
+								'value' => 'aiosp_home_description',
+							),
 							'Submit'         => array(
 								'type'  => 'submit',
 								'class' => 'aioseop_update_options_button button-primary',

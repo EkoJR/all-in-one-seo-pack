@@ -27,7 +27,12 @@ class Test_Canonical_Urls extends AIOSEOP_Test_Base {
 		global $aioseop_options;
 		$aioseop_options['aiosp_can'] = 1;
 		update_option( 'aioseop_options', $aioseop_options );
-		$id = $this->factory->post->create( array( 'post_type' => 'post', 'post_content' => 'one <!--nextpage--> two <!--nextpage--> three <!--nextpage-->' ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_content' => 'one <!--nextpage--> two <!--nextpage--> three <!--nextpage-->',
+			)
+		);
 		$link_page = get_permalink( $id );
 		$pages[] = $link_page;
 		$pages[] = add_query_arg( 'page', 2, $link_page );
@@ -56,7 +61,12 @@ class Test_Canonical_Urls extends AIOSEOP_Test_Base {
 		global $aioseop_options;
 		$aioseop_options['aiosp_can'] = 1;
 		update_option( 'aioseop_options', $aioseop_options );
-		$id = $this->factory->post->create( array( 'post_type' => 'post', 'post_content' => 'one two three' ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_content' => 'one two three',
+			)
+		);
 		$link_page = get_permalink( $id );
 		$pages[] = $link_page;
 		$pages[] = add_query_arg( 'page', 2, $link_page );

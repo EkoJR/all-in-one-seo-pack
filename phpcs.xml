@@ -26,7 +26,6 @@
         <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
         <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
-        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing" />
 
         <exclude name="Squiz.PHP.CommentedOutCode" />
         <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />

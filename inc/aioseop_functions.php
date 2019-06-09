@@ -621,8 +621,14 @@ if ( ! function_exists( 'aioseop_ajax_scan_header' ) ) {
 		$output   = $aiosp->html_string_to_array( $output );
 		$meta     = '';
 		$metatags = array(
-			'facebook' => array( 'name' => 'property', 'value' => 'content' ),
-			'twitter'  => array( 'name' => 'name', 'value' => 'value' ),
+			'facebook' => array(
+				'name' => 'property',
+				'value' => 'content',
+			),
+			'twitter'  => array(
+				'name' => 'name',
+				'value' => 'value',
+			),
 		);
 		$metadata = array(
 			'facebook' => array(
@@ -1318,7 +1324,7 @@ function aioseop_do_shortcodes( $content ) {
 		// Second check is needed for shortcodes in Gutenberg Classic blocks.
 		if ( stripos( $content, $shortcode, 0 ) || 0 === stripos( $content, $shortcode, 0 ) ) {
 			global $shortcode_tags;
-			$shortcode_tag = str_replace( array('[', ']'), '', $shortcode );
+			$shortcode_tag = str_replace( array( '[', ']' ), '', $shortcode );
 			if ( array_key_exists( $shortcode_tag, $shortcode_tags ) ) {
 				$rtn_conflict_shortcodes[ $shortcode_tag ] = $shortcode_tags[ $shortcode_tag ];
 			}

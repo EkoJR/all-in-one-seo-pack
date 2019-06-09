@@ -38,4 +38,10 @@ activate_plugin( 'all-in-one-seo-pack/all_in_one_seo_pack.php' );
 global $current_user;
 $current_user = new WP_User( 1 );
 $current_user->set_role( 'administrator' );
-wp_update_user( array( 'ID' => 1, 'first_name' => 'Admin', 'last_name' => 'User' ) );
+wp_update_user(
+	array(
+		'ID' => 1,
+		'first_name' => 'Admin',
+		'last_name' => 'User',
+	)
+);

@@ -266,7 +266,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				'default'  => null,
 				'type'     => 'textarea',
 				'sanitize' => 'text',
-				'condshow' => array( 'aiosp_togglekeywords' => 0, 'aiosp_use_static_home_info' => 0 ),
+				'condshow' => array(
+					'aiosp_togglekeywords' => 0,
+					'aiosp_use_static_home_info' => 0,
+				),
 			),
 			'use_static_home_info'        => array(
 				'name'            => __( 'Use Static Front Page Instead', 'all-in-one-seo-pack' ),
@@ -677,7 +680,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		}
 
 		$this->locations = array(
-			'default' => array( 'name' => $this->name, 'prefix' => 'aiosp_', 'type' => 'settings', 'options' => null ),
+			'default' => array(
+				'name' => $this->name,
+				'prefix' => 'aiosp_',
+				'type' => 'settings',
+				'options' => null,
+			),
 			'aiosp'   => array(
 				'name'            => $this->plugin_name,
 				'type'            => 'metabox',
@@ -1134,7 +1142,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			$opts    = $this->meta_opts;
 			$post_id = $p->ID;
 			if ( empty( $post->post_modified_gmt ) ) {
-				$wp_query = new WP_Query( array( 'p' => $post_id, 'post_type' => $post->post_type ) );
+				$wp_query = new WP_Query(
+					array(
+						'p' => $post_id,
+						'post_type' => $post->post_type,
+					)
+				);
 			}
 			if ( 'page' === $post->post_type ) {
 				$wp_query->is_page = true;
@@ -4603,7 +4616,10 @@ EOF;
 			}
 		}
 
-		return array( 'prev' => $prev, 'next' => $next );
+		return array(
+			'prev' => $prev,
+			'next' => $next,
+		);
 	}
 
 	/**

@@ -59,7 +59,7 @@ class Test_Shortcodes_In_Description extends AIOSEOP_Test_Base {
 		$id = $this->factory->post->create( $args );
 
 		$link = get_permalink( $id );
-		$meta_tags = $this->parse_html( $link, array ('meta') );
+		$meta_tags = $this->parse_html( $link, array( 'meta' ) );
 		$description = preg_replace( '(\[(.*?)\])', '', $meta_tags[0]['content'] );
 
 		$this->assertEquals( $description, $expected_description );
@@ -75,7 +75,7 @@ class Test_Shortcodes_In_Description extends AIOSEOP_Test_Base {
 	 */
 	public function conflictingShortcodeProvider() {
 		return [
-			'WooCommerce My Account' => ['[woocommerce_my_account]'],
+			'WooCommerce My Account' => [ '[woocommerce_my_account]' ],
 		];
 	}
 }

@@ -34,7 +34,13 @@ class Test_Meta extends AIOSEOP_Test_Base {
 		global $aioseop_options;
 
 		$meta_desc  = 'heyhey';
-		$id = $this->factory->post->create( array( 'post_type' => 'post', 'post_title' => 'hey', 'post_content' => $meta_desc ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_title' => 'hey',
+				'post_content' => $meta_desc,
+			)
+		);
 		// update the AIOSEOP description to be the same as the post description.
 		update_post_meta( $id, '_aioseop_description', $meta_desc );
 
@@ -75,7 +81,14 @@ class Test_Meta extends AIOSEOP_Test_Base {
 
 		$meta_desc  = 'heyhey';
 		// very, very important: post excerpt has to be empty or this will not work.
-		$id = $this->factory->post->create( array( 'post_type' => 'post', 'post_title' => 'hey', 'post_content' => '', 'post_excerpt' => '' ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_title' => 'hey',
+				'post_content' => '',
+				'post_excerpt' => '',
+			)
+		);
 		// update the AIOSEOP description.
 		update_post_meta( $id, 'custom_description', $meta_desc );
 
@@ -108,7 +121,14 @@ class Test_Meta extends AIOSEOP_Test_Base {
 	public function test_auto_generate_description( $content, $meta_desc, $excerpt = '' ) {
 		wp_set_current_user( 1 );
 		global $aioseop_options;
-		$id = $this->factory->post->create( array( 'post_type' => 'post', 'post_title' => 'hey' . rand(), 'post_excerpt' => $excerpt, 'post_content' => $content ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_title' => 'hey' . rand(),
+				'post_excerpt' => $excerpt,
+				'post_content' => $content,
+			)
+		);
 		// update the format.
 		$aioseop_options['aiosp_description_format'] = '%description%';
 		$aioseop_options['aiosp_generate_descriptions'] = 'on';
@@ -136,7 +156,12 @@ class Test_Meta extends AIOSEOP_Test_Base {
 	public function test_post_title_in_meta_desc( $title, $meta_desc, $format ) {
 		wp_set_current_user( 1 );
 		global $aioseop_options;
-		$id = $this->factory->post->create( array( 'post_type' => 'post', 'post_title' => $title ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_title' => $title,
+			)
+		);
 		// update the format.
 		$aioseop_options['aiosp_description_format'] = $format;
 		update_option( 'aioseop_options', $aioseop_options );
@@ -198,7 +223,12 @@ class Test_Meta extends AIOSEOP_Test_Base {
 		wp_set_current_user( 1 );
 		global $aioseop_options;
 
-		$id = $this->factory->post->create( array( 'post_type' => $type, 'post_title' => 'heyhey' ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_type' => $type,
+				'post_title' => 'heyhey',
+			)
+		);
 
 		// remove the default action so that canonical is not included by default.
 		remove_action( 'wp_head', 'rel_canonical' );
@@ -252,8 +282,18 @@ class Test_Meta extends AIOSEOP_Test_Base {
 
 		global $aioseop_options;
 
-		$post_id = $this->factory->post->create( array( 'post_type' => 'post', 'post_title' => 'heyhey' ) );
-		$page_id = $this->factory->post->create( array( 'post_type' => 'page', 'post_title' => 'heyhey' ) );
+		$post_id = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_title' => 'heyhey',
+			)
+		);
+		$page_id = $this->factory->post->create(
+			array(
+				'post_type' => 'page',
+				'post_title' => 'heyhey',
+			)
+		);
 		$attachment_ids = $this->create_attachments( 1 );
 
 		// what keyword should each title contain.

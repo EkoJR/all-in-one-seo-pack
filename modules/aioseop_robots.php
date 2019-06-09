@@ -53,7 +53,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Robots' ) ) {
 				'type'          => array(
 					'name'  => __( 'Rule', 'all-in-one-seo-pack' ),
 					'type'  => 'select',
-					'initial_options' => array( 'allow' => __( 'Allow', 'all-in-one-seo-pack' ), 'disallow' => __( 'Disallow', 'all-in-one-seo-pack' ) ),
+					'initial_options' => array(
+						'allow' => __( 'Allow', 'all-in-one-seo-pack' ),
+						'disallow' => __( 'Disallow', 'all-in-one-seo-pack' ),
+					),
 					'label' => 'top',
 					'save'  => false,
 				),
@@ -89,7 +92,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Robots' ) ) {
 				),
 			);
 
-			add_filter( $this->prefix . 'submit_options', array( $this, 'submit_options'), 10, 2 );
+			add_filter( $this->prefix . 'submit_options', array( $this, 'submit_options' ), 10, 2 );
 
 			$this->default_options = array_merge( $this->default_options, $this->rule_fields );
 

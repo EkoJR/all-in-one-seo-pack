@@ -85,8 +85,18 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 			);
 
 			$system_status = array(
-				'status' => array( 'default' => '', 'type' => 'html', 'label' => 'none', 'save' => false ),
-				'send_email' => array( 'default' => '', 'type' => 'html', 'label' => 'none', 'save' => false ),
+				'status' => array(
+					'default' => '',
+					'type' => 'html',
+					'label' => 'none',
+					'save' => false,
+				),
+				'send_email' => array(
+					'default' => '',
+					'type' => 'html',
+					'label' => 'none',
+					'save' => false,
+				),
 			);
 
 			$this->layout['system_status'] = array(

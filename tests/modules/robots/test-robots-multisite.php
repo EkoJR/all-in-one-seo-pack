@@ -69,28 +69,68 @@ class Test_Robots_Multisite extends Test_Robots {
 	public function conflictingRulesProvider() {
 		return array(
 			array(
-				array( 'path' => 'test.txt', 'type' => 'disallow', 'agent' => '*' ),
-				array( 'path' => 'test.txt', 'type' => 'disallow', 'agent' => '*' ),
+				array(
+					'path' => 'test.txt',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
+				array(
+					'path' => 'test.txt',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
 				'Identical rule exists',
 			),
 			array(
-				array( 'path' => 'wp-content/image.jpg', 'type' => 'allow', 'agent' => '*' ),
-				array( 'path' => 'wp-content/image.jpg', 'type' => 'allow', 'agent' => '*' ),
+				array(
+					'path' => 'wp-content/image.jpg',
+					'type' => 'allow',
+					'agent' => '*',
+				),
+				array(
+					'path' => 'wp-content/image.jpg',
+					'type' => 'allow',
+					'agent' => '*',
+				),
 				'Identical rule exists',
 			),
 			array(
-				array( 'path' => 'temp.*', 'type' => 'allow', 'agent' => '*' ),
-				array( 'path' => 'temp.*', 'type' => 'allow', 'agent' => '*' ),
+				array(
+					'path' => 'temp.*',
+					'type' => 'allow',
+					'agent' => '*',
+				),
+				array(
+					'path' => 'temp.*',
+					'type' => 'allow',
+					'agent' => '*',
+				),
 				'Identical rule exists',
 			),
 			array(
-				array( 'path' => 'wp-content/*.txt', 'type' => 'disallow', 'agent' => '*' ),
-				array( 'path' => 'wp-content/*.txt', 'type' => 'disallow', 'agent' => '*' ),
+				array(
+					'path' => 'wp-content/*.txt',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
+				array(
+					'path' => 'wp-content/*.txt',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
 				'Identical rule exists',
 			),
 			array(
-				array( 'path' => 'wp-content/image.jpg', 'type' => 'allow', 'agent' => '*' ),
-				array( 'path' => 'wp-*/*.jpg', 'type' => 'disallow', 'agent' => '*' ),
+				array(
+					'path' => 'wp-content/image.jpg',
+					'type' => 'allow',
+					'agent' => '*',
+				),
+				array(
+					'path' => 'wp-*/*.jpg',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
 				'Wild-card path cannot be overridden',
 			),
 		);
@@ -161,19 +201,43 @@ class Test_Robots_Multisite extends Test_Robots {
 		return array(
 			array(
 				array(
-					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
-					array( 'path' => '/wp-admin', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/test.txt',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
+					array(
+						'path' => '/wp-admin',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
 				'/test.txt',
-				array( 'path' => '/testttt.txt', 'type' => 'disallow', 'agent' => '*' ),
+				array(
+					'path' => '/testttt.txt',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
 			),
 			array(
 				array(
-					array( 'path' => '/test.txt', 'type' => 'disallow', 'agent' => '*' ),
-					array( 'path' => '/wp-admin', 'type' => 'disallow', 'agent' => '*' ),
+					array(
+						'path' => '/test.txt',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
+					array(
+						'path' => '/wp-admin',
+						'type' => 'disallow',
+						'agent' => '*',
+					),
 				),
 				'/test.txt',
-				array( 'path' => '/wp-admin', 'type' => 'disallow', 'agent' => '*' ),
+				array(
+					'path' => '/wp-admin',
+					'type' => 'disallow',
+					'agent' => '*',
+				),
 				'Identical rule exists',
 			),
 		);

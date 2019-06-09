@@ -48,15 +48,49 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 	 * @var type
 	 */
 	protected $_core_actions_post = array(
-		'oembed_cache', 'image-editor', 'delete-comment', 'delete-tag', 'delete-link',
-		'delete-meta', 'delete-post', 'trash-post', 'untrash-post', 'delete-page', 'dim-comment',
-		'add-link-category', 'add-tag', 'get-tagcloud', 'get-comments', 'replyto-comment',
-		'edit-comment', 'add-menu-item', 'add-meta', 'add-user', 'autosave', 'closed-postboxes',
-		'hidden-columns', 'update-welcome-panel', 'menu-get-metabox', 'wp-link-ajax',
-		'menu-locations-save', 'menu-quick-search', 'meta-box-order', 'get-permalink',
-		'sample-permalink', 'inline-save', 'inline-save-tax', 'find_posts', 'widgets-order',
-		'save-widget', 'set-post-thumbnail', 'date_format', 'time_format', 'wp-fullscreen-save-post',
-		'wp-remove-post-lock', 'dismiss-wp-pointer', 'nopriv_autosave',
+		'oembed_cache',
+		'image-editor',
+		'delete-comment',
+		'delete-tag',
+		'delete-link',
+		'delete-meta',
+		'delete-post',
+		'trash-post',
+		'untrash-post',
+		'delete-page',
+		'dim-comment',
+		'add-link-category',
+		'add-tag',
+		'get-tagcloud',
+		'get-comments',
+		'replyto-comment',
+		'edit-comment',
+		'add-menu-item',
+		'add-meta',
+		'add-user',
+		'autosave',
+		'closed-postboxes',
+		'hidden-columns',
+		'update-welcome-panel',
+		'menu-get-metabox',
+		'wp-link-ajax',
+		'menu-locations-save',
+		'menu-quick-search',
+		'meta-box-order',
+		'get-permalink',
+		'sample-permalink',
+		'inline-save',
+		'inline-save-tax',
+		'find_posts',
+		'widgets-order',
+		'save-widget',
+		'set-post-thumbnail',
+		'date_format',
+		'time_format',
+		'wp-fullscreen-save-post',
+		'wp-remove-post-lock',
+		'dismiss-wp-pointer',
+		'nopriv_autosave',
 	);
 
 	/**
@@ -197,7 +231,13 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 		// add an image caption and title with special characters.
 		kses_remove_filters();
 		$spl = wp_generate_password( 12, true, true ) . $this->_spl_chars;
-		wp_update_post( array( 'ID' => $attachment_id, 'post_title' => $spl, 'post_excerpt' => $spl ) );
+		wp_update_post(
+			array(
+				'ID' => $attachment_id,
+				'post_title' => $spl,
+				'post_excerpt' => $spl,
+			)
+		);
 		kses_init_filters();
 
 		if ( 0 !== $id ) {
@@ -309,10 +349,24 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 	 */
 	final protected function setup_posts( $without_images = 0, $with_images = 0, $type = 'post' ) {
 		if ( $without_images > 0 ) {
-			$this->factory->post->create_many( $without_images, array( 'post_type' => $type, 'post_content' => 'content without image', 'post_title' => 'title without image' ) );
+			$this->factory->post->create_many(
+				$without_images,
+				array(
+					'post_type' => $type,
+					'post_content' => 'content without image',
+					'post_title' => 'title without image',
+				)
+			);
 		}
 		if ( $with_images > 0 ) {
-			$ids    = $this->factory->post->create_many( $with_images, array( 'post_type' => $type, 'post_content' => 'content with image', 'post_title' => 'title with image' ) );
+			$ids    = $this->factory->post->create_many(
+				$with_images,
+				array(
+					'post_type' => $type,
+					'post_content' => 'content with image',
+					'post_title' => 'title with image',
+				)
+			);
 			foreach ( $ids as $id ) {
 				$this->upload_image_and_maybe_attach( str_replace( '\\', '/', AIOSEOP_UNIT_TESTING_DIR . '/resources/images/footer-logo.png' ), $id );
 			}

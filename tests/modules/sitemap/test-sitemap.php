@@ -429,9 +429,27 @@ class Test_Sitemap extends Sitemap_Test_Base {
 			$this->markTestSkipped( 'Only for single site' );
 		}
 
-		$id1 = $this->factory->post->create( array( 'post_type' => 'post', 'post_content' => 'content <img src="http://example.org/image1.jpg">', 'post_title' => 'title with image' ) );
-		$id2 = $this->factory->post->create( array( 'post_type' => 'post', 'post_content' => 'content <img src="//example.org/image2.jpg">', 'post_title' => 'title with image' ) );
-		$id3 = $this->factory->post->create( array( 'post_type' => 'post', 'post_content' => 'content <img src="/image3.jpg">', 'post_title' => 'title with image' ) );
+		$id1 = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_content' => 'content <img src="http://example.org/image1.jpg">',
+				'post_title' => 'title with image',
+			)
+		);
+		$id2 = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_content' => 'content <img src="//example.org/image2.jpg">',
+				'post_title' => 'title with image',
+			)
+		);
+		$id3 = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_content' => 'content <img src="/image3.jpg">',
+				'post_title' => 'title with image',
+			)
+		);
 		$urls = array( get_permalink( $id1 ), get_permalink( $id2 ), get_permalink( $id3 ) );
 
 		$custom_options = array();
@@ -536,7 +554,13 @@ class Test_Sitemap extends Sitemap_Test_Base {
 		for ( $x = 0; $x < 4; $x++ ) {
 			$attachments[] = $this->upload_image_and_maybe_attach( str_replace( '\\', '/', AIOSEOP_UNIT_TESTING_DIR . '/resources/images/footer-logo.png' ) );
 		}
-		$id = $this->factory->post->create( array( 'post_type' => 'post', 'post_content' => '[gallery size="medium" link="file" columns="5" type="slideshow" ids="' . implode( ',', $attachments ) . '"]', 'post_title' => 'jetpack' ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_content' => '[gallery size="medium" link="file" columns="5" type="slideshow" ids="' . implode( ',', $attachments ) . '"]',
+				'post_title' => 'jetpack',
+			)
+		);
 		$posts['with'][] = get_permalink( $id );
 		$custom_options = array();
 		$custom_options['aiosp_sitemap_indexes'] = '';
@@ -598,7 +622,13 @@ class Test_Sitemap extends Sitemap_Test_Base {
 		}
 		// $content will output div and img tags but the img tags have an empty src.
 		$this->markTestIncomplete( 'We cannot add images in such a way that the shortcode displays the "src" attribute in the image tags. Skipping.' );
-		$id = $this->factory->post->create( array( 'post_type' => 'post', 'post_content' => $shortcode, 'post_title' => 'nextgen' ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_content' => $shortcode,
+				'post_title' => 'nextgen',
+			)
+		);
 		$url = get_permalink( $id );
 		$custom_options = array();
 		$custom_options['aiosp_sitemap_indexes'] = '';
@@ -723,8 +753,20 @@ class Test_Sitemap extends Sitemap_Test_Base {
 
 		$posts = $this->setup_posts( 2 );
 
-		$id1 = $this->factory->post->create( array( 'post_type' => 'post', 'post_content' => 'content <img src="http://www.x.com/image.jpg">', 'post_title' => 'title with image' ) );
-		$id2 = $this->factory->post->create( array( 'post_type' => 'post', 'post_content' => 'content <img src="http://www.y.com/image.jpg">', 'post_title' => 'title with image' ) );
+		$id1 = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_content' => 'content <img src="http://www.x.com/image.jpg">',
+				'post_title' => 'title with image',
+			)
+		);
+		$id2 = $this->factory->post->create(
+			array(
+				'post_type' => 'post',
+				'post_content' => 'content <img src="http://www.y.com/image.jpg">',
+				'post_title' => 'title with image',
+			)
+		);
 		$posts['with'] = array( get_permalink( $id1 ), get_permalink( $id2 ) );
 
 		// allow only www.x.com.

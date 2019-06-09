@@ -48,7 +48,12 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 			'twitter:title' => 70,                 // hard limit to 70.
 		);
 
-		$id = $this->factory->post->create( array( 'post_title' => $title, 'post_content' => $content ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_title' => $title,
+				'post_content' => $content,
+			)
+		);
 
 		wp_set_current_user( 1 );
 
@@ -107,7 +112,12 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 		$custom_options['aiosp_opengraph_generate_descriptions'] = 'on';
 		$this->_setup_options( 'opengraph', $custom_options );
 
-		$id = $this->factory->post->create( array( 'post_title' => $title, 'post_content' => $content ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_title' => $title,
+				'post_content' => $content,
+			)
+		);
 
 		$settings = get_post_meta( $id, '_aioseop_opengraph_settings', true );
 		$settings['aioseop_opengraph_settings_title'] = $title;
@@ -159,7 +169,12 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 		$custom_options['aiosp_opengraph_generate_descriptions'] = 'on';
 		$this->_setup_options( 'opengraph', $custom_options );
 
-		$id = $this->factory->post->create( array( 'post_title' => $title, 'post_content' => $content ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_title' => $title,
+				'post_content' => $content,
+			)
+		);
 
 		update_post_meta( $id, '_aioseop_title', $title );
 
@@ -198,7 +213,12 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 			'twitter:title' => array( 70 ), // no limit.
 		);
 
-		$id = $this->factory->post->create( array( 'post_title' => $title, 'post_content' => $content ) );
+		$id = $this->factory->post->create(
+			array(
+				'post_title' => $title,
+				'post_content' => $content,
+			)
+		);
 
 		wp_set_current_user( 1 );
 
@@ -253,7 +273,7 @@ class Test_Opengraph extends AIOSEOP_Test_Base {
 	public function test_home_page( $title_meta, $desc_meta ) {
 		$this->markTestIncomplete( 'Cannot seem to get any meta tag when accessing the home page. Have set home page as static page as well as showing latest posts. Nothing works.' );
 
-		$id = $this->factory->post->create( array('post_type' => 'page') );
+		$id = $this->factory->post->create( array( 'post_type' => 'page' ) );
 		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 		// trailingslashit( get_site_url() ) . 'house';
 		$home_url = get_site_url();
