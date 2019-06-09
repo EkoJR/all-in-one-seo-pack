@@ -1,10 +1,11 @@
 <?php
-
 /**
- * The File Editor class.
+ * The File Editor class
  *
- * @package All-in-One-SEO-Pack
+ * @package All_in_One_SEO_Pack
+ * @since ?
  */
+
 if ( ! class_exists( 'All_in_One_SEO_Pack_File_Editor' ) ) {
 
 	/**

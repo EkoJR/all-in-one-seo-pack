@@ -1,4 +1,10 @@
 <?php
+/**
+ * AIOSEOP Updates Class
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
+ */
 
 /**
  * Handles detection of new plugin version updates.

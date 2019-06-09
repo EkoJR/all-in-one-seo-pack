@@ -4,7 +4,8 @@
  *
  * This is just for Pro strings to be translated.
  *
- * @package All-in-One-SEO-Pack
+ * @package All_in_One_SEO_Pack
+ * @since ?
  */
 
 /**

@@ -1,12 +1,16 @@
 <?php
 /**
- * All in One SEO Pack Main Class file.
+ * All in One SEO Pack Main Class file
  *
  * Main class file, to be broken up later.
  *
- * @package All-in-One-SEO-Pack
+ * @package All_in_One_SEO_Pack
+ * @since ?
  */
 
+/**
+ * Module Base Class
+ */
 require_once( AIOSEOP_PLUGIN_DIR . 'admin/aioseop_module_class.php' ); // Include the module base class.
 
 /**

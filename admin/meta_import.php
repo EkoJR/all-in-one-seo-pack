@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Meta Import
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
+ */
 if ( class_exists( 'WPSEO_Import_Hooks' ) ) {
 
 	/**

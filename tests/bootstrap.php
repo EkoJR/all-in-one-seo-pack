@@ -2,7 +2,8 @@
 /**
  * PHPUnit bootstrap file
  *
- * @package all-in-one-seo-pack
+ * @package All_in_One_SEO_Pack
+ * @since 2.3.5
  */
 
 $_tests_dir = getenv( 'WP_TESTS_DIR' );

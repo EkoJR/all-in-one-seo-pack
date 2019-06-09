@@ -1,4 +1,10 @@
 <?php
+/**
+ * Public Opengraph
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
+ */
 
 if ( ! class_exists( 'AIOSEOP_Opengraph_Public' ) ) {
 

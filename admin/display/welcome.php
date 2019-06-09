@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Welcome
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
+ */
 if ( ! class_exists( 'aioseop_welcome' ) ) {
 
 	/**

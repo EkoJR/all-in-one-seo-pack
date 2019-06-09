@@ -4,12 +4,16 @@
  *
  * @since 2.4.4.1
  *
+ * @package All_in_One_SEO_Pack
  * @group url
  * @group post_permalink
  * @group All_in_One_SEO_Pack
  * @group aiosp_mrt_get_url
  */
 
+/**
+ * AIOSEOP test base
+ */
 require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-aioseop-test-base.php';
 
 /**

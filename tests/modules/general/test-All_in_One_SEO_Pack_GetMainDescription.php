@@ -2,6 +2,13 @@
 /**
  * Testing All_in_One_SEO_Pack_Sitemap::get_main_description();
  *
+ * @package All_in_One_SEO_Pack
+ * @since ?
+ */
+
+/**
+ * Testing All_in_One_SEO_Pack_Sitemap::get_main_description();
+ *
  * Function:  Get's the AIOSEOP, post meta data, description from the post object (including taxonomies, attachments, etc)
  *            Which is also used for the General module ( aioseop_class ), OpenGraph module, and Page Snippet.
  * Expected:  Returns a (string) description depending on the $aioseop_options configuration with auto-gen, truncate,
@@ -23,6 +30,9 @@
  *
  */
 
+/**
+ * AIOSEOP test base
+ */
 require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-aioseop-test-base.php';
 
 /**

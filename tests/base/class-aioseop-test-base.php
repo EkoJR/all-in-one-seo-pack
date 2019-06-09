@@ -1,6 +1,15 @@
 <?php
 /**
- * AIOSEOP testing base class.
+ * AIOSEOP testing base class
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
+ */
+
+/**
+ * Class AIOSEOP_Test_Base
+ *
+ * @since 2.4.2.1
  */
 class AIOSEOP_Test_Base extends WP_UnitTestCase {
 

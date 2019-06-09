@@ -7,7 +7,10 @@
     <exclude-pattern>node_modules/*</exclude-pattern>
     <exclude-pattern>vendor/*</exclude-pattern>
     <exclude-pattern>lib/*</exclude-pattern>
+    <exclude-pattern>*/index.php</exclude-pattern>
     <rule ref="WordPress-Core">
+
+
         <exclude name="Squiz.Commenting.FileComment.SpacingAfterComment" />
         <exclude name="Generic.Files.LowercasedFilename" />
         <exclude name="Generic.NamingConventions.UpperCaseConstantName" />
@@ -41,7 +44,6 @@
         <!-- these can be removed once the initial part of #1003 is closed -->
         <exclude name="Generic.Commenting.DocComment" />
         <exclude name="Squiz.Commenting.FunctionComment" />
-        <exclude name="Squiz.Commenting.FileComment" />
 
         <!-- these can be removed once #2335 is closed -->
 
@@ -54,4 +56,9 @@
         <severity>0</severity>
     </rule>
 
+    <rule ref="Squiz.Commenting.FileComment">
+        <!-- Prevents File Header documentation -->
+        <exclude-pattern>*/index.php</exclude-pattern>
+        <exclude-pattern>/all_in_one_seo_pack.php</exclude-pattern>
+    </rule>
 </ruleset>

@@ -1,7 +1,9 @@
 <?php
-
 /**
- * @package All-in-One-SEO-Pack
+ * AIOSEOP Common
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
  */
 
 /**

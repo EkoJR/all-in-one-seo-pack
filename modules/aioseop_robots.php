@@ -1,10 +1,11 @@
 <?php
 /**
- * @package All-in-One-SEO-Pack
+ * Robots Module
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
  */
-/**
- * The Robots class.
- */
+
 if ( ! class_exists( 'All_in_One_SEO_Pack_Robots' ) ) {
 
 	/**

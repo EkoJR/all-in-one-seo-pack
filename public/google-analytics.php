@@ -1,4 +1,10 @@
 <?php
+/**
+ * Google Analytice
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
+ */
 
 if ( ! class_exists( 'aioseop_google_analytics' ) ) {
 

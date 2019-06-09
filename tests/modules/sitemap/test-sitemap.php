@@ -2,13 +2,13 @@
 /**
  * Class Test_Sitemap
  *
- * @package
+ * @package All_in_One_SEO_Pack
+ * @since 2.4.3.1
  */
 
 /**
  * Sitemap test case.
  */
-
 require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-sitemap-test-base.php';
 
 /**

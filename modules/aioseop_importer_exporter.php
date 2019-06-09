@@ -1,4 +1,10 @@
 <?php
+/**
+ * AIOSEOP Import & Export
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
+ */
 
 if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 

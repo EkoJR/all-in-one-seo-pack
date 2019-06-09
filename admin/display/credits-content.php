@@ -1,8 +1,23 @@
+<?php
+/**
+ * Credits Content
+ *
+ * Displays AIOSEOP's team and additional individuals who have contributed.
+ *
+ * @link https://wordpress.org/plugins/all-in-one-seo-pack/
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
+ */
+?>
 <div class="wrap credits-wrap">
 
-<p class="about-description"><?php
+<p class="about-description">
+<?php
 	/* translators: %s is a placeholder, which means that it should not be translated. It will be replaced with the name of the plugin, All in One SEO Pack. */
-	printf( __( '%s is created by a worldwide network of friendly folks like these.', 'all-in-one-seo-pack' ), AIOSEOP_PLUGIN_NAME ); ?></p>
+	printf( __( '%s is created by a worldwide network of friendly folks like these.', 'all-in-one-seo-pack' ), AIOSEOP_PLUGIN_NAME );
+?>
+	</p>
 
 <h3 class="wp-people-group"><?php _e( 'Project Leaders', 'all-in-one-seo-pack' ); ?></h3>
 <ul class="wp-people-group " id="wp-people-group-project-leaders">

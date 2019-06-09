@@ -2,9 +2,13 @@
 /**
  * Class Test_Opengraph
  *
- * @package
+ * @package All_in_One_SEO_Pack
+ * @since 3.0
  */
 
+/**
+ * AIOSEOP test base
+ */
 require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-aioseop-test-base.php';
 
 /**

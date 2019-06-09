@@ -2,8 +2,10 @@
 /**
  * Class Test_Canonical_Urls
  *
- * @package
+ * @package All_in_One_SEO_Pack
+ * @since 2.9
  */
+
 /**
  * Canonnical URLs test cases.
  */

@@ -1,5 +1,7 @@
 <?php
 /**
+ * AIOSEOP Module Class
+ *
  * @package All-in-One-SEO-Pack
  * @version 2.3.12.2
  */

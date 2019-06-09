@@ -2,9 +2,13 @@
 /**
  * Class Test_Robots_Multisite
  *
- * @package
+ * @package All_in_One_SEO_Pack
+ * @since 2.7.2
  */
 
+/**
+ * AIOSEOP test base
+ */
 require_once AIOSEOP_UNIT_TESTING_DIR . '/modules/robots/test-robots.php';
 
 /**

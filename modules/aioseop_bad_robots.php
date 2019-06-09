@@ -1,6 +1,9 @@
 <?php
 /**
- * @package All-in-One-SEO-Pack
+ * Bad Robots Module
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
  */
 
 if ( ! class_exists( 'All_in_One_SEO_Pack_Bad_Robots' ) ) {

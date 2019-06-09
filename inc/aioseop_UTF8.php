@@ -1,7 +1,11 @@
 <?php
 /**
- * @package All-in-One-SEO-Pack
+ * AIOSEOP UTF8
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
  */
+
 $UTF8_TABLES = array();
 
 $UTF8_TABLES['strtolower'] = array(

@@ -2,13 +2,13 @@
 /**
  * Class Test_Meta
  *
- * @package
+ * @package All_in_One_SEO_Pack
+ * @since 2.4.5.1
  */
 
 /**
  * Advance Custom Fields test cases.
  */
-
 require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-aioseop-test-base.php';
 
 /**

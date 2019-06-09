@@ -1,4 +1,11 @@
 <?php
+/**
+ * Compatability with WPML (WordPress Multilingual)
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
+ */
+
 if ( ! class_exists( 'All_in_One_SEO_Pack_Wpml' ) ) {
 	/**
 	 * Compatibility with WPML - WordPress Multilingual Plugin

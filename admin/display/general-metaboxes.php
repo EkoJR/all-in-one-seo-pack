@@ -1,7 +1,9 @@
 <?php
-
 /**
- * @package All-in-One-SEO-Pack
+ * General Metaboxes
+ *
+ * @package All_in_One_SEO_Pack
+ * @since ?
  */
 // @codingStandardsIgnoreStart
 class aiosp_metaboxes {
