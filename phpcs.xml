@@ -39,7 +39,6 @@
         <exclude name="Squiz.Commenting.BlockComment" />
         <exclude name="Generic.Commenting.DocComment.LongNotCapital" />
         <exclude name="Squiz.Commenting.BlockComment.CloserSameLine" />
-        <exclude name="Squiz.Commenting.InlineComment.NotCapital" />
 
         <!-- these can be removed once the initial part of #1003 is closed -->
 
