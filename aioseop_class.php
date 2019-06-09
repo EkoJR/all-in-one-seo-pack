@@ -1430,7 +1430,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	function get_aioseop_title( $post, $use_original_title_format = true ) {
 		global $aioseop_options;
 		// the_search_query() is not suitable, it cannot just return.
-		global $s, $STagging;
+		global $s, $STagging; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 		$opts = $this->meta_opts;
 		if ( is_front_page() ) {
 			if ( ! empty( $aioseop_options['aiosp_use_static_home_info'] ) ) {
@@ -1665,8 +1665,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			}
 		} elseif ( ( is_tax() || is_category() ) && ! is_feed() ) {
 			return $this->get_tax_title();
-		} elseif ( isset( $STagging ) && $STagging->is_tag_view() ) { // Simple tagging support.
-			$tag = $STagging->search_tag;
+
+		} elseif ( isset( $STagging ) && $STagging->is_tag_view() ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+			// Simple tagging support.
+			$tag = $STagging->search_tag; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 			if ( $tag ) {
 				$title_format = $aioseop_options['aiosp_tag_title_format'];
 				$title        = str_replace( '%site_title%', $this->internationalize( get_bloginfo( 'name' ) ), $title_format );
@@ -2062,6 +2064,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		// The page number if paged.
 		global $paged;
 		global $aioseop_options;
+		// phpcs:disable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 		// Simple tagging support.
 		global $STagging;
 		$page = get_query_var( 'page' );
@@ -2077,6 +2080,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				$title .= $part;
 			}
 		}
+		// phpcs:enable
 
 		return $title;
 	}
@@ -3841,14 +3845,15 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		if ( is_attachment() ) {
 
 			$url = $this->aiosp_mrt_get_url( $wp_query );
+			$unique_desc = '';
 			if ( $url ) {
 				$matches = array();
 				preg_match_all( '/(\d+)/', $url, $matches );
 				if ( is_array( $matches ) ) {
-					$uniqueDesc = join( '', $matches[0] );
+					$unique_desc = join( '', $matches[0] );
 				}
 			}
-			$description .= ' ' . $uniqueDesc;
+			$description .= ' ' . $unique_desc;
 		}
 
 		return $description;

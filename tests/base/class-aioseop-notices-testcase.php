@@ -36,16 +36,17 @@ class AIOSEOP_Notices_TestCase extends WP_UnitTestCase {
 	 * AIOSEOP_Notices_TestCase constructor.
 	 *
 	 * @since 3.0
+	 *
 	 * @param null $name
 	 * @param array $data
-	 * @param string $dataName
+	 * @param string $data_name
 	 */
-	public function __construct( $name = null, array $data = array(), $dataName = '' ) {
+	public function __construct( $name = null, array $data = array(), $data_name = '' ) {
 		if ( ! defined( 'WP_DEVELOP_DIR' ) ) {
 			$this->define_wp_develop_dir();
 		}
 
-		parent::__construct( $name, $data, $dataName );
+		parent::__construct( $name, $data, $data_name );
 	}
 
 	/**

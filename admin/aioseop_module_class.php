@@ -406,6 +406,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 			}
 
 			if ( $charset == 'UTF-8' ) {
+				// phpcs:disable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 				global $UTF8_TABLES;
 				include_once( AIOSEOP_PLUGIN_DIR . 'inc/aioseop_UTF8.php' );
 				if ( is_array( $UTF8_TABLES ) ) {
@@ -416,6 +417,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 						return strtr( $str, $UTF8_TABLES['strtolower'] );
 					}
 				}
+				// phpcs:enable
 			}
 
 			if ( $mode == 'upper' ) {

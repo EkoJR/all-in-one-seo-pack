@@ -222,7 +222,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 		 * @return array
 		 */
 		function parse_ini_helper( $array ) {
-			$returnArray = array();
+			$return_array = array();
 			if ( is_array( $array ) ) {
 				foreach ( $array as $key => $value ) {
 					$e = explode( ':', $key );
@@ -234,27 +234,27 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 						$x = array_reverse( $x, true );
 						foreach ( $x as $k => $v ) {
 							$c = $x[0];
-							if ( empty( $returnArray[ $c ] ) ) {
-								$returnArray[ $c ] = array();
+							if ( empty( $return_array[ $c ] ) ) {
+								$return_array[ $c ] = array();
 							}
-							if ( isset( $returnArray[ $x[1] ] ) ) {
-								$returnArray[ $c ] = array_merge(
-									$returnArray[ $c ], $returnArray[ $x[1] ]
+							if ( isset( $return_array[ $x[1] ] ) ) {
+								$return_array[ $c ] = array_merge(
+									$return_array[ $c ], $return_array[ $x[1] ]
 								);
 							}
 							if ( $k === 0 ) {
-								$returnArray[ $c ] = array_merge(
-									$returnArray[ $c ], $array[ $key ]
+								$return_array[ $c ] = array_merge(
+									$return_array[ $c ], $array[ $key ]
 								);
 							}
 						}
 					} else {
-						$returnArray[ $key ] = $array[ $key ];
+						$return_array[ $key ] = $array[ $key ];
 					}
 				}
 			}
 
-			return $returnArray;
+			return $return_array;
 		}
 
 		/**
@@ -266,7 +266,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 		 * @return array
 		 */
 		function recursive_parse( $array ) {
-			$returnArray = array();
+			$return_array = array();
 			if ( is_array( $array ) ) {
 				foreach ( $array as $key => $value ) {
 					if ( is_array( $value ) ) {
@@ -275,11 +275,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 					$x = explode( '.', $key );
 					if ( ! empty( $x[1] ) ) {
 						$x = array_reverse( $x, true );
-						if ( isset( $returnArray[ $key ] ) ) {
-							unset( $returnArray[ $key ] );
+						if ( isset( $return_array[ $key ] ) ) {
+							unset( $return_array[ $key ] );
 						}
-						if ( ! isset( $returnArray[ $x[0] ] ) ) {
-							$returnArray[ $x[0] ] = array();
+						if ( ! isset( $return_array[ $x[0] ] ) ) {
+							$return_array[ $x[0] ] = array();
 						}
 						$first = true;
 						foreach ( $x as $k => $v ) {
@@ -289,16 +289,16 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 							}
 							$b = array( $v => $b );
 						}
-						$returnArray[ $x[0] ] = array_merge_recursive(
-							$returnArray[ $x[0] ], $b[ $x[0] ]
+						$return_array[ $x[0] ] = array_merge_recursive(
+							$return_array[ $x[0] ], $b[ $x[0] ]
 						);
 					} else {
-						$returnArray[ $key ] = $array[ $key ];
+						$return_array[ $key ] = $array[ $key ];
 					}
 				}
 			}
 
-			return $returnArray;
+			return $return_array;
 		}
 
 

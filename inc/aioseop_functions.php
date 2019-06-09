@@ -989,17 +989,17 @@ if ( ! function_exists( 'aioseop_array_insert_after' ) ) {
 	 * @since ?
 	 *
 	 * @param $arr
-	 * @param $insertKey
-	 * @param $newValues
+	 * @param $insert_key
+	 * @param $new_values
 	 * @return array
 	 */
-	function aioseop_array_insert_after( $arr, $insertKey, $newValues ) {
-		$keys        = array_keys( $arr );
-		$vals        = array_values( $arr );
-		$insertAfter = array_search( $insertKey, $keys ) + 1;
-		$keys2       = array_splice( $keys, $insertAfter );
-		$vals2       = array_splice( $vals, $insertAfter );
-		foreach ( $newValues as $k => $v ) {
+	function aioseop_array_insert_after( $arr, $insert_key, $new_values ) {
+		$keys         = array_keys( $arr );
+		$vals         = array_values( $arr );
+		$insert_after = array_search( $insert_key, $keys ) + 1;
+		$keys2        = array_splice( $keys, $insert_after );
+		$vals2        = array_splice( $vals, $insert_after );
+		foreach ( $new_values as $k => $v ) {
 			$keys[] = $k;
 			$vals[] = $v;
 		}

@@ -6,6 +6,7 @@
  * @since ?
  */
 
+// phpcs:disable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 $UTF8_TABLES = array();
 
 $UTF8_TABLES['strtolower'] = array(
@@ -452,3 +453,4 @@ $UTF8_TABLES['strtoupper'] = array(
 	'e' => 'E', 'd' => 'D', 'c' => 'C',
 	'b' => 'B', 'a' => 'A',
 );
+// phpcs:enable
