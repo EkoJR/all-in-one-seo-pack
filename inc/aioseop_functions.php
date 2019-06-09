@@ -399,7 +399,8 @@ if ( ! function_exists( 'aioseop_ajax_save_meta' ) ) {
 		check_ajax_referer( 'aioseop_meta_' . $target . '_' . $post_id, '_nonce' );
 		$result = '';
 		if ( in_array(
-			$target, array(
+			$target,
+			array(
 				'title',
 				'description',
 				'keywords',
@@ -519,7 +520,8 @@ if ( ! function_exists( 'aioseop_ajax_save_url' ) ) {
 			$module->handle_settings_updates( null );
 			$options = $module->get_current_options( array(), null );
 			$output  = $module->display_custom_options(
-				'', array(
+				'',
+				array(
 					'name'  => $prefix . 'addl_pages',
 					'type'  => 'custom',
 					'save'  => true,
@@ -573,7 +575,8 @@ if ( ! function_exists( 'aioseop_ajax_delete_url' ) ) {
 			$module->handle_settings_updates( null );
 			$options = $module->get_current_options( array(), null );
 			$output  = $module->display_custom_options(
-				'', array(
+				'',
+				array(
 					'name'  => 'aiosp_sitemap_addl_pages',
 					'type'  => 'custom',
 					'save'  => true,
@@ -1024,11 +1027,13 @@ if ( ! function_exists( 'fnmatch' ) ) {
 	function fnmatch( $pattern, $string ) {
 		return preg_match(
 			'#^' . strtr(
-				preg_quote( $pattern, '#' ), array(
+				preg_quote( $pattern, '#' ),
+				array(
 					'\*' => '.*',
 					'\?' => '.',
 				)
-			) . '$#i', $string
+			) . '$#i',
+			$string
 		);
 	}
 }

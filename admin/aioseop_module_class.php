@@ -1229,7 +1229,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 
 			if ( ( $post_types != null ) && ( $this === $aiosp ) ) {
 				$buf .= $this->post_data_export(
-					'_aioseop', array(
+					'_aioseop',
+					array(
 						'posts_per_page' => - 1,
 						'post_type'      => $post_types,
 						'post_status' => array( 'publish', 'pending', 'draft', 'future', 'private', 'inherit' ),
@@ -1248,18 +1249,22 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 					} // don't re-export all module settings -- pdb
 					if ( is_array( $value ) ) {
 						$value = "'" . str_replace(
-							array( "'", "\n", "\r" ), array(
+							array( "'", "\n", "\r" ),
+							array(
 								"\'",
 								'\n',
 								'\r',
-							), trim( serialize( $value ) )
+							),
+							trim( serialize( $value ) )
 						) . "'";
 					} else {
 						$value = str_replace(
-							array( "\n", "\r" ), array(
+							array( "\n", "\r" ),
+							array(
 								'\n',
 								'\r',
-							), trim( var_export( $value, true ) )
+							),
+							trim( var_export( $value, true ) )
 						);
 					}
 					$buf .= "$key = $value\n";
@@ -2223,7 +2228,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 
 			if ( $this->locations === null ) {
 				array_unshift(
-					$links, array(
+					$links,
+					array(
 						'parent' => AIOSEOP_PLUGIN_DIRNAME,
 						'title'  => $name,
 						'id'     => $hookname,
@@ -2236,7 +2242,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 					if ( $v['type'] === 'settings' ) {
 						if ( $k === 'default' ) {
 							array_unshift(
-								$links, array(
+								$links,
+								array(
 									'parent' => AIOSEOP_PLUGIN_DIRNAME,
 									'title'  => $name,
 									'id'     => $hookname,
@@ -2251,7 +2258,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 								$name = $v['name'];
 							}
 							array_unshift(
-								$links, array(
+								$links,
+								array(
 									'parent' => AIOSEOP_PLUGIN_DIRNAME,
 									'title'  => $name,
 									'id'     => $this->get_prefix( $k ) . $k,
@@ -2305,7 +2313,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 			}
 			if ( $this->locations === null ) {
 				$hookname = add_submenu_page(
-					$parent_slug, $name, $name, apply_filters( 'manage_aiosp', 'aiosp_manage_seo' ), plugin_basename( $this->file ), array(
+					$parent_slug,
+					$name,
+					$name,
+					apply_filters( 'manage_aiosp', 'aiosp_manage_seo' ),
+					plugin_basename( $this->file ),
+					array(
 						$this,
 						'display_settings_page',
 					)
@@ -2323,7 +2336,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 							$name = $this->name;
 						}
 						$hookname = add_submenu_page(
-							$parent_slug, $name, $name, apply_filters( 'manage_aiosp', 'aiosp_manage_seo' ), plugin_basename( $this->file ), array(
+							$parent_slug,
+							$name,
+							$name,
+							apply_filters( 'manage_aiosp', 'aiosp_manage_seo' ),
+							plugin_basename( $this->file ),
+							array(
 								$this,
 								'display_settings_page',
 							)
@@ -2335,7 +2353,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 							$name = $v['name'];
 						}
 						$hookname = add_submenu_page(
-							$parent_slug, $name, $name, apply_filters( 'manage_aiosp', 'aiosp_manage_seo' ), $this->get_prefix( $k ) . $k, array(
+							$parent_slug,
+							$name,
+							$name,
+							apply_filters( 'manage_aiosp', 'aiosp_manage_seo' ),
+							$this->get_prefix( $k ) . $k,
+							array(
 								$this,
 								"display_settings_page_$k",
 							)
@@ -2393,10 +2416,16 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 									$title .= "<a class='aioseop_help_text_link aioseop_meta_box_help' target='_blank' href='" . $lopts['help_link'] . "'><span>" . __( 'Help', 'all-in-one-seo-pack' ) . '</span></a>';
 								}
 								add_meta_box(
-									$v['prefix'] . $k, $title, array(
+									$v['prefix'] . $k,
+									$title,
+									array(
 										$this,
 										'display_metabox',
-									), $posttype, $v['context'], $v['priority'], $v
+									),
+									$posttype,
+									$v['context'],
+									$v['priority'],
+									$v
 								);
 							}
 						}
@@ -2580,7 +2609,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 				return apply_filters( "{$prefix}output_option", '', $args );
 			}
 			if ( in_array(
-				$options['type'], array(
+				$options['type'],
+				array(
 					'multiselect',
 					'select',
 					'multicheckbox',
@@ -3089,20 +3119,29 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 										$title .= "<a class='aioseop_help_text_link aioseop_meta_box_help' target='_blank' href='" . $lopts['help_link'] . "'><span>" . __( 'Help', 'all-in-one-seo-pack' ) . '</span></a>';
 									}
 									add_meta_box(
-										$this->get_prefix( $location ) . $l . '_metabox', $title, array(
+										$this->get_prefix( $location ) . $l . '_metabox',
+										$title,
+										array(
 											$this,
 											'display_options',
 										),
-										"{$this->prefix}settings", 'advanced', 'default', $lopts
+										"{$this->prefix}settings",
+										'advanced',
+										'default',
+										$lopts
 									);
 								}
 							}
 						} else {
 							add_meta_box(
-								$this->get_prefix( $location ) . 'metabox', $name, array(
+								$this->get_prefix( $location ) . 'metabox',
+								$name,
+								array(
 									$this,
 									'display_options',
-								), "{$this->prefix}settings", 'advanced'
+								),
+								"{$this->prefix}settings",
+								'advanced'
 							);
 						}
 						do_meta_boxes( "{$this->prefix}settings", 'advanced', $location );

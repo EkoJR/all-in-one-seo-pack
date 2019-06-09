@@ -169,18 +169,22 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module_Manager' ) ) {
 			$this->modules[ $mod ] = $module_class;
 			if ( is_user_logged_in() && is_admin_bar_showing() && current_user_can( 'aiosp_manage_seo' ) ) {
 				add_action(
-					'admin_bar_menu', array(
+					'admin_bar_menu',
+					array(
 						$module_class,
 						'add_admin_bar_submenu',
-					), 1001 + $module_class->menu_order()
+					),
+					1001 + $module_class->menu_order()
 				);
 			}
 			if ( is_admin() ) {
 				add_action(
-					'aioseop_modules_add_menus', array(
+					'aioseop_modules_add_menus',
+					array(
 						$module_class,
 						'add_menu',
-					), $module_class->menu_order()
+					),
+					$module_class->menu_order()
 				);
 				add_action( 'aiosoep_options_reset', array( $module_class, 'reset_options' ) );
 				add_filter( 'aioseop_export_settings', array( $module_class, 'settings_export' ) );

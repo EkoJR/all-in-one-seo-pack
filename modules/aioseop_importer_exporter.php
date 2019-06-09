@@ -239,12 +239,14 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 							}
 							if ( isset( $return_array[ $x[1] ] ) ) {
 								$return_array[ $c ] = array_merge(
-									$return_array[ $c ], $return_array[ $x[1] ]
+									$return_array[ $c ],
+									$return_array[ $x[1] ]
 								);
 							}
 							if ( $k === 0 ) {
 								$return_array[ $c ] = array_merge(
-									$return_array[ $c ], $array[ $key ]
+									$return_array[ $c ],
+									$array[ $key ]
 								);
 							}
 						}
@@ -290,7 +292,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 							$b = array( $v => $b );
 						}
 						$return_array[ $x[0] ] = array_merge_recursive(
-							$return_array[ $x[0] ], $b[ $x[0] ]
+							$return_array[ $x[0] ],
+							$b[ $x[0] ]
 						);
 					} else {
 						$return_array[ $key ] = $array[ $key ];
@@ -538,7 +541,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 						/* translators: %s is a placeholder, which means that it should not be translated. It will be replaced with the name of the plugin, All in One SEO Pack. */
 						$buf           = '; ' . sprintf(
 							__(
-								'Settings export file for %s', '
+								'Settings export file for %s',
+								'
 							all-in-one-seo-pack'
 							),
 							AIOSEOP_PLUGIN_NAME

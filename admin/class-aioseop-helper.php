@@ -148,7 +148,8 @@ class AIOSEOP_Helper {
 					'<dd>' . sprintf(
 						__( 'The %1$s of the author of the %2$s', 'all-in-one-seo-pack' ),
 						/* translators: The "nicename" is the sanitized version of a username. */
-						__( 'nicename', 'all-in-one-seo-pack' ), __( 'Homepage', 'all-in-one-seo-pack' )
+						__( 'nicename', 'all-in-one-seo-pack' ),
+						__( 'Homepage', 'all-in-one-seo-pack' )
 					) . '</dd>' .
 					'<dt>%page_author_firstname%</dt>' .
 					'<dd>' . sprintf( __( 'The %1$s of the author of the %2$s', 'all-in-one-seo-pack' ), __( 'first name', 'all-in-one-seo-pack' ), __( 'Homepage', 'all-in-one-seo-pack' ) ) . '</dd>' .
@@ -329,7 +330,8 @@ class AIOSEOP_Helper {
 					'<dd>' . sprintf( __( 'The current %s', 'all-in-one-seo-pack' ), __( 'year', 'all-in-one-seo-pack' ) ) . '</dd>' .
 					'<dt>%post_date%</dt>' .
 					'<dd>' . sprintf(
-						__( 'The %1$s when the %2$s was published (localized)', 'all-in-one-seo-pack' ), __( 'date', 'all-in-one-seo-pack' ),
+						__( 'The %1$s when the %2$s was published (localized)', 'all-in-one-seo-pack' ),
+						__( 'date', 'all-in-one-seo-pack' ),
 						/* translators: "Post/Page" are the two main content types in WordPress. */
 						__( 'Post/Page', 'all-in-one-seo-pack' )
 					) . '</dd>' .

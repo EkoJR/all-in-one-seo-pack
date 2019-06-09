@@ -31,7 +31,6 @@
         <exclude name="Squiz.PHP.CommentedOutCode" />
         <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
         <exclude name="PEAR.NamingConventions.ValidClassName.Invalid" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
 
         <!-- these can be removed once the initial part of #1003 is closed -->
 

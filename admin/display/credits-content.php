@@ -66,7 +66,8 @@
 		/* translators: '%1$s' and '%2$s' are used as placeholders and turn the text in between into a clickable link */
 			printf(
 				__( 'Want to see your name and picture here as a community developer? %1$sClick here%2$s to open an issue on GitHub to report a bug, request a feature or find an issue and submit code!', 'all-in-one-seo-pack' ),
-				'<a href="https://github.com/semperfiwebdesign/all-in-one-seo-pack" target="_blank">', '</a>'
+				'<a href="https://github.com/semperfiwebdesign/all-in-one-seo-pack" target="_blank">',
+				'</a>'
 			);
 			?>
 		</li>

@@ -213,7 +213,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 			$object_type = null;
 			if ( ! $terms ) {
 				$terms = get_terms(
-					$taxonomy_name, array(
+					$taxonomy_name,
+					array(
 						'meta_query' => array(
 							array(
 								'key' => '_' . $prefix . $k,
@@ -764,7 +765,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 			if ( $this->option_isset( 'types' ) && is_array( $this->options['aiosp_opengraph_types'] ) && in_array( $current_post_type, $this->options['aiosp_opengraph_types'] ) ) {
 				$post_url = aioseop_get_permalink( $post->ID );
 				$endpoint = sprintf(
-					'https://graph.facebook.com/?%s', http_build_query(
+					'https://graph.facebook.com/?%s',
+					http_build_query(
 						array(
 							'id'     => $post_url,
 							'scrape' => true,
@@ -792,7 +794,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 			if ( 'publish' === $post_after->post_status && $this->option_isset( 'types' ) && is_array( $this->options['aiosp_opengraph_types'] ) && in_array( $current_post_type, $this->options['aiosp_opengraph_types'] ) ) {
 				$post_url = aioseop_get_permalink( $post_id );
 				$endpoint = sprintf(
-					'https://graph.facebook.com/?%s', http_build_query(
+					'https://graph.facebook.com/?%s',
+					http_build_query(
 						array(
 							'id'     => $post_url,
 							'scrape' => true,
@@ -1072,7 +1075,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 			}
 
 			$attributes = apply_filters(
-				$this->prefix . 'attributes', array(
+				$this->prefix . 'attributes',
+				array(
 					'prefix="og: http://ogp.me/ns#"',
 				)
 			);
@@ -1717,22 +1721,31 @@ END;
 			add_filter( $this->prefix . 'display_settings', array( &$this, 'filter_settings' ), 10, 3 );
 			add_filter( $this->prefix . 'override_options', array( &$this, 'override_options' ), 10, 3 );
 			add_filter(
-				$this->get_prefix( 'settings' ) . 'default_options', array(
+				$this->get_prefix( 'settings' ) . 'default_options',
+				array(
 					&$this,
 					'filter_default_options',
-				), 10, 2
+				),
+				10,
+				2
 			);
 			add_filter(
-				$this->get_prefix( 'settings' ) . 'filter_metabox_options', array(
+				$this->get_prefix( 'settings' ) . 'filter_metabox_options',
+				array(
 					&$this,
 					'filter_metabox_options',
-				), 10, 3
+				),
+				10,
+				3
 			);
 			add_filter(
-				$this->get_prefix( 'settings' ) . 'filter_term_metabox_options', array(
+				$this->get_prefix( 'settings' ) . 'filter_term_metabox_options',
+				array(
 					&$this,
 					'filter_metabox_options',
-				), 10, 3
+				),
+				10,
+				3
 			);
 			$post_types                                        = $this->get_post_type_titles();
 			$rempost                                           = array(

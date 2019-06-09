@@ -367,11 +367,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 								if ( $file_handle = @fopen( $file_path, 'w' ) ) {
 								// @codingStandardsIgnoreEnd
 									global $aiosp;
-									/* translators: %s is a placeholder, which means that it should not be translated. It will be replaced with the name of the plugin, All in One SEO Pack. */
 									$buf = '; ' . sprintf(
-										__(
-											'Settings export file for %s', 'all-in-one-seo-pack'
-										), AIOSEOP_PLUGIN_NAME
+										/* translators: %s is a placeholder, which means that it should not be translated. It will be replaced with the name of the plugin, All in One SEO Pack. */
+										__( 'Settings export file for %s', 'all-in-one-seo-pack' ),
+										AIOSEOP_PLUGIN_NAME
 									) . "\n";
 
 									// Adds all settings and posts data to settings file.

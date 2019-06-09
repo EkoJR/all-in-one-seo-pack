@@ -3279,12 +3279,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 
 		if ( AIOSEOPPRO ) {
 			global $aioseop_update_checker;
-			add_action(
-				"{$this->prefix}update_options", array(
-					$aioseop_update_checker,
-					'license_change_check',
-				), 10, 2
-			);
+			add_action( "{$this->prefix}update_options", array( $aioseop_update_checker, 'license_change_check' ), 10, 2 );
 			add_action( "{$this->prefix}settings_update", array( $aioseop_update_checker, 'update_check' ), 10, 2 );
 		}
 
@@ -3772,12 +3767,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				if ( current_user_can( 'update_plugins' ) ) {
 					add_action( 'admin_notices', array( $aioseop_update_checker, 'key_warning' ) );
 				}
-				add_action(
-					'after_plugin_row_' . AIOSEOP_PLUGIN_BASENAME, array(
-						$aioseop_update_checker,
-						'add_plugin_row',
-					)
-				);
+				add_action( 'after_plugin_row_' . AIOSEOP_PLUGIN_BASENAME, array( $aioseop_update_checker, 'add_plugin_row' ) );
 			}
 		} else {
 			if ( $aioseop_options['aiosp_can'] == '1' || $aioseop_options['aiosp_can'] == 'on' ) {
@@ -5033,31 +5023,39 @@ EOF;
 		);
 
 		add_meta_box(
-			'aioseop-list', __( 'Join Our Mailing List', 'all-in-one-seo-pack' ), array(
-				'aiosp_metaboxes',
-				'display_extra_metaboxes',
-			), 'aioseop_metaboxes', 'normal', 'core'
+			'aioseop-list',
+			__( 'Join Our Mailing List', 'all-in-one-seo-pack' ),
+			array( 'aiosp_metaboxes', 'display_extra_metaboxes' ),
+			'aioseop_metaboxes',
+			'normal',
+			'core'
 		);
 		if ( AIOSEOPPRO ) {
 			add_meta_box(
-				'aioseop-about', __( 'About', 'all-in-one-seo-pack' ), array(
-					'aiosp_metaboxes',
-					'display_extra_metaboxes',
-				), 'aioseop_metaboxes', 'side', 'core'
+				'aioseop-about',
+				__( 'About', 'all-in-one-seo-pack' ),
+				array( 'aiosp_metaboxes', 'display_extra_metaboxes' ),
+				'aioseop_metaboxes',
+				'side',
+				'core'
 			);
 		} else {
 			add_meta_box(
-				'aioseop-about', __( 'About', 'all-in-one-seo-pack' ) . "<span class='Taha' style='float:right;'>" . __( 'Version', 'all-in-one-seo-pack' ) . ' <b>' . AIOSEOP_VERSION . '</b></span>', array(
-					'aiosp_metaboxes',
-					'display_extra_metaboxes',
-				), 'aioseop_metaboxes', 'side', 'core'
+				'aioseop-about',
+				__( 'About', 'all-in-one-seo-pack' ) . "<span class='Taha' style='float:right;'>" . __( 'Version', 'all-in-one-seo-pack' ) . ' <b>' . AIOSEOP_VERSION . '</b></span>',
+				array( 'aiosp_metaboxes', 'display_extra_metaboxes' ),
+				'aioseop_metaboxes',
+				'side',
+				'core'
 			);
 		}
 		add_meta_box(
-			'aioseop-support', __( 'Support', 'all-in-one-seo-pack' ) . " <span  class='Taha' style='float:right;'>" . __( 'Version', 'all-in-one-seo-pack' ) . ' <b>' . AIOSEOP_VERSION . '</b></span>', array(
-				'aiosp_metaboxes',
-				'display_extra_metaboxes',
-			), 'aioseop_metaboxes', 'side', 'core'
+			'aioseop-support',
+			__( 'Support', 'all-in-one-seo-pack' ) . " <span  class='Taha' style='float:right;'>" . __( 'Version', 'all-in-one-seo-pack' ) . ' <b>' . AIOSEOP_VERSION . '</b></span>',
+			array( 'aiosp_metaboxes', 'display_extra_metaboxes' ),
+			'aioseop_metaboxes',
+			'side',
+			'core'
 		);
 
 		add_action( 'aioseop_modules_add_menus', array( $this, 'add_menu' ), 5 );
@@ -5090,10 +5088,13 @@ EOF;
 							add_meta_box( $m[0]['id'], $title, $m[0]['callback'], $m[0]['post_type'], $m[0]['context'], $m[0]['priority'], $m[0]['callback_args'] );
 						} elseif ( $tab_num > 1 ) {
 							add_meta_box(
-								$m[0]['id'] . '_tabbed', $title, array(
-									$this,
-									'display_tabbed_metabox',
-								), $m[0]['post_type'], $m[0]['context'], $m[0]['priority'], $m
+								$m[0]['id'] . '_tabbed',
+								$title,
+								array( $this, 'display_tabbed_metabox' ),
+								$m[0]['post_type'],
+								$m[0]['context'],
+								$m[0]['priority'],
+								$m
 							);
 						}
 					}
