@@ -3849,15 +3849,16 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 
 			// Check images galleries in the content. DO NOT run the_content filter here as it might cause issues with other shortcodes.
 			if ( has_shortcode( $post->post_content, 'gallery' ) ) {
-				// Get the jetpack gallery images.
-				// TODO Investigate other alternatives to retrieve ID instead. Specifically Jetpack data.
 				/*
+				 * TODO Investigate other alternatives to retrieve ID instead. Specifically Jetpack data.
+				 *
 				 * Is this even necessary? Jetpack uses many of the WP functions, some of which may already be in use.
 				 * This is also limited to 1 source, and doesn't check other sources once a value is obtained.
 				 *
 				 * @link https://hayashikejinan.com/wp-content/uploads/jetpack_api/classes/Jetpack_PostImages.html
 				 */
 				if ( class_exists( 'Jetpack_PostImages' ) ) {
+					// Get the jetpack gallery images.
 					$jetpack = Jetpack_PostImages::get_images( $post->ID );
 					if ( $jetpack ) {
 						foreach ( $jetpack as $jetpack_image ) {

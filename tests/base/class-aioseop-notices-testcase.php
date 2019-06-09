@@ -496,6 +496,7 @@ class AIOSEOP_Notices_TestCase extends WP_UnitTestCase {
 	 * @return array
 	 */
 	protected function data_screens_wp() {
+		// phpcs:disable Squiz.Commenting.BlockComment
 		return array(
 			array(
 				'screen_id' => 'dashboard',
@@ -711,6 +712,7 @@ class AIOSEOP_Notices_TestCase extends WP_UnitTestCase {
 			),
 
 		);
+		// phpcs:enable
 	}
 
 	/**

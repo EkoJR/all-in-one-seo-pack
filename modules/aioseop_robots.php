@@ -21,13 +21,14 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Robots' ) ) {
 		 * @since ?
 		 */
 		function __construct() {
-			// only for testing.
+			// Only for testing.
+			// phpcs:disable Squiz.Commenting.BlockComment
 			/*
 			if ( ! defined( 'AIOSEOP_DO_LOG' ) ) {
 				define( 'AIOSEOP_DO_LOG', true );
 			}
 			*/
-
+			// phpcs:enable
 			$this->name   = __( 'Robots.txt', 'all-in-one-seo-pack' ); // Human-readable name of the plugin.
 			$this->prefix = 'aiosp_robots_';                           // option prefix.
 			$this->file   = __FILE__;                                  // the current file.

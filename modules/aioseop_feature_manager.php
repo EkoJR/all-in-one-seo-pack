@@ -37,17 +37,14 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Feature_Manager' ) ) {
 			parent::__construct();
 			$this->module_info = array(
 				'sitemap'           => array(
-					/* translators: the XML Sitemaps module allows users to generate a sitemap in .xml format for their website and
-					submit it to search engines such as Google, Bing and Yahoo. */
+					/* translators: the XML Sitemaps module allows users to generate a sitemap in .xml format for their website and submit it to search engines such as Google, Bing and Yahoo. */
 					'name'        => __( 'XML Sitemaps', 'all-in-one-seo-pack' ),
 					'description' => __( 'Create and manage your XML Sitemaps using this feature and submit your XML Sitemap to Google, Bing/Yahoo and Ask.com.', 'all-in-one-seo-pack' ),
 				),
 				'opengraph'         => array(
-					/* translators: the Social Meta module allows users to add Open Graph (OG:) meta tags to their site's post/pages
-					to control the appearance of them when shared on social media networks like Facebook and Twitter. */
+					/* translators: the Social Meta module allows users to add Open Graph (OG:) meta tags to their site's post/pages to control the appearance of them when shared on social media networks like Facebook and Twitter. */
 					'name'        => __( 'Social Meta', 'all-in-one-seo-pack' ),
-					/* translators: Social Meta refers to Open Graph (OG:) meta tags, which can be used to control the appearance
-					of a site's posts/pages when shared on social media networks like Facebook and Twitter. */
+					/* translators: Social Meta refers to Open Graph (OG:) meta tags, which can be used to control the appearance of a site's posts/pages when shared on social media networks like Facebook and Twitter. */
 					'description' => __( 'Add Social Meta data to your site to deliver closer integration between your website and social media.', 'all-in-one-seo-pack' ),
 				),
 				'robots'            => array(
@@ -61,8 +58,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Feature_Manager' ) ) {
 					'description' => __( 'Edit your .htaccess file to fine-tune your site.', 'all-in-one-seo-pack' ),
 				),
 				'importer_exporter' => array(
-					/* translators: the Importer & Exporter module allows users to import/export their All in One SEO Pack
-					settings for backup purposes or when migrating their site. */
+					/* translators: the Importer & Exporter module allows users to import/export their All in One SEO Pack settings for backup purposes or when migrating their site. */
 					'name'        => __( 'Importer & Exporter', 'all-in-one-seo-pack' ),
 					/* translators: %s is a placeholder, which means that it should not be translated. It will be replaced with the name of the plugin, All in One SEO Pack. */
 					'description' => sprintf( __( 'Exports and imports your %s plugin settings.', 'all-in-one-seo-pack' ), AIOSEOP_PLUGIN_NAME ),
@@ -74,8 +70,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Feature_Manager' ) ) {
 					'description' => __( 'Stop badly behaving bots from slowing down your website.', 'all-in-one-seo-pack' ),
 				),
 				'performance'       => array(
-					/* translators: the Performance module allows users to set certain performance related settings and
-					check the status of their WordPress installation. */
+					/* translators: the Performance module allows users to set certain performance related settings and check the status of their WordPress installation. */
 					'name'        => __( 'Performance', 'all-in-one-seo-pack' ),
 					'description' => __( 'Optimize performance related to SEO and check your system status.', 'all-in-one-seo-pack' ),
 					'default'     => 'on',
@@ -92,8 +87,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Feature_Manager' ) ) {
 					'save'        => false,
 				);
 				$this->module_info['video_sitemap'] = array(
-					/*translators: the Video Sitemap module allows users to generate a sitemap with video content in .xml format
-					for their website and submit it to search engines such as Google, Bing and Yahoo. */
+					/* translators: the Video Sitemap module allows users to generate a sitemap with video content in .xml format for their website and submit it to search engines such as Google, Bing and Yahoo. */
 					'name'        => __( 'Video Sitemap', 'all-in-one-seo-pack' ),
 					'description' => __( 'Create and manage your Video Sitemap using this feature and submit your Video Sitemap to Google, Bing/Yahoo and Ask.com.', 'all-in-one-seo-pack' ),
 				);

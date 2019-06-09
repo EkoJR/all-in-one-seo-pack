@@ -188,7 +188,8 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 	 * Upload an image and, optionally, attach to the post.
 	 */
 	protected final function upload_image_and_maybe_attach( $image, $id = 0 ) {
-		/* this factory method has a bug so we have to be a little clever.
+		/*
+		This factory method has a bug so we have to be a little clever.
 		$this->factory->attachment->create( array( 'file' => $image, 'post_parent' => $id ) );
 		*/
 		$attachment_id = $this->factory->attachment->create_upload_object( $image, $id );

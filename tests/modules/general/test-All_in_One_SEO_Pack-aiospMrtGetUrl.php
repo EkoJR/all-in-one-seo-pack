@@ -192,7 +192,7 @@ class Tests_All_in_One_SEO_Pack_AiospMrtGetUrl extends AIOSEOP_Test_Base {
 		 * appears to be a potentual bug with WP_UnitTestCase.
 		 */
 		// $this->go_to_edit_post( site_url() . '/wp-admin/post.php?post=' . $this->post_ids[0] . '&action=edit' );
-		/* OR ( Could change to override function as well) */
+		// OR ( Could change to override function as well)
 		// $this->go_to( site_url() . '/wp-admin/post.php?post=' . $this->post_ids[0] . '&action=edit' );
 		// unset( $GLOBALS['wp_query'], $GLOBALS['wp_the_query'] );
 		// $GLOBALS['wp_the_query'] = new WP_Query();

@@ -219,6 +219,7 @@ class Test_GetMainDescription extends AIOSEOP_Test_Base {
 						$message .= 'Actual Desc. Length: ' . $test_desc_length . '. ';
 						$this->assertLessThan( $count_expected, $test_desc_length, $message );
 					}
+					// phpcs:disable Squiz.Commenting.BlockComment
 					/*
 					if ( $aioseop_options['aiosp_skip_excerpt'] ) {
 						$this->assertEmpty( $test_description, $message  );
@@ -226,6 +227,7 @@ class Test_GetMainDescription extends AIOSEOP_Test_Base {
 						$this->assertEmpty( $test_description, $message  );
 					}
 					*/
+					// phpcs:enable
 				} elseif ( empty( $aioseop_options['aiosp_generate_descriptions'] ) || 'off' === $aioseop_options['aiosp_generate_descriptions'] ) {
 					$message .= 'Not Empty. Actual Test Description: "' . $test_description . '"';
 					if ( empty( $post->post_excerpt ) ) {
