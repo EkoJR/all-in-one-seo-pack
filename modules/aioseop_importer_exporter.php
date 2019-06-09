@@ -75,7 +75,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 			add_action( 'admin_init', array( $this, 'debug_post_types' ), 5 );
 		}
 
-
+		/**
+		 * Settings Page Initialize
+		 *
+		 * @since ?
+		 */
 		function settings_page_init() {
 			add_filter(
 				$this->prefix . 'submit_options',
@@ -85,8 +89,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 
 
 		/**
-		 * @param $submit
+		 * Filter Submit
 		 *
+		 * @since ?
+		 *
+		 * @param $submit
 		 * @return array
 		 */
 		function filter_submit( $submit ) {
@@ -105,7 +112,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 			) + $submit;
 		}
 
-
+		/**
+		 * Debug Post Types
+		 *
+		 * @since ?
+		 */
 		function debug_post_types() {
 			$post_types                                                    = $this->get_post_type_titles();
 			$rempost                                                       = array(
@@ -159,8 +170,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 
 
 		/**
-		 * @param $args
+		 * Importer/Exporter Export
 		 *
+		 * @since ?
+		 *
+		 * @param $args
 		 * @return string
 		 */
 		function importer_exporter_export( $args ) {
@@ -181,7 +195,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 			return $buf;
 		}
 
-
+		/**
+		 * Show Import Warning
+		 *
+		 * @since ?
+		 */
 		function show_import_warnings() {
 
 			echo '<div class="error fade" style="width:52%">';
@@ -196,8 +214,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 
 
 		/**
-		 * @param $array
+		 * Parse INI Helper
 		 *
+		 * @since ?
+		 *
+		 * @param $array
 		 * @return array
 		 */
 		function parse_ini_helper( $array ) {
@@ -236,10 +257,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 			return $returnArray;
 		}
 
-
 		/**
-		 * @param $array
+		 * Recursive Parse
 		 *
+		 * @since ?
+		 *
+		 * @param $array
 		 * @return array
 		 */
 		function recursive_parse( $array ) {
@@ -280,9 +303,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 
 
 		/**
+		 * Get INI File
+		 *
+		 * @since ?
+		 *
 		 * @param      $assoc_arr
 		 * @param bool $has_sections
-		 *
 		 * @return string
 		 */
 		function get_ini_file( $assoc_arr, $has_sections = true ) {
@@ -319,10 +345,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 			return $content;
 		}
 
-
 		/**
-		 * @param $string
+		 * Parse INI Advanced
 		 *
+		 * @since ?
+		 *
+		 * @param $string
 		 * @return array
 		 */
 		function parse_ini_advanced( $string ) {
@@ -333,7 +361,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 			);
 		}
 
-
+		/**
+		 * Do Importer/Exporter
+		 *
+		 * @since ?
+		 */
 		function do_importer_exporter() {
 			$submit       = null;
 			$count        = 0;
@@ -529,16 +561,23 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Importer_Exporter' ) ) {
 		}
 
 
+		/**
+		 * Settings Update
+		 *
+		 * @since ?
+		 * @deprecated
+		 */
 		function settings_update() {
 		}
 
 		/**
+		 * Get Sanitized File
+		 *
 		 * Returns sanitized imported file.
 		 *
-		 * @since
+		 * @since 2.3.4.2
 		 *
 		 * @param string $filename Path to where the uploaded file is located.
-		 *
 		 * @return array Sanitized file as array.
 		 * @throws Exception
 		 */

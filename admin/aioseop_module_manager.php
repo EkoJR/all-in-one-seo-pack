@@ -96,10 +96,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module_Manager' ) ) {
 		}
 
 		/**
-		 * Return module.
+		 * Return Module
+		 *
+		 * @since ?
 		 *
 		 * @param $class
-		 *
 		 * @return $this|bool|mixed
 		 */
 		function return_module( $class ) {
@@ -121,6 +122,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module_Manager' ) ) {
 		}
 
 		/**
+		 * Get Loaded Module List
+		 *
+		 * @since ?
+		 *
 		 * @return array
 		 */
 		function get_loaded_module_list() {
@@ -137,9 +142,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module_Manager' ) ) {
 		}
 
 		/**
+		 * Do Load Module
+		 *
+		 * @since ?
+		 *
 		 * @param $mod Module.
 		 * @param null $args
-		 *
 		 * @return bool
 		 */
 		function do_load_module( $mod, $args = null ) {
@@ -182,8 +190,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module_Manager' ) ) {
 		}
 
 		/**
-		 * @param $mod
+		 * Load Module
 		 *
+		 * @since ?
+		 *
+		 * @param $mod
 		 * @return bool
 		 */
 		function load_module( $mod ) {

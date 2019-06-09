@@ -54,20 +54,32 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_File_Editor' ) ) {
 			$this->update_options();
 		}
 
+		/**
+		 * Settings Page Initialize
+		 *
+		 * @since ?
+		 */
 		function settings_page_init() {
 			add_filter( $this->prefix . 'display_options', array( $this, 'filter_options' ), 10, 2 );
 			add_filter( $this->prefix . 'submit_options', array( $this, 'filter_submit' ), 10, 2 );
 		}
 
+		/**
+		 * Add Page Hooks
+		 *
+		 * @since ?
+		 */
 		function add_page_hooks() {
 			parent::add_page_hooks();
 			add_action( $this->prefix . 'settings_update', array( $this, 'do_file_editor' ), 10, 2 );
 		}
 
 		/**
+		 * Filter Submit
+		 *
+		 * @since ?
 		 * @param $submit
 		 * @param $location
-		 *
 		 * @return mixed
 		 */
 		function filter_submit( $submit, $location ) {
@@ -85,9 +97,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_File_Editor' ) ) {
 		}
 
 		/**
+		 * Filter Options
+		 *
+		 * @since ?
+		 *
 		 * @param $options
 		 * @param $location
-		 *
 		 * @return mixed
 		 */
 		function filter_options( $options, $location ) {
@@ -100,6 +115,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_File_Editor' ) ) {
 		}
 
 		/**
+		 * Do File Editor
+		 *
+		 * @since ?
+		 *
 		 * @param $options This seems to be unused.
 		 * @param $location
 		 */

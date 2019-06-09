@@ -198,8 +198,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	var $is_front_page = null;
 
 	/**
+	 * Constructor
+	 *
 	 * All_in_One_SEO_Pack constructor.
 	 *
+	 * @since ?
 	 * @since 2.3.14 #921 More google analytics options added.
 	 * @since 2.4.0 #1395 Longer Meta Descriptions.
 	 * @since 2.6.1 #1694 Back to shorter meta descriptions.
@@ -911,13 +914,15 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 
 	// good candidate for pro dir.
 	/**
+	 * Custom Output Option
+	 *
 	 * Use custom callback for outputting snippet
 	 *
+	 * @since ?
 	 * @since 2.3.16 Decodes HTML entities on title, description and title length count.
 	 *
 	 * @param $buf
 	 * @param $args
-	 *
 	 * @return string
 	 */
 	function custom_output_option( $buf, $args ) {
@@ -969,8 +974,9 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * Get Title Format for snippet preview.
+	 * Get Title Format
 	 *
+	 * Get Title Format for snippet preview.
 	 * Get the title formatted according to AIOSEOP %shortcodes% specifically for the snippet preview..
 	 *
 	 * @since 2.4.9
@@ -993,7 +999,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		 * Runs before we start applying the formatting for the snippet preview title.
 		 *
 		 * @since 3.0
-		 *
 		 */
 		do_action( 'aioseop_before_get_title_format' );
 
@@ -1084,7 +1089,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		 * @since 3.0
 		 *
 		 * @param string $title_format Document title to be filtered.
-		 *
 		 */
 		$title_format = apply_filters( 'aioseop_title_format', $title_format );
 
@@ -1094,15 +1098,19 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		 * Runs after applying the formatting for the snippet preview title.
 		 *
 		 * @since 3.0
-		 *
 		 */
 		do_action( 'aioseop_after_format_title' );
 
 		return $title_format;
 	}
 
-	// good candidate for pro dir.
 	/**
+	 * Get Page Snippet Info
+	 *
+	 * Good candidate for pro dir.
+	 *
+	 * @since ?
+	 *
 	 * @return array
 	 */
 	function get_page_snippet_info() {
@@ -1251,6 +1259,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Get Queried Object
+	 *
+	 * @since ?
+	 *
 	 * @return null|object|WP_Post
 	 */
 	function get_queried_object() {
@@ -1272,11 +1284,14 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Get Current Option
+	 *
+	 * @since ?
+	 *
 	 * @param array $opts
 	 * @param null $location
 	 * @param null $defaults
 	 * @param null $post
-	 *
 	 * @return array
 	 */
 	function get_current_options( $opts = array(), $location = null, $defaults = null, $post = null ) {
@@ -1348,8 +1363,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $in
+	 * Internationalize
 	 *
+	 * @since ?
+	 *
+	 * @param $in
 	 * @return mixed|void
 	 */
 	function internationalize( $in ) {
@@ -1372,7 +1390,15 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		return apply_filters( 'localization', $in );
 	}
 
-	/*** Used to filter wp_title(), get our title. ***/
+	/**
+	 * WP Title
+	 *
+	 * Used to filter wp_title(), get our title.
+	 *
+	 * @since ?
+	 *
+	 * @return mixed|void
+	 */
 	function wp_title() {
 		if ( ! $this->is_seo_enabled_for_cpt() ) {
 			return;
@@ -1392,12 +1418,13 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Get AIOSEOP Title
+	 *
 	 * Gets the title that will be used by AIOSEOP for title rewrites or returns false.
 	 *
 	 * @param WP_Post $post the post object
 	 * @param bool $use_original_title_format should the original title format be used viz. post_title | blog_title. This parameter was introduced
 	 * to resolve issue#986
-	 *
 	 * @return bool|string
 	 */
 	function get_aioseop_title( $post, $use_original_title_format = true ) {
@@ -1739,11 +1766,14 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Get Original Title
+	 *
+	 * @since ?
+	 *
 	 * @param string $sep
 	 * @param bool $echo
 	 * @param string $seplocation
-	 *
-	 * @return The original title as delivered by WP (well, in most cases).
+	 * @return string The original title as delivered by WP (well, in most cases).
 	 */
 	function get_original_title( $sep = '|', $echo = false, $seplocation = '' ) {
 		global $aioseop_options;
@@ -1838,9 +1868,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $request
+	 * Request as Words
 	 *
-	 * @return User -readable nice words for a given request.
+	 * @since ?
+	 *
+	 * @param $request
+	 * @return string User -readable nice words for a given request.
 	 */
 	function request_as_words( $request ) {
 		$request     = htmlspecialchars( $request );
@@ -1860,10 +1893,13 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Apply Page Title Format
+	 *
+	 * @since ?
+	 *
 	 * @param $title
 	 * @param null $p
 	 * @param string $title_format
-	 *
 	 * @return string
 	 */
 	function apply_page_title_format( $title, $p = null, $title_format = '' ) {
@@ -1881,14 +1917,17 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Title Placeholder Helper
+	 *
 	 * Replace doc title templates inside % symbol on the frontend.
+	 *
+	 * @since ?
 	 *
 	 * @param $title
 	 * @param $post
 	 * @param string $type
 	 * @param string $title_format
 	 * @param string $category
-	 *
 	 * @return string
 	 */
 	function title_placeholder_helper( $title, $post, $type = 'post', $title_format = '', $category = '' ) {
@@ -1897,7 +1936,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		 * Runs before applying the formatting for the doc title on the frontend.
 		 *
 		 * @since 3.0
-		 *
 		 */
 		do_action( 'aioseop_before_title_placeholder_helper' );
 
@@ -1976,7 +2014,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		 * @since 3.0
 		 *
 		 * @param string $new_title Document title to be filtered.
-		 *
 		 */
 		$new_title = apply_filters( 'aioseop_title_format', $new_title );
 
@@ -1984,7 +2021,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		 * Runs after applying the formatting for the doc title on the frontend.
 		 *
 		 * @since 3.0
-		 *
 		 */
 		do_action( 'aioseop_after_title_placeholder_helper' );
 
@@ -1994,9 +2030,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Get All Terms
+	 *
+	 * @since ?
+	 *
 	 * @param $id
 	 * @param $taxonomy
-	 *
 	 * @return array
 	 */
 	function get_all_terms( $id, $taxonomy ) {
@@ -2012,8 +2051,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $title
+	 * Paged Title
 	 *
+	 * @since ?
+	 *
+	 * @param $title
 	 * @return string
 	 */
 	function paged_title( $title ) {
@@ -2040,6 +2082,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Log
+	 *
+	 * @since ?
+	 *
 	 * @param $message
 	 */
 	function log( $message ) {
@@ -2051,10 +2097,13 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Apply Post Title Format
+	 *
+	 * @since ?
+	 *
 	 * @param $title
 	 * @param string $category
 	 * @param null $p
-	 *
 	 * @return string
 	 */
 	function apply_post_title_format( $title, $category = '', $p = null ) {
@@ -2069,9 +2118,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Get Post Title Format
+	 *
+	 * @since ?
+	 *
 	 * @param string $title_type
 	 * @param null $p
-	 *
 	 * @return bool|string
 	 */
 	function get_post_title_format( $title_type = 'post', $p = null ) {
@@ -2101,9 +2153,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Is Singular
+	 *
+	 * @since ?
+	 *
 	 * @param array $post_types
 	 * @param null $post
-	 *
 	 * @return bool
 	 */
 	function is_singular( $post_types = array(), $post = null ) {
@@ -2115,6 +2170,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Is Static Posts Page
+	 *
+	 * @since ?
+	 *
 	 * @return bool|null
 	 */
 	function is_static_posts_page() {
@@ -2129,6 +2188,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Is Static Front Page
+	 *
+	 * @since ?
+	 *
 	 * @return bool|null
 	 */
 	function is_static_front_page() {
@@ -2142,8 +2205,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param int $id
+	 * Get All Categories
 	 *
+	 * @since ?
+	 *
+	 * @param int $id
 	 * @return array
 	 */
 	function get_all_categories( $id = 0 ) {
@@ -2159,8 +2225,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param string $tax
+	 * Get Taxonomy Title
 	 *
+	 * @since ?
+	 *
+	 * @param string $tax
 	 * @return string
 	 */
 	function get_tax_title( $tax = '' ) {
@@ -2183,13 +2252,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		return $this->apply_tax_title_format( $name, $desc, $tax );
 	}
 
-	// Handle prev / next links.
 	/**
-	 *
-	 * Gets taxonomy name.
+	 * Gets Taxonomy Name
 	 *
 	 * @param $tax
 	 *
+	 * @since ?
 	 * @since 2.3.10 Remove option for capitalize categories. We still respect the option,
 	 * and the default (true) or a legacy option in the db can be overridden with the new filter hook aioseop_capitalize_categories
 	 * @since 2.3.15 Remove category capitalization completely
@@ -2214,8 +2282,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $tax
+	 * Get Taxonomy Description
 	 *
+	 * @since ?
+	 *
+	 * @param $tax
 	 * @return mixed|void
 	 */
 	function get_tax_desc( $tax ) {
@@ -2235,10 +2306,13 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Apply Taxonomy Title Format
+	 *
+	 * @since ?
+	 *
 	 * @param $category_name
 	 * @param $category_description
 	 * @param string $tax
-	 *
 	 * @return string
 	 */
 	function apply_tax_title_format( $category_name, $category_description, $tax = '' ) {
@@ -2247,7 +2321,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		 * Runs before applying the formatting for the taxonomy title.
 		 *
 		 * @since 3.0
-		 *
 		 */
 		do_action( 'aioseop_before_tax_title_format' );
 
@@ -2287,7 +2360,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		 * @since 3.0
 		 *
 		 * @param string $title Document title to be filtered.
-		 *
 		 */
 		$title = apply_filters( 'aioseop_title_format', $title );
 
@@ -2297,7 +2369,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		 * Runs after applying the formatting for the taxonomy title.
 		 *
 		 * @since 3.0
-		 *
 		 */
 		do_action( 'aioseop_after_tax_title_format' );
 
@@ -2305,8 +2376,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param string $tax
+	 * Get Taxonomy Title Format
 	 *
+	 * @since ?
+	 *
+	 * @param string $tax
 	 * @return string
 	 */
 	function get_tax_title_format( $tax = '' ) {
@@ -2340,9 +2414,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Apply Archive Title Format
+	 *
+	 * @since ?
+	 *
 	 * @param $title
 	 * @param string $category
-	 *
 	 * @return string
 	 */
 	function apply_archive_title_format( $title, $category = '' ) {
@@ -2359,6 +2436,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Get Archive Title Format
+	 *
+	 * @since ?
+	 *
 	 * @return bool|string
 	 */
 	function get_archive_title_format() {
@@ -2366,12 +2447,14 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Get Main Description
+	 *
+	 * @since ?
 	 * @since 2.3.14 #932 Adds filter "aioseop_description", removes extra filtering.
 	 * @since 2.4 #951 Trim/truncates occurs inside filter "aioseop_description".
 	 * @since 2.4.4.1 #1395 Longer Meta Descriptions & don't trim manual Descriptions.
 	 *
 	 * @param null $post
-	 *
 	 * @return mixed|string|void
 	 */
 	function get_main_description( $post = null ) {
@@ -2430,6 +2513,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Show Page Description
+	 *
+	 * @since ?
+	 *
 	 * @return bool
 	 */
 	function show_page_description() {
@@ -2445,6 +2532,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Get Page Number
+	 *
+	 * @since ?
+	 *
 	 * @return mixed
 	 */
 	function get_page_number() {
@@ -2461,6 +2552,8 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Get AIOSEOP Description
+	 *
 	 * @since ?
 	 * @since 2.4 #1395 Longer Meta Descriptions & don't trim manual Descriptions.
 	 *
@@ -2489,7 +2582,8 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * Gets post description.
+	 * Gets Post Description
+	 *
 	 * Auto-generates description if settings are ON.
 	 *
 	 * @since 2.3.13 #899 Fixes non breacking space, applies filter "aioseop_description".
@@ -2498,7 +2592,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	 * @since 2.4 #1395 Longer Meta Descriptions & don't trim manual Descriptions.
 	 *
 	 * @param object $post Post object.
-	 *
 	 * @return mixed|string
 	 */
 	function get_post_description( $post ) {
@@ -2533,10 +2626,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Trim Text without Filter Full Length
+	 *
+	 * @since ?
 	 * @since 2.3.15 Brackets not longer replaced from filters.
 	 *
 	 * @param $text
-	 *
 	 * @return string
 	 */
 	function trim_text_without_filters_full_length( $text ) {
@@ -2548,11 +2643,13 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Trim Excerpt without Filters
+	 *
+	 * @since ?
 	 * @since 2.3.15 Brackets not longer replaced from filters.
 	 *
 	 * @param $text
 	 * @param int $max
-	 *
 	 * @return string
 	 */
 	function trim_excerpt_without_filters( $text, $max = 0 ) {
@@ -2594,9 +2691,14 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * AIOSEOP Get URL
+	 *
+	 * @since ?
+	 *
+	 * @todo Change name to `*_get_url`.
+	 *
 	 * @param $query
 	 * @param bool $show_page
-	 *
 	 * @return bool|false|string
 	 */
 	function aiosp_mrt_get_url( $query, $show_page = true ) {
@@ -2693,8 +2795,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $link
+	 * Get Paged
 	 *
+	 * @since ?
+	 *
+	 * @param $link
 	 * @return string
 	 */
 	function get_paged( $link ) {
@@ -2727,6 +2832,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Get Main Keywords
+	 *
+	 * @since ?
+	 *
 	 * @return comma|string
 	 */
 	function get_main_keywords() {
@@ -2754,7 +2863,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @return comma-separated list of unique keywords
+	 * Get All Keywords
+	 *
+	 * @since ?
+	 *
+	 * @return string|null comma-separated list of unique keywords
 	 */
 	function get_all_keywords() {
 		global $posts;
@@ -2828,8 +2941,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $keywords
+	 * Keyword String to List
 	 *
+	 * @since ?
+	 *
+	 * @param $keywords
 	 * @return array
 	 */
 	function keyword_string_to_list( $keywords ) {
@@ -2843,8 +2959,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param int $id
+	 * Get All Tags
 	 *
+	 * @since ?
+	 *
+	 * @param int $id
 	 * @return array
 	 */
 	function get_all_tags( $id = 0 ) {
@@ -2874,8 +2993,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $keywords
+	 * Get Unique Keywords
 	 *
+	 * @since ?
+	 *
+	 * @param $keywords
 	 * @return string
 	 */
 	function get_unique_keywords( $keywords ) {
@@ -2883,8 +3005,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $keywords
+	 * Clean Keyword List
 	 *
+	 * @since ?
+	 *
+	 * @param $keywords
 	 * @return array
 	 */
 	function clean_keyword_list( $keywords ) {
@@ -2902,6 +3027,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Split Share Term
+	 *
+	 * @since ?
+	 *
 	 * @param $term_id
 	 * @param $new_term_id
 	 * @param string $term_taxonomy_id
@@ -2921,8 +3050,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $term_id
+	 * Get All Term Data
 	 *
+	 * @since ?
+	 *
+	 * @param $term_id
 	 * @return array
 	 */
 	function get_all_term_data( $term_id ) {
@@ -3026,6 +3158,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 	*/
 
+	/**
+	 * Add Page Hooks
+	 *
+	 * @since ?
+	 */
 	function add_page_hooks() {
 
 		global $aioseop_options;
@@ -3221,8 +3358,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $submit
+	 * Filter Submit
 	 *
+	 * @since ?
+	 *
+	 * @param $submit
 	 * @return mixed
 	 */
 	function filter_submit( $submit ) {
@@ -3241,7 +3381,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Reset Options
+	 *
 	 * Handle resetting options to defaults, but preserve the license key if pro.
+	 *
+	 * @since ?
 	 *
 	 * @param null $location
 	 * @param bool $delete
@@ -3285,12 +3429,14 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Filter Settings
+	 *
+	 * @since ?
 	 * @since 2.3.16 Forces HTML entity decode on placeholder values.
 	 *
 	 * @param $settings
 	 * @param $location
 	 * @param $current
-	 *
 	 * @return mixed
 	 */
 	function filter_settings( $settings, $location, $current ) {
@@ -3369,9 +3515,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Filter Options
+	 *
+	 * @since ?
+	 *
 	 * @param $options
 	 * @param $location
-	 *
 	 * @return mixed
 	 */
 	function filter_options( $options, $location ) {
@@ -3399,6 +3548,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		return $options;
 	}
 
+	/**
+	 * Template Redirect
+	 *
+	 * @since ?
+	 */
 	function template_redirect() {
 		global $aioseop_options;
 
@@ -3420,6 +3574,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Is Page Included
+	 *
+	 * @since ?
+	 *
 	 * @return bool
 	 */
 	function is_page_included() {
@@ -3500,8 +3658,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $content
+	 * Output Callback for Title
 	 *
+	 * @since ?
+	 *
+	 * @param $content
 	 * @return mixed|string
 	 */
 	function output_callback_for_title( $content ) {
@@ -3509,10 +3670,13 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Rewrite Title
+	 *
 	 * Used for forcing title rewrites.
 	 *
-	 * @param $header
+	 * @since ?
 	 *
+	 * @param $header
 	 * @return mixed|string
 	 */
 	function rewrite_title( $header ) {
@@ -3544,9 +3708,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Replace Title
+	 *
+	 * @since ?
+	 *
 	 * @param $content
 	 * @param $title
-	 *
 	 * @return mixed
 	 */
 	function replace_title( $content, $title ) {
@@ -3564,8 +3731,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Add Hooks
+	 *
 	 * Adds WordPress hooks.
 	 *
+	 * @since ?
 	 * @since 2.3.13 #899 Adds filter:aioseop_description.
 	 * @since 2.3.14 #593 Adds filter:aioseop_title.
 	 * @since 2.4 #951 Increases filter:aioseop_description arguments number.
@@ -3659,8 +3829,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $description
+	 * Make Unique Attachment Description
 	 *
+	 * @since ?
+	 *
+	 * @param $description
 	 * @return string
 	 */
 	function make_unique_att_desc( $description ) {
@@ -3682,9 +3855,15 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * AMP Head
+	 *
 	 * Adds meta description to AMP pages.
 	 *
+	 * @todo Change void returns to empty string returns.
+	 *
 	 * @since 2.3.11.5
+	 *
+	 * @return string|void
 	 */
 	function amp_head() {
 		if ( ! $this->is_seo_enabled_for_cpt() ) {
@@ -3722,7 +3901,15 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Is SEO Enabled for CPT
+	 *
 	 * Checks whether the current CPT should show the SEO tags.
+	 *
+	 * @since 2.9
+	 *
+	 * @todo Remove this as it is only a simple boolean check.
+	 *
+	 * @return bool
 	 */
 	private function is_seo_enabled_for_cpt() {
 		global $aioseop_options;
@@ -3730,6 +3917,9 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * WP Head
+	 *
+	 * @since ?
 	 * @since 2.3.14 #932 Removes filter "aioseop_description".
 	 */
 	function wp_head() {
@@ -3961,7 +4151,9 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * Check rewrite handler.
+	 * Check Rewrite Handler
+	 *
+	 * @since ?
 	 */
 	function check_rewrite_handler() {
 		global $aioseop_options;
@@ -4001,8 +4193,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @param $description
+	 * Trim Description
 	 *
+	 * @since ?
+	 *
+	 * @param $description
 	 * @return mixed|string
 	 */
 	function trim_description( $description ) {
@@ -4015,9 +4210,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Apply Description Format
+	 *
+	 * @since ?
+	 *
 	 * @param $description
 	 * @param null $post
-	 *
 	 * @return mixed
 	 */
 	function apply_description_format( $description, $post = null ) {
@@ -4026,7 +4224,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		 * Runs before applying the formatting for the meta description.
 		 *
 		 * @since 3.0
-		 *
 		 */
 		do_action( 'aioseop_before_apply_description_format' );
 
@@ -4081,7 +4278,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		 * Runs after applying the formatting for the meta description.
 		 *
 		 * @since 3.0
-		 *
 		 */
 		do_action( 'aioseop_after_apply_description_format' );
 
@@ -4089,9 +4285,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
-	 * @return string
-	 * @since 0.0
+	 * Get Robots Meta
+	 *
+	 * @since 2.3.5
 	 * @since 2.3.11.5 Added no index API filter hook for password protected posts.
+	 *
+	 * @return string
 	 */
 	function get_robots_meta() {
 		global $aioseop_options;
@@ -4163,6 +4362,8 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Check Singular
+	 *
 	 * Determine if the post is 'like' singular. In some specific instances, such as when the Reply post type of bbpress is loaded in its own page,
 	 * it reflects as singular intead of single
 	 *
@@ -4183,8 +4384,12 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 
 	/**
+	 * Is Password Protected
+	 *
 	 * Determine if post is password protected.
+	 *
 	 * @since 2.3.11.5
+	 *
 	 * @return bool
 	 */
 	function is_password_protected() {
@@ -4239,8 +4444,11 @@ EOF;
 	}
 
 	/**
-	 * @param null $post
+	 * Get Previous/Next Links
 	 *
+	 * @since ?
+	 *
+	 * @param null $post
 	 * @return array
 	 */
 	function get_prev_next_links( $post = null ) {
@@ -4323,17 +4531,17 @@ EOF;
 	}
 
 	/**
+	 * Validate URL Scheme
 	 *
 	 * Validates whether the url should be https or http.
 	 *
 	 * Mainly we're just using this for canonical URLS, but eventually it may be useful for other things
 	 *
-	 * @param $url
-	 *
-	 * @return string $url
-	 *
 	 * @since 2.3.5
 	 * @since 2.3.11 Removed check for legacy protocol setting. Added filter.
+	 *
+	 * @param $url
+	 * @return string $url
 	 */
 	function validate_url_scheme( $url ) {
 
@@ -4353,10 +4561,13 @@ EOF;
 	}
 
 	/**
+	 * Override Options
+	 *
+	 * @since ?
+	 *
 	 * @param $options
 	 * @param $location
 	 * @param $settings
-	 *
 	 * @return mixed
 	 */
 	function override_options( $options, $location, $settings ) {
@@ -4372,8 +4583,11 @@ EOF;
 	}
 
 	/**
-	 * @param $id
+	 * Save Post Data
 	 *
+	 * @since ?
+	 *
+	 * @param $id
 	 * @return bool
 	 */
 	function save_post_data( $id ) {
@@ -4450,6 +4664,10 @@ EOF;
 	}
 
 	/**
+	 * Display Tabbed Metabox
+	 *
+	 * @since ?
+	 *
 	 * @param $post
 	 * @param $metabox
 	 */
@@ -4472,6 +4690,10 @@ EOF;
 	}
 
 	/**
+	 * Get Metabox Header
+	 *
+	 * @since ?
+	 *
 	 * @param $tabs
 	 *
 	 * @return string
@@ -4493,6 +4715,11 @@ EOF;
 		return $header;
 	}
 
+	/**
+	 * Admin Bar Menu
+	 *
+	 * @since ?
+	 */
 	function admin_bar_menu() {
 
 		if ( apply_filters( 'aioseo_show_in_admin_bar', true ) === false ) {
@@ -4604,6 +4831,10 @@ EOF;
 	}
 
 	/**
+	 * Menu Order
+	 *
+	 * @since ?
+	 *
 	 * Order for adding the menus for the aioseop_modules_add_menus hook.
 	 */
 	function menu_order() {
@@ -4611,6 +4842,10 @@ EOF;
 	}
 
 	/**
+	 * Display Category Metaboxes
+	 *
+	 * @since ?
+	 *
 	 * @param $tax
 	 */
 	function display_category_metaboxes( $tax ) {
@@ -4623,6 +4858,10 @@ EOF;
 	}
 
 	/**
+	 * Save Category Metaboxes
+	 *
+	 * @since ?
+	 *
 	 * @param $id
 	 */
 	function save_category_metaboxes( $id ) {
@@ -4693,6 +4932,11 @@ EOF;
 		}
 	}
 
+	/**
+	 * Admin Menu
+	 *
+	 * @since ?
+	 */
 	function admin_menu() {
 		$file      = plugin_basename( __FILE__ );
 		$menu_name = __( 'All in One SEO', 'all-in-one-seo-pack' );
@@ -4865,8 +5109,11 @@ EOF;
 	}
 
 	/**
-	 * @param $menu_order
+	 * Set Menu Order
 	 *
+	 * @since ?
+	 *
+	 * @param $menu_order
 	 * @return array
 	 */
 	function set_menu_order( $menu_order ) {

@@ -24,6 +24,13 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 		 */
 		protected $module_info = array();
 
+		/**
+		 * All_in_One_SEO_Pack_Performance constructor.
+		 *
+		 * @since ?
+		 *
+		 * @param $mod
+		 */
 		function __construct( $mod ) {
 			$this->name   = __( 'Performance', 'all-in-one-seo-pack' );        // Human-readable name of the plugin.
 			$this->prefix = 'aiosp_performance_';                        // Option prefix.
@@ -95,6 +102,15 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 			add_action( $this->prefix . 'settings_update', array( $this, 'settings_update_action' ), 10, 2 );
 		}
 
+		/**
+		 * Update Options Filter
+		 *
+		 * @since ?
+		 *
+		 * @param $options
+		 * @param $location
+		 * @return mixed
+		 */
 		function update_options_filter( $options, $location ) {
 			if ( $location == null && isset( $options[ $this->prefix . 'force_rewrites' ] ) ) {
 				unset( $options[ $this->prefix . 'force_rewrites' ] );
@@ -103,6 +119,15 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 			return $options;
 		}
 
+		/**
+		 * Display Options Filter
+		 *
+		 * @since ?
+		 *
+		 * @param $options
+		 * @param $location
+		 * @return mixed
+		 */
 		function display_options_filter( $options, $location ) {
 			if ( $location == null ) {
 				$options[ $this->prefix . 'force_rewrites' ] = 1;
@@ -113,6 +138,14 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 			return $options;
 		}
 
+		/**
+		 * Settings Update Action
+		 *
+		 * @since ?
+		 *
+		 * @param $options
+		 * @param $location
+		 */
 		function settings_update_action( $options, $location ) {
 			if ( $location == null && isset( $_POST[ $this->prefix . 'force_rewrites' ] ) ) {
 				$force_rewrites = $_POST[ $this->prefix . 'force_rewrites' ];
@@ -126,6 +159,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 			}
 		}
 
+		/**
+		 * Add Page Hooks
+		 *
+		 * @since ?
+		 */
 		function add_page_hooks() {
 			$memory_usage = memory_get_peak_usage() / 1024 / 1024;
 			if ( $memory_usage > 32 ) {
@@ -144,15 +182,34 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 			parent::add_page_hooks();
 		}
 
+		/**
+		 * Settings Page Initialization
+		 *
+		 * @since ?
+		 */
 		function settings_page_init() {
 			$this->default_options['status']['default'] = $this->get_serverinfo();
 			$this->default_options['send_email']['default'] = $this->get_email_input();
 		}
 
+		/**
+		 * Menu Order
+		 *
+		 * @since ?
+		 *
+		 * @return int
+		 */
 		function menu_order() {
 			return 7;
 		}
 
+		/**
+		 * Get Server Info
+		 *
+		 * @since ?
+		 *
+		 * @return mixed|string|void
+		 */
 		function get_serverinfo() {
 			global $wpdb;
 			global $wp_version;
@@ -345,6 +402,13 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 			return $buf;
 		}
 
+		/**
+		 * Get Email Input
+		 *
+		 * @since ?
+		 *
+		 * @return string
+		 */
 		function get_email_input() {
 			$nonce = wp_create_nonce( 'sfwd-debug-nonce' );
 			$buf   = '<input name="sfwd_debug_send_email" type="text" value="" placeholder="' . __( 'E-mail debug information', 'all-in-one-seo-pack' ) . '"><input name="sfwd_debug_nonce" type="hidden" value="' .
@@ -352,10 +416,24 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Performance' ) ) {
 			return $buf;
 		}
 
+		/**
+		 * Get Exporter Choices
+		 *
+		 * @since 2.3.13
+		 *
+		 * @return array
+		 */
 		function get_exporter_choices() {
 			return array( 1, 2 );
 		}
 
+		/**
+		 * Get Exporter Post Types
+		 *
+		 * @since 2.3.13
+		 *
+		 * @return array
+		 */
 		function get_exporter_post_types() {
 			$post_types = $this->get_post_type_titles();
 			$rempost    = array(

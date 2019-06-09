@@ -27,7 +27,6 @@
  * @group post
  * @group meta
  * @group description
- *
  */
 
 /**
@@ -159,6 +158,7 @@ class Test_GetMainDescription extends AIOSEOP_Test_Base {
 	 * Issue #1491 Class Method to test.
 	 *
 	 * set_current_screen
+	 *
 	 * @link https://codex.wordpress.org/Plugin_API/Admin_Screen_Reference
 	 *
 	 * @dataProvider data_get_main_description

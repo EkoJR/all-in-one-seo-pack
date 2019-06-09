@@ -1610,6 +1610,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 
 						/**
 						 * This is to accomodate multiple fb:admins on separate lines.
+						 *
 						 * @TODO Eventually we'll want to put this in its own function so things like images work too.
 						 */
 						if ( 'key' === $k ) {
@@ -1662,6 +1663,7 @@ END;
 
 		/**
 		 * Do / adds opengraph properties to meta.
+		 *
 		 * @since 2.3.11
 		 *
 		 * @global array $aioseop_options AIOSEOP plugin options.
@@ -1870,6 +1872,7 @@ END;
 
 		/**
 		 * Enqueue our file upload scripts and styles.
+		 *
 		 * @param $hook
 		 */
 		function og_admin_enqueue_scripts( $hook ) {
@@ -1916,6 +1919,7 @@ END;
 		/**
 		 * Returns the placeholder filtered and ready for DOM display.
 		 * filter:aioseop_opengraph_placeholder
+		 *
 		 * @since 2.4.14
 		 *
 		 * @param mixed  $placeholder Placeholder to be filtered.
@@ -1930,6 +1934,7 @@ END;
 		/**
 		 * Returns filtered default options.
 		 * filter:{prefix}default_options
+		 *
 		 * @since 2.4.13
 		 *
 		 * @param array  $options  Default options.

@@ -10,7 +10,11 @@
 
 if ( ! function_exists( 'aioseop_get_permalink' ) ) {
 	/**
+	 * AIOSEOP Get Permalink
+	 *
 	 * Support UTF8 URLs.
+	 *
+	 * @since ?
 	 *
 	 * @param int|object|null $post_id The post.
 	 */
@@ -26,7 +30,11 @@ if ( ! function_exists( 'aioseop_get_permalink' ) ) {
 
 if ( ! function_exists( 'aioseop_load_modules' ) ) {
 	/**
+	 * AIOSEOP Load Modules
+	 *
 	 * Load the module manager.
+	 *
+	 * @since ?
 	 */
 	function aioseop_load_modules() {
 		global $aioseop_modules, $aioseop_module_list;
@@ -38,6 +46,10 @@ if ( ! function_exists( 'aioseop_load_modules' ) ) {
 
 if ( ! function_exists( 'aioseop_get_options' ) ) {
 	/**
+	 * AIOSEOP Get Option
+	 *
+	 * @since ?
+	 *
 	 * @return mixed|void
 	 */
 	function aioseop_get_options() {
@@ -51,9 +63,13 @@ if ( ! function_exists( 'aioseop_get_options' ) ) {
 
 if ( ! function_exists( 'aioseop_update_settings_check' ) ) {
 	/**
+	 * AIOSEOP Update Settings Check
+	 *
 	 * Check if settings need to be updated / migrated from old version.
 	 *
 	 * @TODO See when this is from and if we can move it elsewhere... our new db updates/upgrades class? This is called every single time a page is loaded both on the front-end or backend.
+	 *
+	 * @since ?
 	 */
 	function aioseop_update_settings_check() {
 		global $aioseop_options;
@@ -87,9 +103,13 @@ if ( ! function_exists( 'aioseop_update_settings_check' ) ) {
 
 if ( ! function_exists( 'aioseop_initialize_options' ) ) {
 	/**
+	 * AIOSEOP Initialize Options
+	 *
 	 * Initialize settings to defaults. Changed name from the abstruse 'aioseop_mrt_mkarry' to 'aioseop_initialize_options'.
 	 *
 	 * @TODO Should also move.
+	 *
+	 * @since ?
 	 */
 	function aioseop_initialize_options() {
 		global $aiosp;
@@ -113,10 +133,14 @@ if ( ! function_exists( 'aioseop_initialize_options' ) ) {
 }
 
 if ( ! function_exists( 'aioseop_get_version' ) ) {
+
 	/**
-	 * Returns the version.
+	 * AIOSEOP Get Version
 	 *
+	 * Returns the version.
 	 * I'm not sure why we have BOTH a function and a constant for this. -mrt
+	 *
+	 * @since ?
 	 *
 	 * @return string
 	 */
@@ -126,11 +150,15 @@ if ( ! function_exists( 'aioseop_get_version' ) ) {
 }
 
 if ( ! function_exists( 'aioseop_option_isset' ) ) {
+
 	/**
+	 * AIOSEOP Option Isset
+	 *
 	 * Checks if an option isset.
 	 *
-	 * @param $option
+	 * @since ?
 	 *
+	 * @param $option
 	 * @return bool
 	 */
 	function aioseop_option_isset( $option ) {
@@ -141,9 +169,13 @@ if ( ! function_exists( 'aioseop_option_isset' ) ) {
 }
 
 if ( ! function_exists( 'aioseop_addmycolumns' ) ) {
+
 	/**
+	 * AIOSEOP Add My Columns
+	 *
 	 * Adds posttype columns.
 	 *
+	 * @since ?
 	 */
 	function aioseop_addmycolumns() {
 		global $aioseop_options, $pagenow;
@@ -181,8 +213,11 @@ if ( ! function_exists( 'aioseop_addmycolumns' ) ) {
 if ( ! function_exists( 'aioseop_mrt_pcolumns' ) ) {
 
 	/**
-	 * @param $aioseopc
+	 * AIOSEOP (MRT) P Columns
 	 *
+	 * @since ?
+	 *
+	 * @param $aioseopc
 	 * @return mixed
 	 */
 	function aioseop_mrt_pcolumns( $aioseopc ) {
@@ -199,6 +234,11 @@ if ( ! function_exists( 'aioseop_mrt_pcolumns' ) ) {
 
 if ( ! function_exists( 'aioseop_admin_head' ) ) {
 
+	/**
+	 * AIOSEOP Admin Head
+	 *
+	 * @since ?
+	 */
 	function aioseop_admin_head() {
 		wp_enqueue_script( 'aioseop_welcome_js', AIOSEOP_PLUGIN_URL . 'js/quickedit_functions.js', array( 'jquery' ), AIOSEOP_VERSION );
 		?>
@@ -263,6 +303,11 @@ if ( ! function_exists( 'aioseop_admin_head' ) ) {
 
 if ( ! function_exists( 'aioseop_handle_ignore_notice' ) ) {
 
+	/**
+	 * AIOSEOP Handle Ignore Notice
+	 *
+	 * @since ?
+	 */
 	function aioseop_handle_ignore_notice() {
 
 		if ( ! empty( $_GET ) ) {
@@ -282,10 +327,13 @@ if ( ! function_exists( 'aioseop_handle_ignore_notice' ) ) {
 if ( ! function_exists( 'aioseop_output_notice' ) ) {
 
 	/**
+	 * AIOSEOP Output Notice
+	 *
+	 * @since ?
+	 *
 	 * @param $message
 	 * @param string $id
 	 * @param string $class
-	 *
 	 * @return bool
 	 */
 	function aioseop_output_notice( $message, $id = '', $class = 'updated fade' ) {
@@ -306,10 +354,13 @@ if ( ! function_exists( 'aioseop_output_notice' ) ) {
 if ( ! function_exists( 'aioseop_output_dismissable_notice' ) ) {
 
 	/**
+	 * AIOSEOP Output Dismissable Notice
+	 *
+	 * @since ?
+	 *
 	 * @param $message
 	 * @param string $id
 	 * @param string $class
-	 *
 	 * @return bool
 	 */
 	function aioseop_output_dismissable_notice( $message, $id = '', $class = 'updated fade' ) {
@@ -335,6 +386,9 @@ if ( ! function_exists( 'aioseop_output_dismissable_notice' ) ) {
 
 if ( ! function_exists( 'aioseop_ajax_save_meta' ) ) {
 
+	/**
+	 * AIOSEOP AJAX Save Meta
+	 */
 	function aioseop_ajax_save_meta() {
 		if ( ! empty( $_POST['_inline_edit'] ) && ( $_POST['_inline_edit'] !== 'undefined' ) ) {
 			check_ajax_referer( 'inlineeditnonce', '_inline_edit' );
@@ -380,6 +434,11 @@ if ( ! function_exists( 'aioseop_ajax_save_meta' ) ) {
 
 if ( ! function_exists( 'aioseop_ajax_init' ) ) {
 
+	/**
+	 * AIOSEOP AJAX Init
+	 *
+	 * @since ?
+	 */
 	function aioseop_ajax_init() {
 		if ( ! empty( $_POST ) && ! empty( $_POST['settings'] ) && ( ! empty( $_POST['nonce-aioseop'] ) || ( ! empty( $_POST['nonce-aioseop-edit'] ) ) ) && ! empty( $_POST['options'] ) ) {
 			$_POST    = stripslashes_deep( $_POST );
@@ -398,10 +457,13 @@ if ( ! function_exists( 'aioseop_ajax_init' ) ) {
 }
 
 /**
+ * AIOSEOP Embed Handler HTML
+ *
+ * @since 2.3a
+ *
  * @param $return
  * @param $url
  * @param $attr
- *
  * @return mixed
  */
 function aioseop_embed_handler_html( $return, $url, $attr ) {
@@ -410,6 +472,11 @@ function aioseop_embed_handler_html( $return, $url, $attr ) {
 
 if ( ! function_exists( 'aioseop_ajax_save_url' ) ) {
 
+	/**
+	 * AIOSEOP AJAX Save URL
+	 *
+	 * @since ?
+	 */
 	function aioseop_ajax_save_url() {
 		$valid   = true;
 		$invalid_msg    = null;
@@ -475,6 +542,11 @@ if ( ! function_exists( 'aioseop_ajax_save_url' ) ) {
 
 if ( ! function_exists( 'aioseop_ajax_delete_url' ) ) {
 
+	/**
+	 * AIOSEOP AJAX Delete URL
+	 *
+	 * @since ?
+	 */
 	function aioseop_ajax_delete_url() {
 		aioseop_ajax_init();
 		$options         = array();
@@ -520,6 +592,11 @@ if ( ! function_exists( 'aioseop_ajax_delete_url' ) ) {
 
 if ( ! function_exists( 'aioseop_ajax_scan_header' ) ) {
 
+	/**
+	 * AIOSEOP AJAX Scan Header
+	 *
+	 * @since ?
+	 */
 	function aioseop_ajax_scan_header() {
 		$_POST['options'] = 'foo';
 		aioseop_ajax_init();
@@ -607,6 +684,11 @@ if ( ! function_exists( 'aioseop_ajax_scan_header' ) ) {
 
 if ( ! function_exists( 'aioseop_ajax_save_settings' ) ) {
 
+	/**
+	 * AIOSEOP AJAX Save Settings
+	 *
+	 * @since ?
+	 */
 	function aioseop_ajax_save_settings() {
 		aioseop_ajax_init();
 		$options = array();
@@ -641,6 +723,11 @@ if ( ! function_exists( 'aioseop_ajax_save_settings' ) ) {
 
 if ( ! function_exists( 'aioseop_ajax_get_menu_links' ) ) {
 
+	/**
+	 * AIOSEOP AJAX Get Menu Links
+	 *
+	 * @since ?
+	 */
 	function aioseop_ajax_get_menu_links() {
 		aioseop_ajax_init();
 		$options = array();
@@ -712,6 +799,10 @@ if ( ! function_exists( 'aioseop_ajax_get_menu_links' ) ) {
 if ( ! function_exists( 'aioseop_mrt_pccolumn' ) ) {
 
 	/**
+	 * AIOSEOP (MRT) Column
+	 *
+	 * @since ?
+	 *
 	 * @param $aioseopcn
 	 * @param $aioseoppi
 	 */
@@ -761,6 +852,10 @@ if ( ! function_exists( 'aioseop_mrt_pccolumn' ) ) {
 if ( ! function_exists( 'aioseop_unprotect_meta' ) ) {
 
 	/**
+	 * AIOSEOP Unprotect Meta
+	 *
+	 * @since ?
+	 *
 	 * @param $protected
 	 * @param $meta_key
 	 * @param $meta_type
@@ -779,8 +874,11 @@ if ( ! function_exists( 'aioseop_unprotect_meta' ) ) {
 if ( ! function_exists( 'aioseop_mrt_exclude_this_page' ) ) {
 
 	/**
-	 * @param null $url
+	 * AIOSEOP (MRT) Exclude this Page
 	 *
+	 * @since ?
+	 *
+	 * @param null $url
 	 * @return bool
 	 */
 	function aioseop_mrt_exclude_this_page( $url = null ) {
@@ -833,8 +931,11 @@ if ( ! function_exists( 'aioseop_mrt_exclude_this_page' ) ) {
 if ( ! function_exists( 'aioseop_add_contactmethods' ) ) {
 
 	/**
-	 * @param $contactmethods
+	 * AIOSEOP Add Contact Methods
 	 *
+	 * @since ?
+	 *
+	 * @param $contactmethods
 	 * @return mixed
 	 */
 	function aioseop_add_contactmethods( $contactmethods ) {
@@ -881,12 +982,15 @@ if ( ! function_exists( 'aioseop_localize_script_data' ) ) {
 
 if ( ! function_exists( 'aioseop_array_insert_after' ) ) {
 	/**
+	 * AIOSEOP Array Insert After
+	 *
 	 * Utility function for inserting elements into associative arrays by key.
+	 *
+	 * @since ?
 	 *
 	 * @param $arr
 	 * @param $insertKey
 	 * @param $newValues
-	 *
 	 * @return array
 	 */
 	function aioseop_array_insert_after( $arr, $insertKey, $newValues ) {
@@ -905,12 +1009,16 @@ if ( ! function_exists( 'aioseop_array_insert_after' ) ) {
 }
 
 if ( ! function_exists( 'fnmatch' ) ) {
+
 	/**
+	 * Filename Match
+	 *
 	 * Support for fnmatch() doesn't exist on Windows pre PHP 5.3.
+	 *
+	 * @since ?
 	 *
 	 * @param $pattern
 	 * @param $string
-	 *
 	 * @return int
 	 */
 	function fnmatch( $pattern, $string ) {
@@ -926,6 +1034,14 @@ if ( ! function_exists( 'fnmatch' ) ) {
 }
 
 if ( ! function_exists( 'aiosp_log' ) ) {
+	/**
+	 * AIOSEOP Log
+	 *
+	 * @since 2.4.10
+	 *
+	 * @param      $log
+	 * @param bool $force
+	 */
 	function aiosp_log( $log, $force = false ) {
 
 		global $aioseop_options;
@@ -943,11 +1059,14 @@ if ( ! function_exists( 'aiosp_log' ) ) {
 
 if ( ! function_exists( 'parse_ini_string' ) ) {
 	/**
+	 * Parse INI String
+	 *
 	 * Parse_ini_string() doesn't exist pre PHP 5.3.
+	 *
+	 * @since ?
 	 *
 	 * @param $string
 	 * @param $process_sections
-	 *
 	 * @return array|bool
 	 */
 	function parse_ini_string( $string, $process_sections ) {
@@ -1001,13 +1120,22 @@ if ( ! function_exists( 'parse_ini_string' ) ) {
 }
 
 /**
- * @deprecated 2.4.2
+ * AIOSEOP Update User Visibility Notice
+ *
+ * @since ?
+ * @deprecated 3.0
  */
 function aioseop_update_user_visibilitynotice() {
 
 	update_user_meta( get_current_user_id(), 'aioseop_visibility_notice_dismissed', true );
 }
 
+/**
+ * AIOSEOP Update Yoast Detected Notice
+ *
+ * @since ?
+ * @deprecated 3.0
+ */
 function aioseop_update_yst_detected_notice() {
 
 	update_user_meta( get_current_user_id(), 'aioseop_yst_detected_notice_dismissed', true );
@@ -1031,6 +1159,13 @@ function aioseop_home_url( $path = '/' ) {
 
 
 if ( ! function_exists( 'aiosp_include_images' ) ) {
+	/**
+	 * AIOSEOP Include Images
+	 *
+	 * @since 2.4.2
+	 *
+	 * @return bool
+	 */
 	function aiosp_include_images() {
 		if ( false === apply_filters( 'aioseo_include_images_in_sitemap', true ) ) {
 			return false;
@@ -1053,9 +1188,13 @@ if ( ! function_exists( 'aiosp_include_images' ) ) {
 
 if ( ! function_exists( 'aioseop_formatted_date' ) ) {
 	/**
+	 * AIOSEOP Formatted Date
+	 *
 	 * Get formatted date. For custom formatting, the user has 2 options:
 	 * 1. provide the native date_i18n filter.
 	 * 2. provide a custom aioseop_format_date filter.
+	 *
+	 * @since 2.5
 	 *
 	 * @param int    $date Date in UNIX timestamp format.
 	 * @param string $format Require date format.
@@ -1074,8 +1213,9 @@ if ( ! function_exists( 'aioseop_formatted_date' ) ) {
 }
 
 /**
- * SVG menu icon function.
+ * AIOSEOP Get Menu Icon
  *
+ * SVG menu icon function.
  * Returns a base64 data URI for the SVG icon in the menu.
  *
  * @since 3.0
@@ -1151,6 +1291,8 @@ if ( ! function_exists( 'aioseop_get_menu_icon' ) ) {
 }
 
 /**
+ * AIOSEOP Do Shortcodes
+ *
  * Runs shortcodes in autogenerated titles & descriptions.
  *
  * @since 3.0.0
@@ -1184,6 +1326,8 @@ function aioseop_do_shortcodes( $content ) {
 }
 
 /**
+ * AIOSEOP Do Shortcode Helper
+ *
  * Ignores shortcodes that are known to conflict.
  * Acts as a helper function for aioseop_do_shortcodes().
  *

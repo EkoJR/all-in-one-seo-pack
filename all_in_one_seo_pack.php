@@ -61,6 +61,11 @@ if ( AIOSEOPPRO ) {
 
 if ( ! function_exists( 'aiosp_add_cap' ) ) {
 
+	/**
+	 * AIOSEOP Add Capabilities
+	 *
+	 * @since 2.3.6
+	 */
 	function aiosp_add_cap() {
 		/*
 		 TODO we should put this into an install script. We just need to make sure it runs soon enough and we need to make
@@ -133,8 +138,11 @@ $aioseop_mem_limit = @ini_get( 'memory_limit' );
 
 if ( ! function_exists( 'aioseop_convert_bytestring' ) ) {
 	/**
-	 * @param $byte_string
+	 * AIOSEOP Convert Bytestring
 	 *
+	 * @since ?
+	 *
+	 * @param $byte_string
 	 * @return int
 	 */
 	function aioseop_convert_bytestring( $byte_string ) {
@@ -214,6 +222,11 @@ if ( AIOSEOPPRO ) {
 
 if ( class_exists( 'All_in_One_SEO_Pack' ) ) {
 	add_action( 'admin_notices', 'admin_notices_already_defined' );
+	/**
+	 * Admin Notices Already Defined
+	 *
+	 * @throws ReflectionException
+	 */
 	function admin_notices_already_defined() {
 		echo "<div class=\'error\'>The All In One SEO Pack class is already defined";
 		if ( class_exists( 'ReflectionClass' ) ) {
@@ -255,6 +268,11 @@ if ( AIOSEOPPRO ) {
 
 if ( ! function_exists( 'aioseop_activate' ) ) {
 
+	/**
+	 * AIOSEOP Activate
+	 *
+	 * @since ?
+	 */
 	function aioseop_activate() {
 
 		// Check if we just got activated.
@@ -287,6 +305,10 @@ if ( ! function_exists( 'aiosp_plugin_row_meta' ) ) {
 	add_filter( 'plugin_row_meta', 'aiosp_plugin_row_meta', 10, 2 );
 
 	/**
+	 * AIOSEOP Plugin Row Meta
+	 *
+	 * @since 2.3.3
+	 *
 	 * @param $actions
 	 * @param $plugin_file
 	 *
@@ -313,9 +335,12 @@ if ( ! function_exists( 'aiosp_add_action_links' ) ) {
 	add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'aiosp_add_action_links', 10, 2 );
 
 	/**
+	 * AIOSEOP Add Action Links
+	 *
+	 * @since 2.3
+	 *
 	 * @param $actions
 	 * @param $plugin_file
-	 *
 	 * @return array
 	 */
 	function aiosp_add_action_links( $actions, $plugin_file ) {
@@ -361,11 +386,14 @@ if ( ! function_exists( 'aiosp_add_action_links' ) ) {
 if ( ! function_exists( 'aiosp_action_links' ) ) {
 
 	/**
+	 * AIOSEOP Action Links
+	 *
+	 * @since 2.3
+	 *
 	 * @param $actions
 	 * @param $plugin_file
 	 * @param array $action_links
 	 * @param string $position
-	 *
 	 * @return array
 	 */
 	function aiosp_action_links( $actions, $plugin_file, $action_links = array(), $position = 'after' ) {
@@ -393,7 +421,7 @@ if ( ! function_exists( 'aioseop_init_class' ) ) {
 	 *
 	 * @global AIOSEOP_Notices $aioseop_notices
 	 *
-	 * @since ?? // When was this added?
+	 * @since 2.3
 	 * @since 2.3.12.3 Loads third party compatibility class.
 	 */
 	function aioseop_init_class() {

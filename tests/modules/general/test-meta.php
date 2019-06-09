@@ -101,6 +101,7 @@ class Test_Meta extends AIOSEOP_Test_Base {
 
 	/**
 	 * Test whether the meta description is correctly auto generated given different types of content.
+	 *
 	 * @test
 	 * @dataProvider postContentProvider
 	 */

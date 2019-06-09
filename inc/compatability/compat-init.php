@@ -68,6 +68,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Compatibility' ) ) {
 
 		/**
 		 *
+		 * AIOSEOP Disable Twitter
+		 *
+		 * @since 2.3.11.4
+		 *
 		 * @return bool
 		 */
 		function aioseop_disable_twitter( $card_properties ) {

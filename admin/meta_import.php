@@ -242,7 +242,6 @@ function aiosp_seometa_admin() {
  * First check to see what records for $new already exist, storing the corresponding post_id values in an array.
  * When the conversion happens, ignore rows that contain a post_id, to avoid duplicate entries.
  *
- *
  * @param string $old Old meta_key entries.
  * @param string $new New meta_key entries.
  * @param bool $delete_old Whether to delete the old entries.
@@ -599,7 +598,6 @@ function aiosp_seometa_import() {
 	 * Hook fires after plugin functions are loaded.
 	 *
 	 * @since 0.9.10
-	 *
 	 */
 	do_action( 'aiosp_seometa_import' );
 
@@ -607,6 +605,7 @@ function aiosp_seometa_import() {
 
 /**
  * Activation Hook
+ *
  * @since 0.9.4
  */
 register_activation_hook( __FILE__, 'aiosp_seometa_activation_hook' );

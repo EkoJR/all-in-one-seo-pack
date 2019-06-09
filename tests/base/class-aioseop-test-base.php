@@ -26,21 +26,25 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 
 	/**
 	 * Last AJAX response.  This is set via echo -or- wp_die.
+	 *
 	 * @var type
 	 */
 	protected $_last_response = '';
 	/**
 	 * List of ajax actions called via POST
+	 *
 	 * @var type
 	 */
 	protected $_core_actions_get = array( 'fetch-list', 'ajax-tag-search', 'wp-compression-test', 'imgedit-preview', 'oembed_cache' );
 	/**
 	 * Saved error reporting level
+	 *
 	 * @var int
 	 */
 	protected $_error_level = 0;
 	/**
 	 * List of ajax actions called via GET
+	 *
 	 * @var type
 	 */
 	protected $_core_actions_post = array(
@@ -57,6 +61,7 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 
 	/**
 	 * A sentence that contains the list of special characters that can be used.
+	 *
 	 * @var type
 	 */
 	protected $_spl_chars = '<tom> - tom&jerry \'cause today\'s effort makes it worth tomorrow\'s "holiday" &raquo; &laquo; &rsaquo; &lsaquo; &rdquo; &ldquo; &rsquo; &lsquo; > <';
@@ -99,6 +104,7 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 
 	/**
 	 * Return our callback handler
+	 *
 	 * @return callback
 	 */
 	public function getDieHandler() {
@@ -143,6 +149,7 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 	 * Mimic the ajax handling of admin-ajax.php
 	 * Capture the output via output buffering, and if there is any, store
 	 * it in $this->_last_message.
+	 *
 	 * @param string $action
 	 */
 	protected function _handleAjax( $action ) {
@@ -167,6 +174,7 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 	/**
 	 * Switch between user roles
 	 * E.g. administrator, editor, author, contributor, subscriber
+	 *
 	 * @param string $role
 	 */
 	protected function _setRole( $role ) {

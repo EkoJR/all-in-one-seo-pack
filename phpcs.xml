@@ -42,7 +42,7 @@
         <exclude name="Squiz.Commenting.InlineComment.NotCapital" />
 
         <!-- these can be removed once the initial part of #1003 is closed -->
-        <exclude name="Generic.Commenting.DocComment" />
+
         <exclude name="Squiz.Commenting.FunctionComment" />
 
         <!-- these can be removed once #2335 is closed -->

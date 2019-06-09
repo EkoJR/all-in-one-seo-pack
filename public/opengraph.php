@@ -3,7 +3,7 @@
  * Public Opengraph
  *
  * @package All_in_One_SEO_Pack
- * @since ?
+ * @since 2.3.5
  */
 
 if ( ! class_exists( 'AIOSEOP_Opengraph_Public' ) ) {
@@ -14,21 +14,22 @@ if ( ! class_exists( 'AIOSEOP_Opengraph_Public' ) ) {
 	 * Handles the public-facing duties of opengraph things
 	 *
 	 * @since 2.3.5
-	 *
 	 */
 	class AIOSEOP_Opengraph_Public {
 
 		/**
+		 * Prepare Twitter Username
+		 *
 		 * Prepare twitter username for public display.
 		 *
 		 * We do things like strip out the URL, etc and return just (at)username.
 		 * At the moment, we'll check for 1 of 3 things... (at)username, username, and https://twitter.com/username.
 		 * In the future, we'll need to start validating the information on the way in, so we don't have to do it one the way out.
 		 *
-		 * @param $twitter_profile
-		 *
-		 * @return string
 		 * @since 2.3.5
+		 *
+		 * @param $twitter_profile
+		 * @return string
 		 */
 		public static function prepare_twitter_username( $twitter_profile ) {
 
@@ -61,13 +62,14 @@ if ( ! class_exists( 'AIOSEOP_Opengraph_Public' ) ) {
 
 		}
 
-
 		/**
-		 * @param $twitter_profile
+		 * Twitter URL to User
 		 *
-		 * @return mixed
 		 * @since 2.3.5
 		 * @since 2.3.5.1 Bail if < WordPress 4.4 for now.
+		 *
+		 * @param $twitter_profile
+		 * @return mixed
 		 */
 		public static function twitter_url_to_user( $twitter_profile ) {
 
@@ -87,14 +89,15 @@ if ( ! class_exists( 'AIOSEOP_Opengraph_Public' ) ) {
 
 		}
 
-
 		/**
-		 * @param $twitter_profile
-		 *
-		 * @return string
-		 * @since 2.3.5
+		 * Validate Twitter Profile
 		 *
 		 * TODO- this claims to just validate, but it's actually validating and adding the AT symbol as needed rather than returning true/false
+		 *
+		 * @since 2.3.5
+		 *
+		 * @param $twitter_profile
+		 * @return string
 		 */
 		public static function validate_twitter_profile( $twitter_profile ) {
 			// test for valid twitter username, with or without @.
@@ -106,12 +109,13 @@ if ( ! class_exists( 'AIOSEOP_Opengraph_Public' ) ) {
 			}
 		}
 
-
 		/**
-		 * @param $twitter_profile
+		 * Prepend at Symbol
 		 *
-		 * @return string
 		 * @since 2.3.5
+		 *
+		 * @param $twitter_profile
+		 * @return string
 		 */
 		public static function prepend_at_symbol( $twitter_profile ) {
 			// checks for @ in the beginning, if it's not there adds it.

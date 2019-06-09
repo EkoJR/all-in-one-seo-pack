@@ -3,7 +3,7 @@
  * Dashboard Widget
  *
  * @package All_in_One_SEO_Pack
- * @since ?
+ * @since 2.3.10
  */
 
 if ( ! class_exists( 'aioseop_dashboard_widget' ) ) {
@@ -18,13 +18,19 @@ if ( ! class_exists( 'aioseop_dashboard_widget' ) ) {
 	// @codingStandardsIgnoreEnd
 
 		/**
+		 * Constructor
+		 *
 		 * Add the action to the constructor.
+		 *
+		 * @since 2.3.10
 		 */
 		function __construct() {
 			add_action( 'wp_dashboard_setup', array( $this, 'add_dashboard_widget' ) );
 		}
 
 		/**
+		 * Add Dashboard Widget
+		 *
 		 * @since 2.3.10
 		 */
 		function add_dashboard_widget() {
@@ -40,6 +46,8 @@ if ( ! class_exists( 'aioseop_dashboard_widget' ) ) {
 		}
 
 		/**
+		 * Show Widget
+		 *
 		 * @since 2.3.10.2
 		 */
 		function show_widget() {
@@ -61,6 +69,8 @@ if ( ! class_exists( 'aioseop_dashboard_widget' ) ) {
 		}
 
 		/**
+		 * Display RSS Dashboard Widget
+		 *
 		 * @since 2.3.10
 		 */
 		function display_rss_dashboard_widget() {

@@ -25,6 +25,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Feature_Manager' ) ) {
 		/**
 		 * All_in_One_SEO_Pack_Feature_Manager constructor.
 		 *
+		 * @since ?
+		 *
 		 * @param $mod Module.
 		 */
 		function __construct( $mod ) {
@@ -158,7 +160,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Feature_Manager' ) ) {
 		}
 
 		/**
+		 * Menu Order
+		 *
 		 * Determines the menu order.
+		 *
+		 * @since ?
 		 *
 		 * @return int
 		 */
@@ -167,8 +173,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Feature_Manager' ) ) {
 		}
 
 		/**
-		 * @param $submit
+		 * Filter Submit
 		 *
+		 * @since ?
+		 *
+		 * @param $submit
 		 * @return mixed
 		 */
 		function filter_submit( $submit ) {
@@ -181,9 +190,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Feature_Manager' ) ) {
 		}
 
 		/**
+		 * Display Option Div
+		 *
+		 * @since ?
+		 *
 		 * @param $buf
 		 * @param $args
-		 *
 		 * @return string
 		 */
 		function display_option_div( $buf, $args ) {

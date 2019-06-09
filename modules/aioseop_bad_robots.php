@@ -91,10 +91,9 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Bad_Robots' ) ) {
 		/**
 		 * Validate IP.
 		 *
-		 * @param $ip
-		 *
 		 * @since 2.3.7
 		 *
+		 * @param $ip
 		 * @return string
 		 */
 		function validate_ip( $ip ) {
@@ -115,8 +114,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Bad_Robots' ) ) {
 		}
 
 		/**
-		 * @param $referlist
+		 * Filter Bad Refer List
 		 *
+		 * @since ?
+		 *
+		 * @param $referlist
 		 * @return array
 		 */
 		function filter_bad_referlist( $referlist ) {
@@ -128,8 +130,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Bad_Robots' ) ) {
 		}
 
 		/**
-		 * @param $botlist
+		 * Filter Bad Bot List
 		 *
+		 * @since ?
+		 *
+		 * @param $botlist
 		 * @return array
 		 */
 		function filter_bad_botlist( $botlist ) {
@@ -142,7 +147,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Bad_Robots' ) ) {
 
 
 		/**
+		 * Blocked Message
+		 *
 		 * Updates blocked message.
+		 *
+		 * @since 2.3.11.1
 		 *
 		 * @param string $msg
 		 */
@@ -172,8 +181,9 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Bad_Robots' ) ) {
 		 *
 		 * Add in options for status display on settings page, sitemap rewriting on multisite.
 		 *
-		 * @param $options
+		 * @since ?
 		 *
+		 * @param $options
 		 * @return mixed
 		 */
 		function filter_display_options( $options ) {

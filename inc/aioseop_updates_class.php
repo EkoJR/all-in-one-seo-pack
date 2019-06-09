@@ -19,7 +19,6 @@ class AIOSEOP_Updates {
 
 	/**
 	 * Constructor
-	 *
 	 */
 	function __construct() {
 

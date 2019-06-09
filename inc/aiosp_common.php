@@ -17,6 +17,8 @@ class aiosp_common {
 // @codingStandardsIgnoreEnd
 
 	/**
+	 * Attachment URL => PostIDs
+	 *
 	 * @var null|array
 	 *
 	 * @since 2.9.2
@@ -24,15 +26,20 @@ class aiosp_common {
 	public static $attachment_url_postids = null;
 
 	/**
-	 * aiosp_common constructor.
+	 * Constructor
 	 *
+	 * @since 2.3.3
 	 */
 	function __construct() {
 
 	}
 
 	/**
+	 * Clear WPE Cache
+	 *
 	 * Clears WP Engine cache.
+	 *
+	 * @since 2.4.10
 	 */
 	static function clear_wpe_cache() {
 		if ( class_exists( 'WpeCommon' ) ) {
@@ -43,8 +50,11 @@ class aiosp_common {
 	}
 
 	/**
-	 * @param null $p
+	 * Get Blog Page
 	 *
+	 * @since 2.3.3
+	 *
+	 * @param null $p
 	 * @return array|null|string|WP_Post
 	 */
 	static function get_blog_page( $p = null ) {
@@ -68,13 +78,16 @@ class aiosp_common {
 	}
 
 	/**
+	 * Get Upgrade Hyperlink
+	 *
+	 * @since 2.3.3
+	 *
 	 * @param string $location
 	 * @param string $title
 	 * @param string $anchor
 	 * @param string $target
 	 * @param string $class
 	 * @param string $id
-	 *
 	 * @return string
 	 */
 	static function get_upgrade_hyperlink( $location = '', $title = '', $anchor = '', $target = '', $class = '', $id = 'aio-pro-update' ) {
@@ -111,17 +124,24 @@ class aiosp_common {
 	}
 
 	/**
+	 * Get Upgrade URL
+	 *
 	 * Gets the upgrade to Pro version URL.
+	 *
+	 * @since 2.3.3
 	 */
 	static function get_upgrade_url() {
 		// put build URL stuff in here.
 	}
 
 	/**
+	 * Absolutize URL
+	 *
 	 * Check whether a url is relative and if it is, make it absolute.
 	 *
-	 * @param string $url URL to check.
+	 * @since 2.4.2
 	 *
+	 * @param string $url URL to check.
 	 * @return string
 	 */
 	static function absolutize_url( $url ) {
@@ -139,10 +159,13 @@ class aiosp_common {
 	}
 
 	/**
+	 * Make URL Valid Smartly
+	 *
 	 * Check whether a url is relative (does not contain a . before the first /) or absolute and makes it a valid url.
 	 *
-	 * @param string $url URL to check.
+	 * @since 2.8
 	 *
+	 * @param string $url URL to check.
 	 * @return string
 	 */
 	static function make_url_valid_smartly( $url ) {
@@ -169,10 +192,13 @@ class aiosp_common {
 	}
 
 	/**
+	 * Is URL Valid
+	 *
 	 * Check whether a url is valid.
 	 *
-	 * @param string $url URL to check.
+	 * @since 2.8
 	 *
+	 * @param string $url URL to check.
 	 * @return bool
 	 */
 	public static function is_url_valid( $url ) {
@@ -180,7 +206,11 @@ class aiosp_common {
 	}
 
 	/**
+	 * Make XML Safe
+	 *
 	 * Renders the value XML safe.
+	 *
+	 * @since 2.10
 	 */
 	public static function make_xml_safe( $tag, $value ) {
 		// some tags contain an array of values.
@@ -302,6 +332,8 @@ class aiosp_common {
 	}
 
 	/**
+	 * Set Transient URL Post IDs
+	 *
 	 * Sets the transient data at the last hook instead at every call.
 	 *
 	 * @see set_transient()

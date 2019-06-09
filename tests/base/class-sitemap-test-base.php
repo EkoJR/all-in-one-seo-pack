@@ -47,7 +47,6 @@ class Sitemap_Test_Base extends AIOSEOP_Test_Base {
 	 * 3) an array - each element of the array will be the name of the XML node. The value, again, can be
 	 *      i) a boolean - true will check if the node exists, false if the node does not exist.
 	 *      ii) a string - the value of the node should be the same as this value.
-	 *
 	 */
 	protected final function validate_sitemap( $elements, $debug = false ) {
 		$file = $this->create_sitemap();

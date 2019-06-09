@@ -21,21 +21,26 @@ if ( ! class_exists( 'aioseop_google_analytics' ) ) {
 	// @codingStandardsIgnoreEnd
 
 		/**
-		 * @todo Rather than extending the module base class,
+		 * TODO Rather than extending the module base class,
 		 * we should find a better way for the shared functions
 		 * like moving them to our common functions class.
 		 */
 
 		/**
+		 * Constructor
+		 *
 		 * Default module constructor.
+		 *
+		 * @since 2.3.9.2
 		 */
 		public function __construct() {
 			$this->google_analytics();
 		}
 
 		/**
-		 * Inits Google Analytics.
+		 * Google Analytics
 		 *
+		 * @since 2.3.9.2
 		 * @since 2.3.14 Refactored to work with autotrack.js.
 		 *
 		 * @link https://github.com/googleanalytics/autotrack
@@ -86,13 +91,17 @@ if ( ! class_exists( 'aioseop_google_analytics' ) ) {
 		}
 
 		/**
-		 * Handle Universal Analytics.
+		 * Universal Analytics
+		 *
 		 * Adds analytics.
 		 *
+		 * @since 2.3.9.2
 		 * @since 2.3.15 Added aioseop_ga_attributes filter hook for attributes.
 		 * @since 2.3.14 Refactored to work with autotrack.js and code optimized.
 		 *
 		 * @global array $aioseop_options All-in-on-seo saved settings/options.
+		 *
+		 * @return false|string
 		 */
 		public function universal_analytics() {
 			global $aioseop_options;
@@ -180,6 +189,10 @@ if ( ! class_exists( 'aioseop_google_analytics' ) ) {
 		}
 
 		/**
+		 * Get Analytics Domain
+		 *
+		 * @since 2.3.9.2
+		 *
 		 * @return mixed|string
 		 */
 		function get_analytics_domain() {

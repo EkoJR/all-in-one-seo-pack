@@ -97,10 +97,11 @@ if ( ! class_exists( 'AIOSEOP_Translations' ) ) :
 		public $native_name = '';
 
 		/**
+		 * Constructor
+		 *
 		 * AIOSEOP_Translations constructor.
 		 *
 		 * @since 2.3.5
-		 *
 		 */
 		public function __construct() {
 
@@ -115,6 +116,8 @@ if ( ! class_exists( 'AIOSEOP_Translations' ) ) :
 		}
 
 		/**
+		 * Get Local Data
+		 *
 		 * Fetch locale data from WP.
 		 *
 		 * @since 2.3.5
@@ -133,6 +136,8 @@ if ( ! class_exists( 'AIOSEOP_Translations' ) ) :
 
 
 		/**
+		 *
+		 * Set Current Loacal Data
 		 *
 		 * @since 2.3.5
 		 *
@@ -195,11 +200,11 @@ if ( ! class_exists( 'AIOSEOP_Translations' ) ) :
 		}
 
 		/**
+		 * Count Translated Languages
 		 *
 		 * @since 2.3.5
 		 *
 		 * @param $locales
-		 *
 		 * @return int
 		 */
 		private function count_translated_languages( $locales ) {
@@ -217,7 +222,7 @@ if ( ! class_exists( 'AIOSEOP_Translations' ) ) :
 		}
 
 		/**
-		 *
+		 * Set Translation URL
 		 *
 		 * @since 2.3.5
 		 */
@@ -233,6 +238,8 @@ if ( ! class_exists( 'AIOSEOP_Translations' ) ) :
 		}
 
 		/**
+		 * Set Native Language
+		 *
 		 * Gets and sets the native language.
 		 *
 		 * @since 2.3.12.1
@@ -250,11 +257,11 @@ if ( ! class_exists( 'AIOSEOP_Translations' ) ) :
 		}
 
 		/**
+		 * Init
 		 *
 		 * @since 2.3.5
 		 * @since 2.3.6 Return FALSE on WP_Error object in get_locale_data().
 		 * @since 2.3.12.1 set_native_language()
-		 *
 		 */
 		private function init() {
 

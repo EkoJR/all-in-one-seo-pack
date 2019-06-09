@@ -177,7 +177,6 @@ class Tests_All_in_One_SEO_Pack_AiospMrtGetUrl extends AIOSEOP_Test_Base {
 	 *
 	 * @expectedException count(): Parameter must be an array or an object that implements Countable
 	 * @expectedExceptionMessage Error Exception Message in Annotations.
-	 *
 	 */
 	public function test_aiosp_mrt_get_url_post_edit() {
 		global $aioseop_class;

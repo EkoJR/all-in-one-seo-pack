@@ -3,20 +3,28 @@
  * General Metaboxes
  *
  * @package All_in_One_SEO_Pack
- * @since ?
+ * @since 2.3.3
  */
 // @codingStandardsIgnoreStart
 class aiosp_metaboxes {
 // @codingStandardsIgnoreEnd
 
 	/**
+	 * Constructor
+	 *
 	 * aiosp_metaboxes constructor.
+	 *
+	 * @since 2.3.3
 	 */
 	function __construct() {
 		// construct.
 	}
 
 	/**
+	 * Display Metaboxes
+	 *
+	 * @since 2.3.3
+	 *
 	 * @param $add
 	 * @param $meta
 	 */
@@ -175,6 +183,11 @@ class aiosp_metaboxes {
 		<?php
 	}
 
+	/**
+	 * Pro Meta Content
+	 *
+	 * @since 2.3.11
+	 */
 	static function pro_meta_content() {
 
 		echo '<ul>';

@@ -19,21 +19,31 @@ require_once AIOSEOP_UNIT_TESTING_DIR . '/base/class-sitemap-test-base.php';
 class Test_Sitemap extends Sitemap_Test_Base {
 
 	/**
+	 * URLs
+	 *
 	 * @var array $_urls Stores the external pages that need to be added to the sitemap.
 	 */
 	private $_urls;
 
+	/**
+	 * Set Up
+	 */
 	public function setUp() {
 		parent::init();
 		parent::setUp();
 	}
 
+	/**
+	 * Tear Down
+	 */
 	public function tearDown() {
 		parent::init();
 		parent::tearDown();
 	}
 
 	/**
+	 * Test Only Pages
+	 *
 	 * Creates posts and pages and tests whether only pages are being shown in the sitemap.
 	 */
 	public function test_only_pages() {
@@ -78,6 +88,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test Featured Image
+	 *
 	 * @requires PHPUnit 5.7
 	 * Creates posts with and without featured images and tests whether the sitemap
 	 * 1) contains the image tag in the posts that have images attached.
@@ -123,6 +135,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test Exclude Images
+	 *
 	 * @requires PHPUnit 5.7
 	 * Creates posts with and without featured images and switches OFF the images from the sitemap. Tests that the sitemap does not contain the image tag for any post.
 	 */
@@ -162,6 +176,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test RSS
+	 *
 	 * Test the generated RSS file for the sitemap.
 	 *
 	 * @ticket 561 XML Sitemap module - Add support for RSS/Atom updates.
@@ -200,6 +216,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 
 
 	/**
+	 * Test Exclude Trashed Pages
+	 *
 	 * Don't include content from trashed pages.
 	 *
 	 * @ticket 1423 XML Sitemap - Don't include content from trashed pages.
@@ -233,7 +251,7 @@ class Test_Sitemap extends Sitemap_Test_Base {
 
 
 	/**
-	 * Testing post type archive pages.
+	 * Testing Post Type Archive Pages
 	 *
 	 * @ticket 155 XML Sitemap - Add support for post type archive pages and support to exclude them as well.
 	 *
@@ -274,6 +292,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Filter AIOSEOP Sitemap Include Post Types Archive
+	 *
 	 * Implements the filter 'aiosp_sitemap_include_post_types_archives'.
 	 */
 	public function filter_aiosp_sitemap_include_post_types_archives( $types ) {
@@ -281,6 +301,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Pst Type Archive Pages Provider
+	 *
 	 * Provide the post types for testing test_post_type_archive_pages.
 	 *
 	 * This will enable us to test these cases:
@@ -299,6 +321,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test WooCommerce Gallery
+	 *
 	 * Add WooCommerce product gallery images to XML sitemap.
 	 *
 	 * @ticket 366 Add WooCommerce product gallery images to XML sitemap
@@ -346,6 +370,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test Only Taxonomies
+	 *
 	 * Adds posts to taxonomies, enables only taxonomies in the sitemap.
 	 */
 	public function test_only_taxonomies() {
@@ -384,6 +410,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Filter MU Plugins Loaded
+	 *
 	 * Loads the specified plugin.
 	 */
 	public function filter_muplugins_loaded() {
@@ -391,6 +419,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test Schemeless Images
+	 *
 	 * @requires PHPUnit 5.7
 	 * Creates posts with schemeless images in the content and checks if they are being correctly included in the sitemap.
 	 */
@@ -428,7 +458,10 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test Sitemap Index Pagination
+	 *
 	 * Creates different types of posts, enables indexes and pagination and checks if the posts are being paginated correctly without additional/blank sitemaps.
+	 *
 	 * @requires PHPUnit 5.7
 	 * @dataProvider enabledPostTypes
 	 */
@@ -476,6 +509,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test Jetpack Gallery
+	 *
 	 * @requires PHPUnit 5.7
 	 * Tests posts with and without images with dependency on jetpack gallery.
 	 *
@@ -527,6 +562,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test NextGen Gallery
+	 *
 	 * @requires PHPUnit 5.7
 	 * Tests posts with and without images with dependency on nextgen gallery.
 	 *
@@ -579,6 +616,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test Additional External URLS
+	 *
 	 * Add external URLs to the sitemap using the filter 'aiosp_sitemap_addl_pages_only'.
 	 *
 	 * @dataProvider externalPagesProvider
@@ -614,6 +653,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test Index
+	 *
 	 * @requires PHPUnit 5.7
 	 * Enables indexes and tests that the index and individual sitemaps are all valid according to the schema.
 	 *
@@ -638,6 +679,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Filter AIOSEOP Sitemap Additional Pages Only
+	 *
 	 * Returns the urls to be added to the sitemap.
 	 */
 	public function filter_aiosp_sitemap_addl_pages_only() {
@@ -645,6 +688,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * External Pages Provider
+	 *
 	 * Provides the external pages that need to be added to the sitemap.
 	 */
 	public function externalPagesProvider() {
@@ -667,6 +712,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test External Images
+	 *
 	 * Creates posts with external images and uses the filter 'aioseop_images_allowed_from_hosts' to allow only a particular host's images to be included in the sitemap.
 	 */
 	public function test_external_images() {
@@ -712,6 +759,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Filter AIOSEOP Images Allowed from Hosts
+	 *
 	 * Implements the filter 'aioseop_images_allowed_from_hosts' to allow speficic hosts.
 	 */
 	public function filter_aioseop_images_allowed_from_hosts( $hosts ) {
@@ -720,6 +769,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Enabled Post Types
+	 *
 	 * Provides posts types to test test_sitemap_index_pagination against.
 	 */
 	public function enabledPostTypes() {
@@ -734,6 +785,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Test Make External URLs Valid
+	 *
 	 * Add invalid external URLs to the sitemap and see if they are shown as valid in the sitemap.
 	 *
 	 * @dataProvider invalidExternalPagesProvider
@@ -787,6 +840,8 @@ class Test_Sitemap extends Sitemap_Test_Base {
 	}
 
 	/**
+	 * Invalid External Pages Provider
+	 *
 	 * Provides the invalid external pages that need to be added to the sitemap.
 	 */
 	public function invalidExternalPagesProvider() {

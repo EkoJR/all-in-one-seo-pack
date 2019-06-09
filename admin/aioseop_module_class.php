@@ -561,8 +561,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param DOMElement $node
+		 * DOM Node to Array
 		 *
+		 * @since ?
+		 *
+		 * @param DOMElement $node
 		 * @return array|string
 		 */
 		function domnode_to_array( $node ) {
@@ -615,10 +618,14 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * adds support for using %cf_(name of field)% for using custom fields / Advanced Custom Fields in titles / descriptions etc. **
+		 * Apply Custom Fields
+		 *
+		 * Adds support for using %cf_(name of field)% for using
+		 * custom fields / Advanced Custom Fields in titles / descriptions etc. **
+		 *
+		 * @since ?
 		 *
 		 * @param $format
-		 *
 		 * @return mixed
 		 */
 		function apply_cf_fields( $format ) {
@@ -626,8 +633,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param $matches
+		 * (ACF) Custom Field Replace
 		 *
+		 * @since ?
+		 *
+		 * @param $matches
 		 * @return bool|mixed|string
 		 */
 		function cf_field_replace( $matches ) {
@@ -672,10 +682,13 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
+		 * Is AIOSEOP Active Blog
+		 *
 		 * Checks if the plugin is active on a given blog by blogid on a multisite.
 		 *
-		 * @param bool $bid
+		 * @since ?
 		 *
+		 * @param bool $bid
 		 * @return bool
 		 */
 		function is_aioseop_active_on_blog( $bid = false ) {
@@ -694,9 +707,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
+		 * Quote List for Regex
+		 *
+		 * @since ?
+		 *
 		 * @param        $list
 		 * @param string $quote
-		 *
 		 * @return string
 		 */
 		function quote_list_for_regex( $list, $quote = '/' ) {
@@ -758,6 +774,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
+		 * Default Bad Bots
+		 *
+		 * @since ?
+		 *
 		 * @return array
 		 */
 		function default_bad_bots() {
@@ -902,6 +922,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
+		 * Is Bad Bot
+		 *
+		 * @since ?
+		 *
 		 * @return bool
 		 */
 		function is_bad_bot() {
@@ -922,6 +946,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
+		 * Default Bad Referers
+		 *
+		 * @since ?
+		 *
 		 * @return array
 		 */
 		function default_bad_referers() {
@@ -957,6 +985,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
+		 * Is Bad Referer
+		 *
+		 * @since ?
+		 *
 		 * @return bool
 		 */
 		function is_bad_referer() {
@@ -975,6 +1007,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
+		 * Allow Bot
+		 *
+		 * @since ?
+		 *
 		 * @return mixed|void
 		 */
 		function allow_bot() {
@@ -989,10 +1025,13 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		/**
 		 * Displays tabs for tabbed locations on a settings page.
 		 *
+		 * @since ?
+		 *
 		 * @param $location
 		 */
 		function display_tabs( $location ) {
 			if ( ( $location != null ) && isset( $locations[ $location ]['tabs'] ) ) {
+				// TODO Fix undefined variable.
 				$tabs = $locations['location']['tabs'];
 			} else {
 				$tabs = $this->tabs;
@@ -1020,8 +1059,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param $post_objs
+		 * Get Object Labels
 		 *
+		 * @since ?
+		 *
+		 * @param $post_objs
 		 * @return array
 		 */
 		function get_object_labels( $post_objs ) {
@@ -1039,8 +1081,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param $post_objs
+		 * Get Term Labels
 		 *
+		 * @since ?
+		 *
+		 * @param $post_objs
 		 * @return array
 		 */
 		function get_term_labels( $post_objs ) {
@@ -1055,8 +1100,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param array $args
+		 * Get Post Type Titles
 		 *
+		 * @since ?
+		 *
+		 * @param array $args
 		 * @return array
 		 */
 		function get_post_type_titles( $args = array() ) {
@@ -1068,8 +1116,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param array $args
+		 * Get Taxonomy Titles
 		 *
+		 * @since ?
+		 *
+		 * @param array $args
 		 * @return array
 		 */
 		function get_taxonomy_titles( $args = array() ) {
@@ -1678,9 +1729,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
+		 * Get All Images
+		 *
+		 * @since ?
+		 *
 		 * @param null $options
 		 * @param null $p
-		 *
 		 * @return array
 		 */
 		function get_all_images( $options = null, $p = null ) {
@@ -1706,7 +1760,6 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		 *
 		 * @return bool|mixed|string
 		 */
-
 		function get_the_image( $options = null, $p = null ) {
 
 			if ( $p === null ) {
@@ -1746,8 +1799,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param null $p
+		 * Get the Image by Default
 		 *
+		 * @since ?
+		 *
+		 * @param null $p
 		 * @return string
 		 */
 		function get_the_image_by_default( $p = null ) {
@@ -1755,8 +1811,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param array $args
+		 * Get the Image by Meta Key
 		 *
+		 * @since ?
+		 *
+		 * @param array $args
 		 * @return bool|mixed
 		 */
 		function get_the_image_by_meta_key( $args = array() ) {
@@ -1780,10 +1839,12 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
+		 * Get the Image by Post Thumbnail
+		 *
+		 * @since ?
 		 * @since 2.4.13 Fixes when content is taxonomy.
 		 *
 		 * @param null $p
-		 *
 		 * @return bool
 		 */
 		function get_the_image_by_post_thumbnail( $p = null ) {
@@ -1815,8 +1876,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param null $p
+		 * Get the Image by Attachment
 		 *
+		 * @since ?
+		 *
+		 * @param null $p
 		 * @return bool
 		 */
 		function get_the_image_by_attachment( $p = null ) {
@@ -1868,8 +1932,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param null $p
+		 * Get the Image by Scan
 		 *
+		 * @since ?
+		 *
+		 * @param null $p
 		 * @return bool
 		 */
 		function get_the_image_by_scan( $p = null ) {
@@ -2057,8 +2124,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param $data
+		 * Localize Script Data
 		 *
+		 * @since ?
+		 *
+		 * @param $data
 		 * @return array
 		 */
 		function localize_script_data( $data ) {
@@ -2122,6 +2192,10 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
+		 * Get Admin Links
+		 *
+		 * @since ?
+		 *
 		 * @return array
 		 */
 		function get_admin_links() {
@@ -2767,8 +2841,11 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		}
 
 		/**
-		 * @param $domain
+		 * Sanitize Domain
 		 *
+		 * @since ?
+		 *
+		 * @param $domain
 		 * @return mixed|string
 		 */
 		function sanitize_domain( $domain ) {
@@ -2860,10 +2937,14 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 			$this->update_class_option( $this->options );
 		}
 
-		/** handle option resetting and updating
+		/**
+		 * Handle Settings Updates
+		 *
+		 * Handle option resetting and updating.
+		 *
+		 * @since ?
 		 *
 		 * @param null $location
-		 *
 		 * @return mixed|string|void
 		 */
 		function handle_settings_updates( $location = null ) {

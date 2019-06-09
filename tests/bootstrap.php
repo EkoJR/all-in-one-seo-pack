@@ -11,11 +11,9 @@ if ( ! $_tests_dir ) {
 	$_tests_dir = '/tmp/wordpress-tests-lib';
 }
 
-/**
-
-*********** contactashish13 test environment */
+/************* Contactashish13 test environment */
 // $_tests_dir = 'E:\work\apps\wordpress-dev\tests\phpunit';
-/************* contactashish13 test environment *************/
+/************* Contactashish13 test environment ************ */
 
 define( 'WP_USE_THEMES', false );
 define( 'WP_TESTS_FORCE_KNOWN_BUGS', true );
