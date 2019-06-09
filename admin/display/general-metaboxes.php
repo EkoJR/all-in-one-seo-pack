@@ -12,7 +12,7 @@ class aiosp_metaboxes {
 	/**
 	 * Constructor
 	 *
-	 * aiosp_metaboxes constructor.
+	 * AIOSEOP metaboxes constructor.
 	 *
 	 * @since 2.3.3
 	 */

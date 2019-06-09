@@ -37,7 +37,6 @@
         <exclude name="WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase" />
         <exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase" />
         <exclude name="Squiz.Commenting.BlockComment" />
-        <exclude name="Generic.Commenting.DocComment.LongNotCapital" />
 
         <!-- these can be removed once the initial part of #1003 is closed -->
 
