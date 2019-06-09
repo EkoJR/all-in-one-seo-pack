@@ -556,6 +556,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 				$doc = new DOMDocument();
 				$doc->loadXML( $htmlstr );
 
+				// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 				return $this->domnode_to_array( $doc->documentElement );
 			}
 		}
@@ -569,6 +570,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 		 * @return array|string
 		 */
 		function domnode_to_array( $node ) {
+			// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 			switch ( $node->nodeType ) {
 				case XML_CDATA_SECTION_NODE:
 				case XML_TEXT_NODE:
@@ -598,8 +600,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 					if ( is_array( $output ) ) {
 						if ( $node->attributes->length ) {
 							$a = array();
-							foreach ( $node->attributes as $attrName => $attrNode ) {
-								$a[ $attrName ] = (string) $attrNode->value;
+							foreach ( $node->attributes as $attr_name => $attr_node ) {
+								$a[ $attr_name ] = (string) $attr_node->value;
 							}
 							$output['@attributes'] = $a;
 						}
@@ -610,6 +612,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Module' ) ) {
 						}
 					}
 			}
+			// phpcs:enable
 			if ( empty( $output ) ) {
 				return '';
 			}

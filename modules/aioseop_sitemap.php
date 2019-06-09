@@ -4108,6 +4108,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 				$dom->loadHTML( $content );
 				libxml_clear_errors();
 
+				// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 				$dom->preserveWhiteSpace = false;
 
 				$matches = $dom->getElementsByTagName( 'img' );

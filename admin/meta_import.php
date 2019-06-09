@@ -257,6 +257,7 @@ function aiosp_seometa_meta_key_convert( $old = '', $new = '', $delete_old = fal
 	$output = new stdClass;
 
 	if ( ! $old || ! $new ) {
+		// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 		$output->WP_Error = 1;
 
 		return $output;
@@ -313,6 +314,7 @@ function aiosp_seometa_post_meta_convert( $old_platform = '', $new_platform = 'A
 	$output = new stdClass;
 
 	if ( empty( $_aiosp_seometa_platforms[ $old_platform ] ) || empty( $_aiosp_seometa_platforms[ $new_platform ] ) ) {
+		// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 		$output->WP_Error = 1;
 
 		return $output;
@@ -372,6 +374,7 @@ function aiosp_seometa_post_meta_analyze( $old_platform = '', $new_platform = 'A
 	$output = new stdClass;
 
 	if ( empty( $_aiosp_seometa_platforms[ $old_platform ] ) || empty( $_aiosp_seometa_platforms[ $new_platform ] ) ) {
+		// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 		$output->WP_Error = 1;
 
 		return $output;

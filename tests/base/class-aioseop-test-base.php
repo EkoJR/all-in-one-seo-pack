@@ -455,6 +455,7 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 	 * Extracts the node from the HTML source.
 	 */
 	private function get_node_as_array( $node ) {
+		// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 		$array = false;
 
 		if ( $node->hasAttributes() ) {
@@ -467,13 +468,14 @@ class AIOSEOP_Test_Base extends WP_UnitTestCase {
 			if ( $node->childNodes->length == 1 ) {
 				$array[ $node->firstChild->nodeName ] = $node->firstChild->nodeValue;
 			} else {
-				foreach ( $node->childNodes as $childNode ) {
-					if ( $childNode->nodeType != XML_TEXT_NODE ) {
-						$array[ $childNode->nodeName ][] = $this->get_node_as_array( $childNode );
+				foreach ( $node->childNodes as $child_node ) {
+					if ( $child_node->nodeType != XML_TEXT_NODE ) {
+						$array[ $child_node->nodeName ][] = $this->get_node_as_array( $child_node );
 					}
 				}
 			}
 		}
+		// phpcs:enable
 
 		return $array;
 	}
