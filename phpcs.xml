@@ -19,7 +19,6 @@
         <exclude name="WordPress.PHP.YodaConditions.NotYoda" />
         <exclude name="Squiz.PHP.DisallowMultipleAssignments" />
         <exclude name="WordPress.NamingConvention.ValidVariableName.StringNotSnakeCase" />
-        <exclude name="WordPress.NamingConventions.ValidVariableName.NotSnakeCase" />
 
         <!-- TODO (Maybe) Change class filenames with "class-" prepended. -->
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
