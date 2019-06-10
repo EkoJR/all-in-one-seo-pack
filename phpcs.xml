@@ -18,7 +18,6 @@
         <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning" />
         <exclude name="WordPress.PHP.YodaConditions.NotYoda" />
         <exclude name="Squiz.PHP.DisallowMultipleAssignments" />
-        <exclude name="WordPress.NamingConvention.ValidVariableName.StringNotSnakeCase" />
 
         <!-- TODO (Maybe) Change class filenames with "class-" prepended. -->
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
