@@ -38,6 +38,29 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Compatibility' ) ) {
 		}
 
 		/**
+		 * Load Compatibility classes.
+		 *
+		 * @since 2.3.6
+		 * @since 2.3.12.3 WPML compatibility loaded.
+		 */
+		public function load_compatibility_classes() {
+			require_once( AIOSEOP_PLUGIN_DIR . 'inc/compatability/compat-gutenberg.php' );
+			require_once( AIOSEOP_PLUGIN_DIR . 'inc/compatability/compat-wpml.php' ); // Load classes.
+			// Evaluate classes and push them into array.
+			$target = new All_in_One_SEO_Pack_Wpml;
+			if ( $target->exists() ) {
+				$this->classes[] = $target;
+			}
+
+			$compat_gutenberg = new AIOSEOP_Compat_Gutenberg();
+			if ( $compat_gutenberg->exists() ) {
+				$this->classes[] = $compat_gutenberg;
+			}
+
+			$this->load_compatibility_hooks();
+		}
+
+		/**
 		 * Load Compatibility Hooks.
 		 *
 		 * @since 2.3.6
@@ -145,23 +168,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Compatibility' ) ) {
 			return $modules;
 		}
 
-		/**
-		 * Load Compatibility classes.
-		 *
-		 * @since 2.3.6
-		 * @since 2.3.12.3 WPML compatibility loaded.
-		 */
-		public function load_compatibility_classes() {
-			require_once( AIOSEOP_PLUGIN_DIR . 'inc/compatability/compat-gutenberg.php' );
-			require_once( AIOSEOP_PLUGIN_DIR . 'inc/compatability/compat-wpml.php' ); // Load classes.
-			// Evaluate classes and push them into array.
-			$target = new All_in_One_SEO_Pack_Wpml;
-			if ( $target->exists() ) {
-				$this->classes[] = $target;
-			}
-			// Eventually we'll load our other classes from here.
-			$this->load_compatibility_hooks();
-		}
+
 	}
 
 }
